@@ -40,6 +40,9 @@ object Router:
       firstMatch(
         path("math") {
           org.worldofscala.scalajswebgl.samples.three.Math()
+        },
+        path("scene") {
+          org.worldofscala.scalajswebgl.samples.three.ScenePage()
         }
       )
     }

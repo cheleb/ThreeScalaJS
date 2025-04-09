@@ -12,5 +12,6 @@ class Vector3(
 ) extends js.Object {
   val isVector3: Boolean = js.native
 
+  def set(x: Double, y: Double, z: Double): this.type         = js.native
   def setFromMatrix3Column(m: Matrix3, index: Int): this.type = js.native
 }
