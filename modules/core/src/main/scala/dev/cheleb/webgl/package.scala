@@ -2,7 +2,7 @@ package dev.cheleb.webgl
 
 import org.scalajs.dom.HTMLCanvasElement
 
-import org.scalajs.dom.{WebGLRenderingContext => GL, WebGL2RenderingContext => GL2, *}
+import org.scalajs.dom.{WebGLRenderingContext => GL, WebGLRenderingContext => GL2, *}
 import scala.scalajs.js.JSConverters.*
 import scala.scalajs.js.typedarray.*
 

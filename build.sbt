@@ -53,7 +53,7 @@ val usedScalacOptions = Seq(
 lazy val core = scalajsProject("core")
   .settings(
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.8.1-local",
+      "org.scala-js" %%% "scalajs-dom" % "2.8.0",
       "com.raquo"    %%% "laminar"     % "17.2.0"
     )
   )
@@ -61,7 +61,7 @@ lazy val core = scalajsProject("core")
 lazy val three = scalajsProject("three")
   .settings(
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.8.1-local"
+      "org.scala-js" %%% "scalajs-dom" % "2.8.0"
     )
   )
 

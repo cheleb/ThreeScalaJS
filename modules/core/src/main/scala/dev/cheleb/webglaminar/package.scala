@@ -5,7 +5,6 @@ import org.scalajs.dom.HTMLCanvasElement
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveHtmlElement
 import org.scalajs.dom.window
-import org.scalajs.dom.WebGL2RenderingContext
 
 /**
  * Build a canvas element with WebGL 2 context initialized with vertex and
