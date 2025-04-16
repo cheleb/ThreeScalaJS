@@ -46,12 +46,12 @@ jobs:
 #          cache: 'npm'
       - name: Install dependencies
         run: |
-          cd examples/client
+          cd example/client
           rm -rf package-lock.json
           npm i
       - name: Vite build
         run: |
-          pushd examples/client
+          pushd example/client
           npm run build
           popd
           export VERSION=`git describe --tags --abbrev=0 | sed "s/v//"`

@@ -42,7 +42,7 @@ jobs:
   
       - name: Install dependencies
         run: |
-          cd examples/client
+          cd example/client
           npm ci
       # - name: Tests
       #   run: sbt +test
