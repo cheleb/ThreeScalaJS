@@ -8,7 +8,7 @@ import dev.cheleb.app.world.*
 import dev.cheleb.scalajswebgl.samples.*
 
 object Router:
-  val uiBase                     = "public"
+  val uiBase                     = "ThreeScalaJS"
   def uiRoute(segments: String*) = segments.mkString(s"/$uiBase/", "/", "")
   private val externalUrlBus     = EventBus[String]()
   val writer                     = externalUrlBus.writer
@@ -56,13 +56,15 @@ object Router:
           // potentially children
 
           pathPrefix(uiBase) {
-            firstMatch(
-              pathEnd {
-                dev.cheleb.scalajswebgl.samples.three.ScenePage()
-              },
-              webglRoutes(),
-              threeRoutes()
-            )
+            path("demo") {
+              firstMatch(
+                pathEnd {
+                  dev.cheleb.scalajswebgl.samples.three.ScenePage()
+                },
+                webglRoutes(),
+                threeRoutes()
+              )
+            }
           },
           noneMatched {
             div("404 Not Found")

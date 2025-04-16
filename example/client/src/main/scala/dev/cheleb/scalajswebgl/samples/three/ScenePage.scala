@@ -26,7 +26,7 @@ object ScenePage {
       )
     )
     val textureLoader = TextureLoader()
-    val colorMap      = textureLoader.load("/public/img/8081-earthmap10k.jpg")
+    val colorMap      = textureLoader.load("/ThreeScalaJS/demo/img/8081-earthmap10k.jpg")
 
     val pointMaterial = PointsMaterial(
       js.Dynamic.literal(color = "0xf0f0f0", size = 0.02, map = colorMap)
@@ -77,7 +77,7 @@ object ScenePage {
       // globeGroup.add(drawLine(x * 1.2, y * 1.2, z * 1.2))
 
     loader.load(
-      "/public/res/scala.glb",
+      "/ThreeScalaJS/demo/res/scala.glb",
       (obj) => {
         addObj(obj, LatLon(46.5188, 6.5593)) // Lauzane
       }
