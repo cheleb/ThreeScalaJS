@@ -2,6 +2,7 @@
 layout: main
 ---
 
+<span onclick='window.open("../demo/index.html", "_blank")'>🚀 Click me for a live demo</span>
 
 
 
