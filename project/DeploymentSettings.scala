@@ -11,8 +11,6 @@ import java.nio.file.Files
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
 import org.scalajs.sbtplugin._
 
-import play.twirl.sbt.SbtTwirl
-
 import sbt._
 import sbt.Keys._
 
@@ -47,16 +45,9 @@ object DeploymentSettings {
 // On dev mode, server will only serve API and static files.
 //
   val serverPlugins = mode match {
-    case "CommonJs" =>
-      Seq(SbtWeb, SbtTwirl, JavaAppPackaging, WebScalaJSBundlerPlugin, DockerPlugin, AshScriptPlugin)
     case "ESModule" =>
-      Seq(SbtTwirl, JavaAppPackaging, DockerPlugin, AshScriptPlugin)
+      Seq(JavaAppPackaging, DockerPlugin, AshScriptPlugin)
     case _ => Seq()
-  }
-
-  def scalaJSModule = mode match {
-    case "CommonJs" => ModuleKind.CommonJSModule
-    case _          => ModuleKind.ESModule
   }
 
   def serverSettings(clientProjects: Project*) = mode match {
@@ -73,27 +64,6 @@ object DeploymentSettings {
   }
 
   def staticGenerationSettings(generator: Project, client: Project) = mode match {
-    case "CommonJs" =>
-      Seq(
-        Assets / resourceGenerators += Def
-          .taskDyn[Seq[File]] {
-            val rootFolder = (Assets / resourceManaged).value / publicFolder
-            rootFolder.mkdirs()
-            (generator / Compile / runMain).toTask {
-              Seq(
-                "samples.BuildIndex",
-                "--title",
-                s""""${name.value} v2 ${version.value}"""",
-                "--version",
-                version.value,
-                "--resource-managed",
-                rootFolder
-              ).mkString(" ", " ", "")
-            }
-              .map(_ => (rootFolder ** "*.html").get)
-          }
-          .taskValue
-      )
     case "ESModule" =>
       Seq(
         (Compile / resourceGenerators) += Def
