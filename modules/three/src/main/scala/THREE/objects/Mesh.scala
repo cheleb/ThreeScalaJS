@@ -8,7 +8,7 @@ import scala.scalajs.js.|
  * Class representing triangular polygon mesh based objects.
  *
  * Example:
- * ```scala
+ * ```scala sc:nocompile
  * val geometry = new BoxGeometry(1, 1, 1)
  * val material = new MeshBasicMaterial(js.Dynamic.literal(color = 0xffff00))
  * val mesh     = new Mesh(geometry, material)
