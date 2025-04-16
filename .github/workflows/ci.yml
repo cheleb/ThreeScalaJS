@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  CI:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup JVM
+        uses: actions/setup-java@v4
+        with:
+          java-version: "23"
+          distribution: "zulu"
+          cache: "sbt"
+      - name: Install sbt
+        uses: sbt/setup-sbt@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+      - name: Cache SBT
+        uses: actions/cache@v4
+        with:
+            path: |
+              ~/.ivy2/cache
+              ~/.ivy2/local
+              **/target/**
+              ~/.sbt
+            key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt', 'project/*.sbt', 'project/*.scala') }}
+            restore-keys: |
+              ${{ runner.os }}-sbt-
+      - name: Cache node
+        uses: actions/cache@v4
+        with:
+            path: |
+              examples/client/node_modules
+            key: ${{ runner.os }}-node-${{ hashFiles('example/client/package.json') }}
+  
+      - name: Install dependencies
+        run: |
+          cd examples/client
+          npm ci
+      # - name: Tests
+      #   run: sbt +test
+      - name: example/dist
+        run: DEV=prod sbt "~client/fastLinkJS"
