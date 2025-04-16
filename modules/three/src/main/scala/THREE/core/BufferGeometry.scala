@@ -66,4 +66,6 @@ class BufferGeometry extends js.Object {
 
   def toNonIndexed(): BufferGeometry = js.native
   def toJSON(): js.Object            = js.native
+
+  def setFromPoints(points: js.Array[Vector2] | js.Array[Vector3]): this.type = js.native
 }

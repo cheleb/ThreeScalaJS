@@ -10,7 +10,7 @@ import org.scalajs.dom
  */
 @js.native
 @JSImport("three/addons/controls/OrbitControls.js", "OrbitControls")
-class OrbitControls(camera: Camera, domElement: js.UndefOr[dom.Element] = js.undefined) extends js.Object {
+class OrbitControls(camera: Camera, domElement: dom.Element) extends js.Object {
 
   /**
    * The current position of the camera.
