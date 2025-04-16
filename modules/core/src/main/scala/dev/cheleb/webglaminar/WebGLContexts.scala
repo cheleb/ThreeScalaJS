@@ -1,4 +1,4 @@
-package org.worldofscala.webglaminar
+package dev.cheleb.webglaminar
 
 import org.scalajs.dom.WebGL2RenderingContext
 import org.scalajs.dom.WebGLProgram

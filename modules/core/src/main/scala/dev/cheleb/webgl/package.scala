@@ -1,4 +1,4 @@
-package org.worldofscala.webgl
+package dev.cheleb.webgl
 
 import org.scalajs.dom.HTMLCanvasElement
 

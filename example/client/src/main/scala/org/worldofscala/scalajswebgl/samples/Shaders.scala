@@ -1,8 +1,8 @@
 package org.worldofscala.scalajswebgl.samples
 
-import org.worldofscala.webgl.*
-import org.worldofscala.webglaminar.*
 import org.scalajs.dom.{WebGLRenderingContext => GL}
+import dev.worldofscala.webgl.{given, Coord}
+import dev.worldofscala.webglaminar.webglCanvas
 
 object Shaders {
 

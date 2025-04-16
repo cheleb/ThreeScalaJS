@@ -8,7 +8,7 @@ import scala.scalajs.js.typedarray.*
 
 import com.raquo.laminar.api.L.*
 import scala.scalajs.js
-import org.worldofscala.webgl.*
+import dev.worldofscala.webgl.given
 
 object Triangle {
 

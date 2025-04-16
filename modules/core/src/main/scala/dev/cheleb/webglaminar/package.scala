@@ -1,6 +1,6 @@
-package org.worldofscala.webglaminar
+package dev.cheleb.webglaminar
 
-import org.worldofscala.webgl.*
+import dev.cheleb.webgl.*
 import org.scalajs.dom.HTMLCanvasElement
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveHtmlElement
