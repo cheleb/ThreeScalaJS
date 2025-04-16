@@ -13,8 +13,8 @@ object HomePage:
         demo("Sphere", Router.uiRoute("webgl", "sphere")),
         demo("Triangle", Router.uiRoute("webgl", "adammurray", "triangle")),
         demo("Laminar WebGL Sample", Router.uiRoute("webgl", "detect")),
-        demo("Three", Router.uiRoute("three", "math")),
-        demo("Three", Router.uiRoute("three", "scene"))
+        demo("Math", Router.uiRoute("three", "math")),
+        demo("ThreeJS", Router.uiRoute("three", "scene"))
       )
     )
 

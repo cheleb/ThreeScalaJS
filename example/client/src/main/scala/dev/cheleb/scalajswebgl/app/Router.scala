@@ -57,8 +57,8 @@ object Router:
 
           pathPrefix(uiBase) {
             firstMatch(
-              (pathEnd | path("index.html")) {
-                HomePage()
+              pathEnd {
+                dev.cheleb.scalajswebgl.samples.three.ScenePage()
               },
               webglRoutes(),
               threeRoutes()

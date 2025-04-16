@@ -28,19 +28,6 @@
             "group": "build"
         },
         {
-            "label": "docker",
-            "icon": {
-                "id": "database"
-            },
-            "type": "shell",
-            "command": "docker-compose up",
-            "presentation": {
-                "panel": "dedicated",
-                "group": "back"
-            },
-            "group": "build"
-        },
-        {
             "label": "runDemo",
             "dependsOrder": "parallel",
             "dependsOn": [
@@ -62,19 +49,6 @@
             "presentation": {
                 "panel": "shared",
                 "group": "front"
-            },
-            "group": "build"
-        },
-        {
-            "label": "serverRun",
-            "icon": {
-                "id": "server-process"
-            },
-            "type": "shell",
-            "command": "./scripts/serverRun.sh",
-            "presentation": {
-                "panel": "shared",
-                "group": "back"
             },
             "group": "build"
         },
