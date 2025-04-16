@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.common
+package dev.cheleb.scalajswebgl.common
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*

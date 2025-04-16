@@ -1,4 +1,4 @@
-package org.worldofscala.app.world
+package dev.cheleb.app.world
 
 import org.scalajs.dom
 import org.scalajs.dom.{WebGLBuffer, WebGLProgram, WebGLRenderingContext => GL}

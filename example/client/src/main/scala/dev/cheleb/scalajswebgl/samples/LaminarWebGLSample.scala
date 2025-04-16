@@ -1,4 +1,4 @@
-package org.worldofscala.app.world
+package dev.cheleb.app.world
 
 import org.scalajs.dom
 import org.scalajs.dom.{WebGLBuffer, WebGLProgram, WebGLRenderingContext => GL}
@@ -8,7 +8,7 @@ import scala.scalajs.js.typedarray.*
 
 import com.raquo.laminar.api.L.*
 import scala.scalajs.js
-import dev.worldofscala.webgl.given
+import dev.cheleb.webgl.*
 object LaminarWebGLSample {
   def apply() = {
     canvasTag(onMountCallback { mc =>

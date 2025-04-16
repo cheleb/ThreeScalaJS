@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.domain.errors
+package dev.cheleb.scalajswebgl.domain.errors
 
 sealed abstract class ApplicationException(message: String) extends RuntimeException(message)
 

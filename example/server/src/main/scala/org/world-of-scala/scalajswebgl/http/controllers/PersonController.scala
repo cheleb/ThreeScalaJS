@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.http.controllers
+package dev.cheleb.scalajswebgl.http.controllers
 
 import dev.cheleb.ziotapir.SecuredBaseController
 
@@ -7,10 +7,10 @@ import zio.*
 import sttp.tapir.server.ServerEndpoint
 import sttp.tapir.ztapir.*
 
-import org.worldofscala.scalajswebgl.domain.*
-import org.worldofscala.scalajswebgl.http.endpoints.PersonEndpoint
-import org.worldofscala.scalajswebgl.service.PersonService
-import org.worldofscala.scalajswebgl.service.JWTService
+import dev.cheleb.scalajswebgl.domain.*
+import dev.cheleb.scalajswebgl.http.endpoints.PersonEndpoint
+import dev.cheleb.scalajswebgl.service.PersonService
+import dev.cheleb.scalajswebgl.service.JWTService
 
 class PersonController private (personService: PersonService, jwtService: JWTService)
     extends SecuredBaseController[String, UserID](jwtService.verifyToken) {

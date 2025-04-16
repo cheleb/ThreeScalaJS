@@ -82,7 +82,7 @@ lazy val client = scalajsExampleProject("client")
           config
             .withModuleKind(ModuleKind.ESModule)
             .withSourceMap(false)
-            .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("org.worldofscala.scalajswebgl")))
+            .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("dev.cheleb.scalajswebgl")))
       }
     }
   )

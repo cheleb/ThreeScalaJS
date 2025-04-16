@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.domain.errors
+package dev.cheleb.scalajswebgl.domain.errors
 
 import sttp.model.StatusCode
 

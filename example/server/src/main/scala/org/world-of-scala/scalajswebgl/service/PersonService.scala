@@ -1,20 +1,20 @@
-package org.worldofscala.scalajswebgl.service
+package dev.cheleb.scalajswebgl.service
 
 import zio.*
 
 import io.scalaland.chimney.dsl._
 import java.time.ZonedDateTime
 
-import org.worldofscala.scalajswebgl.domain.*
-import org.worldofscala.scalajswebgl.domain.errors.*
-import org.worldofscala.scalajswebgl.repositories.UserRepository
-import org.worldofscala.scalajswebgl.UserEntity
-import org.worldofscala.scalajswebgl.NewUserEntity
-import org.worldofscala.scalajswebgl.repositories.TransactionSupport
-import org.worldofscala.scalajswebgl.repositories.PetRepository
-import org.worldofscala.scalajswebgl.PetEntity
-import org.worldofscala.scalajswebgl.CatEntity
-import org.worldofscala.scalajswebgl.DogEntity
+import dev.cheleb.scalajswebgl.domain.*
+import dev.cheleb.scalajswebgl.domain.errors.*
+import dev.cheleb.scalajswebgl.repositories.UserRepository
+import dev.cheleb.scalajswebgl.UserEntity
+import dev.cheleb.scalajswebgl.NewUserEntity
+import dev.cheleb.scalajswebgl.repositories.TransactionSupport
+import dev.cheleb.scalajswebgl.repositories.PetRepository
+import dev.cheleb.scalajswebgl.PetEntity
+import dev.cheleb.scalajswebgl.CatEntity
+import dev.cheleb.scalajswebgl.DogEntity
 
 import java.sql.SQLException
 

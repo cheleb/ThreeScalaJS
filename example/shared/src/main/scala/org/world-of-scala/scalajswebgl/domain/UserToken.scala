@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.domain
+package dev.cheleb.scalajswebgl.domain
 
 import zio.json.JsonCodec
 

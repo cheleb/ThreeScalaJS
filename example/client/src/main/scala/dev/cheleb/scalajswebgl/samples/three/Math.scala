@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.samples.three
+package dev.cheleb.scalajswebgl.samples.three
 
 import com.raquo.laminar.api.L.*
 import THREE.*

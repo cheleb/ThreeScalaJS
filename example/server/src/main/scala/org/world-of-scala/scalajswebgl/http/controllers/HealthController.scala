@@ -1,10 +1,10 @@
-package org.worldofscala.scalajswebgl.http.controllers
+package dev.cheleb.scalajswebgl.http.controllers
 
 import zio.*
 import sttp.tapir.*
 import sttp.tapir.server.ServerEndpoint
 
-import org.worldofscala.scalajswebgl.http.endpoints.HealthEndpoint
+import dev.cheleb.scalajswebgl.http.endpoints.HealthEndpoint
 import dev.cheleb.ziotapir.BaseController
 
 class HealthController private extends BaseController {

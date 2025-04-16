@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.config
+package dev.cheleb.scalajswebgl.config
 
 import zio.Config
 import zio.Duration

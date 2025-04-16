@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.service
+package dev.cheleb.scalajswebgl.service
 
 import zio.Task
 import io.scalaland.chimney.dsl.*

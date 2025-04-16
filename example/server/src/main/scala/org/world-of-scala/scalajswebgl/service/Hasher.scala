@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.service
+package dev.cheleb.scalajswebgl.service
 
 import javax.crypto.SecretKeyFactory
 import javax.crypto.spec.PBEKeySpec

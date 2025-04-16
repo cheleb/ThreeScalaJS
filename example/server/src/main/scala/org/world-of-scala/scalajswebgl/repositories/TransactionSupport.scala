@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.repositories
+package dev.cheleb.scalajswebgl.repositories
 
 import zio.Task
 

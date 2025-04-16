@@ -1,8 +1,8 @@
-package org.worldofscala.scalajswebgl.login
+package dev.cheleb.scalajswebgl.login
 
 import sttp.tapir.Schema
 import dev.cheleb.scalamigen.NoPanel
-import org.worldofscala.scalajswebgl.domain.Password
+import dev.cheleb.scalajswebgl.domain.Password
 
 @NoPanel
 final case class LoginPassword(login: String, password: Password) derives zio.json.JsonCodec, Schema:

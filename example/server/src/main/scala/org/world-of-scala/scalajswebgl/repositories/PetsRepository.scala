@@ -1,11 +1,11 @@
-package org.worldofscala.scalajswebgl.repositories
+package dev.cheleb.scalajswebgl.repositories
 
 import zio.*
 
-import org.worldofscala.scalajswebgl.PetEntity
-import org.worldofscala.scalajswebgl.CatEntity
-import org.worldofscala.scalajswebgl.DogEntity
-import org.worldofscala.scalajswebgl.domain.PetType
+import dev.cheleb.scalajswebgl.PetEntity
+import dev.cheleb.scalajswebgl.CatEntity
+import dev.cheleb.scalajswebgl.DogEntity
+import dev.cheleb.scalajswebgl.domain.PetType
 
 import io.getquill.*
 import io.getquill.jdbczio.Quill

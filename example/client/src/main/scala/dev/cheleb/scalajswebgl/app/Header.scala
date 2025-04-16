@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.app
+package dev.cheleb.scalajswebgl.app
 
 import be.doeraene.webcomponents.ui5.*
 import be.doeraene.webcomponents.ui5.configkeys.*

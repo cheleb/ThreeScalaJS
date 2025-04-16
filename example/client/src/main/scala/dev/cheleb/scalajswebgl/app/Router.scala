@@ -1,11 +1,11 @@
-package org.worldofscala.scalajswebgl.app
+package dev.cheleb.scalajswebgl.app
 
 import com.raquo.laminar.api.L.*
 import frontroute.*
 
 import org.scalajs.dom
-import org.worldofscala.app.world.*
-import org.worldofscala.scalajswebgl.samples.*
+import dev.cheleb.app.world.*
+import dev.cheleb.scalajswebgl.samples.*
 
 object Router:
   val uiBase                     = "public"
@@ -39,10 +39,10 @@ object Router:
     pathPrefix("three") {
       firstMatch(
         path("math") {
-          org.worldofscala.scalajswebgl.samples.three.Math()
+          dev.cheleb.scalajswebgl.samples.three.Math()
         },
         path("scene") {
-          org.worldofscala.scalajswebgl.samples.three.ScenePage()
+          dev.cheleb.scalajswebgl.samples.three.ScenePage()
         }
       )
     }

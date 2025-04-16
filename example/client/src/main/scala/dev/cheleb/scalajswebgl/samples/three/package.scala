@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.samples.three
+package dev.cheleb.scalajswebgl.samples.three
 
 import java.lang.Math.{PI, cos, sin}
 

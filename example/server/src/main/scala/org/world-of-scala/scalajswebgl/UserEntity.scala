@@ -1,7 +1,7 @@
-package org.worldofscala.scalajswebgl
+package dev.cheleb.scalajswebgl
 
 import java.time.ZonedDateTime
-import org.worldofscala.scalajswebgl.domain.*
+import dev.cheleb.scalajswebgl.domain.*
 import io.scalaland.chimney.Transformer
 
 case class NewUserEntity(

@@ -1,4 +1,4 @@
-package org.worldofscala.scalajswebgl.http.endpoints
+package dev.cheleb.scalajswebgl.http.endpoints
 
 import sttp.tapir.*
 

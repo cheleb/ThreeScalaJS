@@ -1,7 +1,7 @@
-package org.worldofscala.scalajswebgl.http.endpoints
+package dev.cheleb.scalajswebgl.http.endpoints
 
 import sttp.tapir.*
-import org.worldofscala.scalajswebgl.domain.errors.HttpError
+import dev.cheleb.scalajswebgl.domain.errors.HttpError
 
 trait BaseEndpoint {
   val baseEndpoint: Endpoint[Unit, Unit, Throwable, Unit, Any] = endpoint
