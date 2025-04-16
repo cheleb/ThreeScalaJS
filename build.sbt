@@ -36,7 +36,6 @@ lazy val root = project
   .aggregate(
     client
   )
-  .disablePlugins(RevolverPlugin)
   .settings(
     publish / skip := true
   )
@@ -75,20 +74,13 @@ lazy val client = scalajsExampleProject("client")
     scalaJSUseMainModuleInitializer := true,
     scalaJSLinkerConfig ~= { config =>
       mode match {
-        case "CommonJs" =>
-          config
-            .withModuleKind(scalaJSModule)
-            .withMinify(true)
-            .withOptimizer(true)
-            .withClosureCompiler(true)
-
         case "ESModule" =>
           config
-            .withModuleKind(scalaJSModule)
+            .withModuleKind(ModuleKind.ESModule)
 
         case _ =>
           config
-            .withModuleKind(scalaJSModule)
+            .withModuleKind(ModuleKind.ESModule)
             .withSourceMap(false)
             .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("org.worldofscala.scalajswebgl")))
       }
@@ -107,7 +99,6 @@ def scalajsProject(projectId: String): Project =
     base = file(s"modules/$projectId")
   )
     .enablePlugins(scalaJSPlugin)
-    .disablePlugins(RevolverPlugin)
     .settings(nexusNpmSettings)
     .settings(Test / requireJsDomEnv := true)
     .settings(
@@ -125,7 +116,6 @@ def scalajsExampleProject(projectId: String): Project =
     base = file(s"example/$projectId")
   )
     .enablePlugins(scalaJSPlugin)
-    .disablePlugins(RevolverPlugin)
     .settings(nexusNpmSettings)
     .settings(Test / requireJsDomEnv := true)
     .settings(
