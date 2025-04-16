@@ -11,7 +11,7 @@ import DeploymentSettings._
 
 val scala3 = "3.6.4"
 
-name := "ScalaJs WebGL"
+name := "ScalaThree.js"
 
 inThisBuild(
   List(
@@ -24,23 +24,9 @@ inThisBuild(
       "-Wunused:all"
 //      "-Xfatal-warnings"
     ),
-    run / fork := true,
-    testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework")
+    run / fork := true
   )
 )
-
-//
-// This is static generation settings to be used in server project
-// Illustrate how to use the generator project to generate static files with twirl
-//
-lazy val generator = project
-  .in(file("build/generator"))
-  .enablePlugins(SbtTwirl)
-  .disablePlugins(RevolverPlugin)
-  .settings(staticFilesGeneratorDependencies)
-  .settings(
-    publish / skip := true
-  )
 
 // Aggregate root project
 // This is the root project that aggregates all other projects
@@ -48,34 +34,9 @@ lazy val generator = project
 lazy val root = project
   .in(file("."))
   .aggregate(
-    generator,
-    server,
-    sharedJs,
-    sharedJvm,
     client
   )
   .disablePlugins(RevolverPlugin)
-  .settings(
-    publish / skip := true
-  )
-
-//
-// Server project
-// It depends on sharedJvm project, a project that contains shared code between server and client
-//
-lazy val server = project
-  .in(file("example/server"))
-  .enablePlugins(serverPlugins: _*)
-  .settings(
-    staticGenerationSettings(generator, client)
-  )
-  .settings(
-    fork := true,
-    serverLibraryDependencies,
-    testingLibraryDependencies
-  )
-  .settings(serverSettings(client): _*)
-  .dependsOn(sharedJvm)
   .settings(
     publish / skip := true
   )
@@ -135,29 +96,10 @@ lazy val client = scalajsExampleProject("client")
   )
   .settings(scalacOptions ++= usedScalacOptions)
   .settings(clientLibraryDependencies)
-  .dependsOn(core, three, sharedJs)
+  .dependsOn(core, three)
   .settings(
     publish / skip := true
   )
-
-//
-// Shared project
-// It is a cross project that contains shared code between server and client
-//
-lazy val shared = crossProject(JSPlatform, JVMPlatform)
-  .crossType(CrossType.Pure)
-  .disablePlugins(RevolverPlugin)
-  .in(file("example/shared"))
-  .settings(
-    sharedJvmAndJsLibraryDependencies
-  )
-  .settings(
-    publish / skip := true
-  )
-lazy val sharedJvm = shared.jvm
-lazy val sharedJs  = shared.js
-
-Test / fork := false
 
 def scalajsProject(projectId: String): Project =
   Project(
@@ -203,17 +145,5 @@ Global / onLoad := {
 
   insureBuildEnvFile(baseDirectory.value, (client / scalaVersion).value)
 
-  // This is hack to share static files between server and client.
-  // It creates symlinks from server to client static files
-  // Ideally, we should use a shared folder for static files
-  // Or use a shared CDN
-  // Or copy the files to the target directory of the server at build time.
-  symlink(server.base / "src" / "main" / "public" / "img", client.base / "img")
-  symlink(server.base / "src" / "main" / "public" / "css", client.base / "css")
-  symlink(server.base / "src" / "main" / "public" / "res", client.base / "res")
-
-  symlink(server.base / "src" / "main" / "resources" / "public" / "img", client.base / "img")
-  symlink(server.base / "src" / "main" / "resources" / "public" / "css", client.base / "css")
-  symlink(server.base / "src" / "main" / "resources" / "public" / "res", client.base / "res")
   (Global / onLoad).value
 }

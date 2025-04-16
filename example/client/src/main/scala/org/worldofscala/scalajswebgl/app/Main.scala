@@ -8,7 +8,6 @@ import frontroute.LinkHandler
 
   val myApp =
     div(
-      onMountCallback(_ => session.loadUserState()),
       Header(),
       Router(),
       Footer()

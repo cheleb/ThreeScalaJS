@@ -61,13 +61,7 @@ object Router:
                 HomePage()
               },
               webglRoutes(),
-              threeRoutes(),
-              path("signup") {
-                signup.SignupPage()
-              },
-              path("profile") {
-                profile.ProfilePage()
-              }
+              threeRoutes()
             )
           },
           noneMatched {

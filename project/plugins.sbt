@@ -11,16 +11,12 @@ addSbtPlugin("org.xerial.sbt" % "sbt-sonatype"        % "3.10.0")
 addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.5.12")
 addSbtPlugin("com.eed3si9n"   % "sbt-assembly"        % "2.3.0")
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.10.4")
-// Static file generator
-addSbtPlugin("org.playframework.twirl" % "sbt-twirl" % "2.0.7")
 // Cross project support, to spread project resources between js and jvm world
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "1.3.2")
 addSbtPlugin("com.dwijnand"       % "sbt-dynver"               % "4.1.1")
 addSbtPlugin("com.github.sbt"     % "sbt-unidoc"               % "0.5.0")
 addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.8.0")
 // will reStart server on code modification.
-addSbtPlugin("io.spray" % "sbt-revolver" % "0.10.0")
 // Giter8 support
-addSbtPlugin("org.foundweekends.giter8" % "sbt-giter8-scaffold" % "0.17.0")
 // Scalafix
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.0")

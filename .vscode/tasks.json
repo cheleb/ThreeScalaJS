@@ -44,8 +44,6 @@
             "label": "runDemo",
             "dependsOrder": "parallel",
             "dependsOn": [
-                "docker",
-                "serverRun",
                 "fastLink",
                 "npmDev"
             ],
