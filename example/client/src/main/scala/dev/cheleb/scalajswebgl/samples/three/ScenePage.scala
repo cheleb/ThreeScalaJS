@@ -29,7 +29,7 @@ object ScenePage {
     val colorMap      = textureLoader.load("/ThreeScalaJS/demo/img/8081-earthmap10k.jpg")
 
     val pointMaterial = PointsMaterial(
-      js.Dynamic.literal(color = "0xf0f0f0", size = 0.02, map = colorMap)
+      js.Dynamic.literal(color = 0xf0f8ff, size = 0.02, map = colorMap)
     )
     val points = Points(pointGeometry, pointMaterial)
 
