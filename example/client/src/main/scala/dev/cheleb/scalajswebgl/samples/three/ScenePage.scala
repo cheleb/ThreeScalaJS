@@ -11,7 +11,7 @@ object ScenePage {
   val R = 1.0
   def apply() =
     val eartthDiv = div(
-      h1("Scene")
+      h1("Scene 1")
     )
     val scene = Scene()
 
@@ -91,6 +91,8 @@ object ScenePage {
     scene.add(light)
 
     eartthDiv.ref.append(renderer.domElement)
+
+    println(Euler.DEFAULT_ORDER)
 
     eartthDiv
 }

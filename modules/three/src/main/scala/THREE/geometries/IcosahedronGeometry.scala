@@ -10,19 +10,13 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "IcosahedronGeometry")
 class IcosahedronGeometry(
-  radius: js.UndefOr[Double] = js.undefined,
-  detail: js.UndefOr[Int] = js.undefined
+  radius: Double = 1,
+  detail: Int = 0
 ) extends BufferGeometry {
 
   /**
    * An object with parameters that were used to generate the geometry.
    */
   val parameters: js.Object = js.native
-}
 
-/**
- * Companion object for IcosahedronGeometry with factory method.
- */
-@js.native
-@JSImport("three", "IcosahedronGeometry")
-object IcosahedronGeometry extends js.Object
+}

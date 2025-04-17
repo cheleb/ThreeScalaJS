@@ -9,8 +9,8 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "Light")
 class Light(
-  var color: js.UndefOr[Int | String | Color] = js.undefined,
-  var intensity: js.UndefOr[Double] = js.undefined
+  var color: Int | String | Color = 0xfffff,
+  var intensity: Double = 1.0
 ) extends Object3D {
 
   /**

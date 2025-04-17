@@ -9,12 +9,12 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "BoxGeometry")
 class BoxGeometry(
-  width: js.UndefOr[Double] = js.undefined,
-  height: js.UndefOr[Double] = js.undefined,
-  depth: js.UndefOr[Double] = js.undefined,
-  widthSegments: js.UndefOr[Int] = js.undefined,
-  heightSegments: js.UndefOr[Int] = js.undefined,
-  depthSegments: js.UndefOr[Int] = js.undefined
+  width: Double = 1,
+  height: Double = 1,
+  depth: Double = 1,
+  widthSegments: Int = 1,
+  heightSegments: Int = 1,
+  depthSegments: Int = 1
 ) extends BufferGeometry {
 
   val parameters: js.Object = js.native

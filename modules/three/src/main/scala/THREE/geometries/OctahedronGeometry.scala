@@ -10,8 +10,8 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "OctahedronGeometry")
 class OctahedronGeometry(
-  radius: js.UndefOr[Double] = js.undefined,
-  detail: js.UndefOr[Int] = js.undefined
+  radius: Double = 1,
+  detail: Int = 0
 ) extends PolyhedronGeometry {}
 
 /**

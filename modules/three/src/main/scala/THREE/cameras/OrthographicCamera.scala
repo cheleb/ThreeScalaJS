@@ -9,12 +9,12 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "OrthographicCamera")
 class OrthographicCamera(
-  var left: js.UndefOr[Double] = js.undefined,
-  var right: js.UndefOr[Double] = js.undefined,
-  var top: js.UndefOr[Double] = js.undefined,
-  var bottom: js.UndefOr[Double] = js.undefined,
-  var near: js.UndefOr[Double] = js.undefined,
-  var far: js.UndefOr[Double] = js.undefined
+  var left: Double = -1.0,
+  var right: Double = 1.0,
+  var top: Double = 1.0,
+  var bottom: Double = -1.0,
+  var near: Double = 0.1,
+  var far: Double = 2000.0
 ) extends Camera {
 
   def updateProjectionMatrix(): Unit = js.native

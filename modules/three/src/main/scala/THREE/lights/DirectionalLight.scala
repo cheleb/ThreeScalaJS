@@ -12,8 +12,8 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "DirectionalLight")
 class DirectionalLight(
-  color: js.UndefOr[Int | String | Color] = js.undefined,
-  intensity: js.UndefOr[Double] = js.undefined
+  color: Int | String | Color = 0xfffff,
+  intensity: Double = 1.0
 ) extends Light {
 
   /**

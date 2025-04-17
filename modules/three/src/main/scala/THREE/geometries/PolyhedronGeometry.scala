@@ -9,10 +9,10 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "PolyhedronGeometry")
 class PolyhedronGeometry(
-  vertices: js.UndefOr[js.Array[Double]] = js.undefined,
-  indices: js.UndefOr[js.Array[Double]] = js.undefined,
-  radius: js.UndefOr[Double] = js.undefined,
-  detail: js.UndefOr[Int] = js.undefined
+  vertices: js.Array[Double] = js.Array(),
+  indices: js.Array[Double] = js.Array(),
+  radius: Double = 1,
+  detail: Int = 0
 ) extends BufferGeometry {
 
   /**

@@ -9,5 +9,5 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "ArrayCamera")
 class ArrayCamera(
-  var cameras: js.UndefOr[js.Array[PerspectiveCamera]] = js.undefined
+  var cameras: js.Array[PerspectiveCamera] = js.Array()
 ) extends PerspectiveCamera {}

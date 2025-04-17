@@ -9,10 +9,10 @@ import scala.scalajs.js.annotation.*
 @js.native
 @JSImport("three", "PerspectiveCamera")
 class PerspectiveCamera(
-  var fov: js.UndefOr[Double] = js.undefined,
-  var aspect: js.UndefOr[Double] = js.undefined,
-  var near: js.UndefOr[Double] = js.undefined,
-  var far: js.UndefOr[Double] = js.undefined
+  var fov: Double = 50.0,
+  var aspect: Double = 1.0,
+  var near: Double = 0.1,
+  var far: Double = 2000.0
 ) extends Camera {
 
   var zoom: Double       = js.native
