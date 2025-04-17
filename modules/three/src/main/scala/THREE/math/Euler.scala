@@ -9,9 +9,9 @@ import scala.scalajs.js.annotation._
 @js.native
 @JSImport("three", "Euler")
 class Euler(
-  var x: js.UndefOr[Double] = js.undefined,
-  var y: js.UndefOr[Double] = js.undefined,
-  var z: js.UndefOr[Double] = js.undefined,
+  var x: Double = js.native,
+  var y: Double = js.native,
+  var z: Double = js.native,
   var order: js.UndefOr[String] = js.undefined
 ) extends js.Object {
 

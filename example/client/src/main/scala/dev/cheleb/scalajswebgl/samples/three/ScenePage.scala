@@ -33,10 +33,12 @@ object ScenePage {
     )
     val points = Points(pointGeometry, pointMaterial)
 
-    val earth = new Mesh(geometry, material);
+    val earth      = new Mesh(geometry, material);
+    val globeGroup = new Group()
+    globeGroup.add(earth)
+    globeGroup.add(points)
 
-    scene.add(earth)
-    scene.add(points)
+    scene.add(globeGroup)
 
     val camera = new PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 100);
 
@@ -57,8 +59,7 @@ object ScenePage {
 
     val animate: () => Unit = () => {
 
-      //   // globeGroup.rotation.x += 0.001;
-      //   globeGroup.rotation.y += 0.0005;
+      globeGroup.rotation.y += 0.0005;
 
       renderer.render(scene, camera);
       orbitControl.update()
