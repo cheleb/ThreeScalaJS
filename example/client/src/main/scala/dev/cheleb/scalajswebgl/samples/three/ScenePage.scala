@@ -5,6 +5,7 @@ import THREE.*
 
 import org.scalajs.dom.window
 import scala.scalajs.js
+import scalajs.js.JSConverters.*
 
 object ScenePage {
 
@@ -74,13 +75,16 @@ object ScenePage {
       val (x, y, z) = location.xyz(R + 0.02)
       pinner.position.set(x, y, z)
       pinner.lookAt(0, 0, 0)
-      scene.add(pinner)
+      globeGroup.add(pinner)
       // globeGroup.add(drawLine(x * 1.2, y * 1.2, z * 1.2))
 
     loader.load(
       "/ThreeScalaJS/demo/res/scala.glb",
       (obj) => {
-        addObj(obj, LatLon(46.5188, 6.5593)) // Lauzane
+        val ll        = LatLon(46.5188, 6.5593)
+        val (x, y, z) = ll.xyz(R + 0.02)
+        addObj(obj, ll) // Lauzane
+        globeGroup.add(drawLine(x * 1.1, y * 1.1, z * 1.1))
       }
     )
 
@@ -95,4 +99,19 @@ object ScenePage {
     println(Euler.DEFAULT_ORDER)
 
     eartthDiv
+
+  def drawLine(
+    x: Double,
+    y: Double,
+    z: Double
+  ) = {
+    val material = new LineBasicMaterial(js.Dynamic.literal(color = 0x0000ff))
+    val geometry = new BufferGeometry().setFromPoints(
+      points((0, 0, 0), (x, y, z))
+    );
+    val line = new Line(geometry, material);
+    line
+  }
+  def points(ps: (Double, Double, Double)*) =
+    ps.map(p => new Vector3(p._1, p._2, p._3)).toJSArray
 }
