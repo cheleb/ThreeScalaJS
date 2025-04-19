@@ -23,3 +23,9 @@ class MeshBasicMaterial(parameters: js.UndefOr[js.Object] = js.undefined) extend
   var wireframe: Boolean         = js.native
   var wireframeLinewidth: Double = js.native
 }
+
+// Manual customization of the constructor
+object MeshBasicMaterial:
+
+  def apply(color: Int, wireframe: Boolean = false) =
+    new MeshBasicMaterial(js.Dynamic.literal(color = color, wireframe = wireframe))

@@ -53,11 +53,10 @@ object ScenePage {
     val pointGeometry = new IcosahedronGeometry(R, detail);
 
     val material = MeshBasicMaterial(
-      js.Dynamic.literal(
-        color = 0x555555,
-        wireframe = true
-      )
+      color = 0x555555,
+      wireframe = true
     )
+
     val textureLoader = TextureLoader()
     val colorMap      = textureLoader.load("/ThreeScalaJS/demo/img/8081-earthmap10k.jpg")
 
