@@ -11,17 +11,50 @@ object ScenePage {
 
   val R = 1.0
   def apply() =
-    val scalaCenter = Var(false)
+
+    val scalaCenterGroup = Var(Option.empty[Group])
+    val scalaMesh        = Var(Option.empty[GLTFResult])
+    val globeGroup       = new Group()
+
+    def newPinner(location: LatLon): GLTFResult => Group = obj =>
+      val pinnerGroup = new Group()
+      val pinner      = obj.scene.jsClone(true)
+      val (x, y, z)   = location.xyz(R + 0.02)
+      pinner.position.set(x, y, z)
+      pinner.lookAt(0, 0, 0)
+      pinnerGroup.add(pinner)
+
+      pinnerGroup.add(drawLine(x * 1.1, y * 1.1, z * 1.1))
+
+      pinnerGroup
+
     val eartthDiv = div(
       h1("Scene 1"),
+      label("ScalaCenter"),
       input(
-        tpe := "button",
-        value <-- scalaCenter.signal.map {
-          case false => "Show ScalaCenter"
+        tpe := "checkbox",
+        value <-- scalaCenterGroup.signal.map(_.isDefined).map {
+          case false => "Show - ScalaCenter"
           case true  => "Hide ScalaSenter"
         },
-        onClick.mapTo(()) --> { _ =>
-          scalaCenter.update(!_)
+        disabled <-- scalaMesh.signal.map(_.isEmpty),
+        onClick.mapToChecked --> {
+          case true =>
+            println("add scalaCenter")
+            scalaMesh.now().foreach { mesh =>
+              println(s"add ${mesh.scene.id}")
+              val pinner = newPinner(LatLon(46.5188, 6.5593))(mesh)
+              globeGroup.add(pinner)
+              scalaCenterGroup.set(Some(pinner)) // Lauzane
+            }
+          case false =>
+            println("remove scalaCenter")
+            scalaCenterGroup.now().foreach { group =>
+              println(s"remove ${group.id}")
+              val ll = globeGroup.remove(group)
+              println("removed from group: " + ll.id)
+            }
+            scalaCenterGroup.set(None)
         }
       )
     )
@@ -45,8 +78,7 @@ object ScenePage {
     )
     val points = Points(pointGeometry, pointMaterial)
 
-    val earth      = new Mesh(geometry, material);
-    val globeGroup = new Group()
+    val earth = new Mesh(geometry, material);
     globeGroup.add(earth)
     globeGroup.add(points)
 
@@ -68,55 +100,18 @@ object ScenePage {
     renderer.setClearColor("#AAAAAA", 1)
     renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8)
 
-    def addObj(location: LatLon): GLTFResult => Group = obj =>
-      val pinnerGroup = new Group()
-      val pinner      = obj.scene.jsClone(true)
-      val (x, y, z)   = location.xyz(R + 0.02)
-      pinner.position.set(x, y, z)
-      pinner.lookAt(0, 0, 0)
-      pinnerGroup.add(pinner)
-
-      pinnerGroup.add(drawLine(x * 1.1, y * 1.1, z * 1.1))
-
-      globeGroup.add(pinnerGroup)
-      pinnerGroup
-
-    // def addObjEta = addObj(LatLon(46.5188, 6.5593)) // Lauzane
-
-    var scalaMesh: Option[GLTFResult]   = None
-    var scalaCenterGroup: Option[Group] = None
-    val loader                          = new GLTFLoader()
+    val loader = new GLTFLoader()
 
     loader.load(
       "/ThreeScalaJS/demo/res/scala.glb",
       obj => {
-        scalaMesh = Some(obj) // Lauzane
+        scalaMesh.set(Some(obj)) // Lauzane
       }
     )
 
     val animate: () => Unit = () => {
 
       globeGroup.rotation.y += 0.0005;
-
-      scalaMesh.foreach { mesh =>
-        (scalaCenter.now(), scalaCenterGroup.isDefined) match {
-          case (true, false) =>
-            scalaCenterGroup = Some(addObj(LatLon(46.5188, 6.5593))(mesh)) // Lauzane
-            scalaCenterGroup.foreach { group =>
-              println(s"add group ${group.id}")
-              // globeGroup.add(group)
-            }
-          case (false, true) =>
-            scalaCenterGroup.foreach { group =>
-              println(s"remove ${group.id}")
-              val ll = globeGroup.remove(group)
-              println("removed from group: " + ll.id)
-              scalaCenterGroup = None
-            }
-          case _ =>
-        }
-
-      }
 
       renderer.render(scene, camera);
 
