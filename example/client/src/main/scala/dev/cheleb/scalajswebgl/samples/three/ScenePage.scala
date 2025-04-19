@@ -5,28 +5,15 @@ import THREE.*
 
 import org.scalajs.dom.window
 import scala.scalajs.js
-import scalajs.js.JSConverters.*
 
 object ScenePage {
 
-  val R = 1.0
+  val R = 1
   def apply() =
 
     val scalaCenterGroup = Var(Option.empty[Group])
     val scalaMesh        = Var(Option.empty[GLTFResult])
     val globeGroup       = new Group()
-
-    def newPinner(location: LatLon): GLTFResult => Group = obj =>
-      val pinnerGroup = new Group()
-      val pinner      = obj.scene.jsClone(true)
-      val (x, y, z)   = location.xyz(R + 0.02)
-      pinner.position.set(x, y, z)
-      pinner.lookAt(0, 0, 0)
-      pinnerGroup.add(pinner)
-
-      pinnerGroup.add(drawLine(x * 1.1, y * 1.1, z * 1.1))
-
-      pinnerGroup
 
     val eartthDiv = div(
       h1("Scene 1"),
@@ -43,9 +30,9 @@ object ScenePage {
             println("add scalaCenter")
             scalaMesh.now().foreach { mesh =>
               println(s"add ${mesh.scene.id}")
-              val pinner = newPinner(LatLon(46.5188, 6.5593))(mesh)
-              globeGroup.add(pinner)
+              val pinner = SceneHelper.newPinner(R, LatLon(46.5188, 6.5593))(mesh)
               scalaCenterGroup.set(Some(pinner)) // Lauzane
+              globeGroup.add(pinner)
             }
           case false =>
             println("remove scalaCenter")
@@ -58,6 +45,7 @@ object ScenePage {
         }
       )
     )
+
     val scene = Scene()
 
     val detail        = 300
@@ -66,7 +54,7 @@ object ScenePage {
 
     val material = MeshBasicMaterial(
       js.Dynamic.literal(
-        color = 0x55ff55,
+        color = 0x555555,
         wireframe = true
       )
     )
@@ -91,7 +79,7 @@ object ScenePage {
     val renderer = new WebGLRenderer(
       js.Dynamic.literal(
         antialias = true,
-        alpha = true
+        alpha = false
       )
     )
     renderer.setPixelRatio(window.devicePixelRatio)
@@ -113,10 +101,9 @@ object ScenePage {
 
       globeGroup.rotation.y += 0.0005;
 
-      renderer.render(scene, camera);
-
       orbitControl.update()
 
+      renderer.render(scene, camera);
     }
     renderer.setAnimationLoop(animate)
 
@@ -129,19 +116,4 @@ object ScenePage {
     eartthDiv.ref.append(renderer.domElement)
 
     eartthDiv
-
-  def drawLine(
-    x: Double,
-    y: Double,
-    z: Double
-  ) = {
-    val material = new LineBasicMaterial(js.Dynamic.literal(color = 0x0000ff))
-    val geometry = new BufferGeometry().setFromPoints(
-      points((0, 0, 0), (x, y, z))
-    );
-    val line = new Line(geometry, material);
-    line
-  }
-  def points(ps: (Double, Double, Double)*) =
-    ps.map(p => new Vector3(p._1, p._2, p._3)).toJSArray
 }
