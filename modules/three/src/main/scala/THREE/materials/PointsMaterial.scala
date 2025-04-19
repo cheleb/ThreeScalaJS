@@ -42,8 +42,45 @@ class PointsMaterial(parameters: js.UndefOr[js.Object] = js.undefined) extends M
 }
 
 /**
- * Companion object for PointsMaterial with factory method.
+ * Companion object for PointsMaterial with factory methods.
  */
-@js.native
-@JSImport("three", "PointsMaterial")
-object PointsMaterial extends js.Object
+object PointsMaterial:
+
+  /**
+   * Create a PointsMaterial with specified parameters.
+   *
+   * @param color
+   *   Color of the points. Default is 0xffffff (white).
+   * @param size
+   *   Size of the points in pixels. Default is 1.0.
+   * @param sizeAttenuation
+   *   Whether the size is attenuated by the camera depth. Default is true.
+   * @param map
+   *   The texture map. Default is null.
+   * @param alphaMap
+   *   The alpha map. Default is null.
+   * @param fog
+   *   Whether the material is affected by fog. Default is true.
+   * @return
+   *   A new PointsMaterial instance.
+   */
+  def apply(
+    color: Int | String | Color = 0xffffff,
+    size: Double = 1.0,
+    sizeAttenuation: Boolean = true,
+    map: Texture,
+    alphaMap: js.UndefOr[Texture] = js.undefined,
+    fog: Boolean = false
+  ): PointsMaterial = {
+    val params = js.Dynamic.literal(
+      color = color.asInstanceOf[js.Any],
+      size = size,
+      sizeAttenuation = sizeAttenuation,
+      map = map,
+      alphaMap = alphaMap,
+      fog = fog
+    )
+
+    new PointsMaterial(params)
+
+  }
