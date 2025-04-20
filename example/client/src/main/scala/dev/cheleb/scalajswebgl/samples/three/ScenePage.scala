@@ -6,6 +6,8 @@ import THREE.*
 import org.scalajs.dom.window
 import scala.scalajs.js
 
+import scala.collection.mutable.Map as MutableMap
+
 object ScenePage {
 
   val R = 1
@@ -13,8 +15,12 @@ object ScenePage {
 
     val scalaMesh  = Var(Option.empty[GLTFResult])
     val globeGroup = new Group()
-    // Map of place name to the Group that represents that place on the globe (if displayed)
-    var placeGroups = Map.empty[String, Group]
+    // Map of place name to the Threejs Group (pinner)
+    // This will be used to store the groups for each place
+    // and allow us to add/remove them from the globe
+    // when the checkbox is checked/unchecked
+    // This is a mutable map, so we can add/remove groups as needed
+    val placeGroups = MutableMap.empty[String, Group]
 
     val eartthDiv = div(
       h1("World of Scala"),
@@ -28,7 +34,6 @@ object ScenePage {
           child <-- scalaMesh.signal.map {
             case Some(scalaPinner) =>
               div(
-                "Here are some famous places",
                 famousPlaces.map { place =>
                   div(
                     cls := "place-item",
