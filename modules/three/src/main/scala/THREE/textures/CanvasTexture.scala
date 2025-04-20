@@ -2,7 +2,6 @@ package THREE
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*
-import org.scalajs.dom
 
 /**
  * Creates a texture from a canvas element.
@@ -10,16 +9,19 @@ import org.scalajs.dom
 @js.native
 @JSImport("three", "CanvasTexture")
 class CanvasTexture(
-  canvas: dom.html.Canvas,
+  canvas: js.Any,
   mapping: js.UndefOr[Int] = js.undefined,
   wrapS: js.UndefOr[Int] = js.undefined,
   wrapT: js.UndefOr[Int] = js.undefined,
   magFilter: js.UndefOr[Int] = js.undefined,
   minFilter: js.UndefOr[Int] = js.undefined,
   format: js.UndefOr[Int] = js.undefined,
-  `type`: js.UndefOr[Int] = js.undefined,
+  tpe: js.UndefOr[Int] = js.undefined,
   anisotropy: js.UndefOr[Int] = js.undefined
 ) extends Texture {
 
+  /**
+   * This flag can be used for type testing.
+   */
   val isCanvasTexture: Boolean = js.native
 }

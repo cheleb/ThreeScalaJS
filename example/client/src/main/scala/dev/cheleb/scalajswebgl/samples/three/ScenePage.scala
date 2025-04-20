@@ -17,7 +17,7 @@ object ScenePage {
     val placeGroups = Var(Map.empty[String, Group])
 
     val eartthDiv = div(
-      h1("Scene 1"),
+      h1("Scene 2"),
       div(
         cls := "scene-container",
         // Places sidebar
@@ -41,7 +41,8 @@ object ScenePage {
                     println(s"add $placeName")
                     scalaMesh.now().foreach { mesh =>
                       println(s"add ${mesh.scene.id}")
-                      val pinner = SceneHelper.newPinner(R, famousPlace(placeName))(mesh)
+                      // Pass the place name to the newPinner method for tooltip display
+                      val pinner = SceneHelper.newPinner(R, famousPlace(placeName), placeName)(mesh)
                       // Update the map with the new group
                       placeGroups.update(_ + (placeName -> pinner))
                       globeGroup.add(pinner)
