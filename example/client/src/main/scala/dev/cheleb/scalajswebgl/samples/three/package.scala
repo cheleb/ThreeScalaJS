@@ -22,14 +22,16 @@ case class LatLon(lat: Double, lon: Double):
 object LatLon:
   val empty: LatLon = LatLon(0.0, 0.0)
 
-val famousPlace = Map(
-  "Lausanne"      -> LatLon(46.5192, 6.6323),
-  "Montpellier"   -> LatLon(43.6119, 3.8772),
-  "Paris"         -> LatLon(48.8566, 2.3522),
-  "London"        -> LatLon(51.5074, -0.1278),
-  "Madrid"        -> LatLon(40.4168, -3.7038),
-  "San Francisco" -> LatLon(37.7749, -122.4194),
-  "New York"      -> LatLon(40.7128, -74.0060),
-  "Tokyo"         -> LatLon(35.682839, 139.759455),
-  "Warsaw"        -> LatLon(52.2297, 21.0122)
+case class Place(name: String, location: LatLon)
+
+val famousPlaces = List(
+  Place("Lausanne", LatLon(46.5192, 6.6323)),
+  Place("Montpellier", LatLon(43.6119, 3.8772)),
+  Place("Paris", LatLon(48.8566, 2.3522)),
+  Place("London", LatLon(51.5074, -0.1278)),
+  Place("Madrid", LatLon(40.4168, -3.7038)),
+  Place("San Francisco", LatLon(37.7749, -122.4194)),
+  Place("New York", LatLon(40.7128, -74.0060)),
+  Place("Tokyo", LatLon(35.682839, 139.759455)),
+  Place("Warsaw", LatLon(52.2297, 21.0122))
 )

@@ -24,43 +24,43 @@ object ScenePage {
         div(
           cls := "places-sidebar",
           h3("Famous Places"),
-          // Create a checkbox for each place in the famousPlace map
-          famousPlace.toSeq.sortBy(_._1).map { case (placeName, location) =>
+          // Create a checkbox for each place in the famousPlaces list
+          famousPlaces.sortBy(_.name).map { place =>
             div(
               cls := "place-item",
               input(
                 tpe    := "checkbox",
-                idAttr := s"place-$placeName",
-                value <-- placeGroups.signal.map(_.contains(placeName)).map {
-                  case false => s"Show $placeName"
-                  case true  => s"Hide $placeName"
+                idAttr := s"place-${place.name}",
+                value <-- placeGroups.signal.map(_.contains(place.name)).map {
+                  case false => s"Show ${place.name}"
+                  case true  => s"Hide ${place.name}"
                 },
                 disabled <-- scalaMesh.signal.map(_.isEmpty),
                 onClick.mapToChecked --> {
                   case true =>
-                    println(s"add $placeName")
+                    println(s"add ${place.name}")
                     scalaMesh.now().foreach { mesh =>
                       println(s"add ${mesh.scene.id}")
                       // Pass the place name to the newPinner method for tooltip display
-                      val pinner = SceneHelper.newPinner(R, famousPlace(placeName), placeName)(mesh)
+                      val pinner = SceneHelper.newPinner(R, place.location, place.name)(mesh)
                       // Update the map with the new group
-                      placeGroups.update(_ + (placeName -> pinner))
+                      placeGroups.update(_ + (place.name -> pinner))
                       globeGroup.add(pinner)
                     }
                   case false =>
-                    println(s"remove $placeName")
-                    placeGroups.now().get(placeName).foreach { group =>
+                    println(s"remove ${place.name}")
+                    placeGroups.now().get(place.name).foreach { group =>
                       println(s"remove ${group.id}")
                       val ll = globeGroup.remove(group)
                       println(s"removed from group: ${ll.id}")
                       // Remove the place from the map
-                      placeGroups.update(_ - placeName)
+                      placeGroups.update(_ - place.name)
                     }
                 }
               ),
               label(
-                forId := s"place-$placeName",
-                placeName
+                forId := s"place-${place.name}",
+                place.name
               )
             )
           }
