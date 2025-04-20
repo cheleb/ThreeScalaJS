@@ -3,6 +3,7 @@ package dev.cheleb.scalajswebgl.samples.three
 import THREE.*
 import scala.scalajs.js
 import scalajs.js.JSConverters.*
+import org.scalajs.dom.window
 
 object SceneHelper {
 
@@ -69,11 +70,31 @@ object SceneHelper {
     y: Double,
     z: Double
   ) = {
-    val material = new LineBasicMaterial(js.Dynamic.literal(color = 0x0000ff))
-    val geometry = new BufferGeometry().setFromPoints(
-      points((0, 0, 0), (x, y, z))
-    );
-    val line = new Line(geometry, material);
+    // Create positions array for LineSegmentsGeometry
+    val positions = js.Array[Double](
+      0,
+      0,
+      0, // start point
+      x,
+      y,
+      z // end point
+    )
+
+    // Create LineSegmentsGeometry and set positions
+    val geometry = new LineSegmentsGeometry()
+    geometry.setPositions(positions)
+
+    // Create LineMaterial with desired properties
+    val material = new LineMaterial(
+      js.Dynamic.literal(
+        color = 0x0000ff,
+        linewidth = 3, // Line width in pixels
+        resolution = new Vector2(window.innerWidth, window.innerHeight)
+      )
+    )
+
+    // Create LineSegments2 with the geometry and material
+    val line = new LineSegments2(geometry, material)
     line
   }
 

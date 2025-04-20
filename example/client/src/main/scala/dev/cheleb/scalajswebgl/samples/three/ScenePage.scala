@@ -17,7 +17,7 @@ object ScenePage {
     val placeGroups = Var(Map.empty[String, Group])
 
     val eartthDiv = div(
-      h1("Scene 2"),
+      h1("World of Scala"),
       div(
         cls := "scene-container",
         // Places sidebar
