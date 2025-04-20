@@ -14,7 +14,7 @@ object ScenePage {
     val scalaMesh  = Var(Option.empty[GLTFResult])
     val globeGroup = new Group()
     // Map of place name to the Group that represents that place on the globe (if displayed)
-    val placeGroups = Var(Map.empty[String, Group])
+    var placeGroups = Map.empty[String, Group]
 
     val eartthDiv = div(
       h1("World of Scala"),
@@ -25,44 +25,44 @@ object ScenePage {
           cls := "places-sidebar",
           h3("Famous Places"),
           // Create a checkbox for each place in the famousPlaces list
-          famousPlaces.sortBy(_.name).map { place =>
-            div(
-              cls := "place-item",
-              input(
-                tpe    := "checkbox",
-                idAttr := s"place-${place.name}",
-                value <-- placeGroups.signal.map(_.contains(place.name)).map {
-                  case false => s"Show ${place.name}"
-                  case true  => s"Hide ${place.name}"
-                },
-                disabled <-- scalaMesh.signal.map(_.isEmpty),
-                onClick.mapToChecked --> {
-                  case true =>
-                    println(s"add ${place.name}")
-                    scalaMesh.now().foreach { mesh =>
-                      println(s"add ${mesh.scene.id}")
-                      // Pass the place name to the newPinner method for tooltip display
-                      val pinner = SceneHelper.newPinner(R, place.location, place.name)(mesh)
-                      // Update the map with the new group
-                      placeGroups.update(_ + (place.name -> pinner))
-                      globeGroup.add(pinner)
-                    }
-                  case false =>
-                    println(s"remove ${place.name}")
-                    placeGroups.now().get(place.name).foreach { group =>
-                      println(s"remove ${group.id}")
-                      val ll = globeGroup.remove(group)
-                      println(s"removed from group: ${ll.id}")
-                      // Remove the place from the map
-                      placeGroups.update(_ - place.name)
-                    }
+          child <-- scalaMesh.signal.map {
+            case Some(scalaPinner) =>
+              div(
+                "Here are some famous places",
+                famousPlaces.map { place =>
+                  div(
+                    cls := "place-item",
+                    input(
+                      tpe    := "checkbox",
+                      idAttr := s"place-${place.name}",
+                      onClick.mapToChecked --> {
+                        case true =>
+                          // Pass the place name to the newPinner method for tooltip display
+                          val pinner = placeGroups.get(place.name) match {
+                            case Some(existingPinner) =>
+                              existingPinner
+                            case None =>
+                              val newPinner = SceneHelper.newPinner(R, place.location, place.name)(scalaPinner)
+                              placeGroups += (place.name -> newPinner)
+                              newPinner
+                          }
+                          // Update the map with the new group
+                          globeGroup.add(pinner)
+                        case false =>
+                          placeGroups.get(place.name).foreach { group =>
+                            globeGroup.remove(group)
+                          }
+                      }
+                    ),
+                    label(
+                      forId := s"place-${place.name}",
+                      place.name
+                    )
+                  )
                 }
-              ),
-              label(
-                forId := s"place-${place.name}",
-                place.name
               )
-            )
+
+            case None => "Loading..."
           }
         ),
         // Canvas container
