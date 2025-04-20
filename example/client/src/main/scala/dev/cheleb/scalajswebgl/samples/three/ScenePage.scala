@@ -11,37 +11,48 @@ object ScenePage {
   val R = 1
   def apply() =
 
-    val scalaCenterGroup = Var(Option.empty[Group])
-    val scalaMesh        = Var(Option.empty[GLTFResult])
-    val globeGroup       = new Group()
+    val scalaMesh  = Var(Option.empty[GLTFResult])
+    val globeGroup = new Group()
+    // Map of place name to the Group that represents that place on the globe (if displayed)
+    val placeGroups = Var(Map.empty[String, Group])
 
     val eartthDiv = div(
       h1("Scene 1"),
-      label("ScalaCenter"),
-      input(
-        tpe := "checkbox",
-        value <-- scalaCenterGroup.signal.map(_.isDefined).map {
-          case false => "Show - ScalaCenter"
-          case true  => "Hide ScalaSenter"
-        },
-        disabled <-- scalaMesh.signal.map(_.isEmpty),
-        onClick.mapToChecked --> {
-          case true =>
-            println("add scalaCenter")
-            scalaMesh.now().foreach { mesh =>
-              println(s"add ${mesh.scene.id}")
-              val pinner = SceneHelper.newPinner(R, LatLon(46.5188, 6.5593))(mesh)
-              scalaCenterGroup.set(Some(pinner)) // Lauzane
-              globeGroup.add(pinner)
-            }
-          case false =>
-            println("remove scalaCenter")
-            scalaCenterGroup.now().foreach { group =>
-              println(s"remove ${group.id}")
-              val ll = globeGroup.remove(group)
-              println("removed from group: " + ll.id)
-            }
-            scalaCenterGroup.set(None)
+      div(
+        h3("Famous Places"),
+        // Create a checkbox for each place in the famousPlace map
+        famousPlace.toSeq.sortBy(_._1).map { case (placeName, location) =>
+          div(
+            label(placeName),
+            input(
+              tpe := "checkbox",
+              value <-- placeGroups.signal.map(_.contains(placeName)).map {
+                case false => s"Show $placeName"
+                case true  => s"Hide $placeName"
+              },
+              disabled <-- scalaMesh.signal.map(_.isEmpty),
+              onClick.mapToChecked --> {
+                case true =>
+                  println(s"add $placeName")
+                  scalaMesh.now().foreach { mesh =>
+                    println(s"add ${mesh.scene.id}")
+                    val pinner = SceneHelper.newPinner(R, famousPlace(placeName))(mesh)
+                    // Update the map with the new group
+                    placeGroups.update(_ + (placeName -> pinner))
+                    globeGroup.add(pinner)
+                  }
+                case false =>
+                  println(s"remove $placeName")
+                  placeGroups.now().get(placeName).foreach { group =>
+                    println(s"remove ${group.id}")
+                    val ll = globeGroup.remove(group)
+                    println(s"removed from group: ${ll.id}")
+                    // Remove the place from the map
+                    placeGroups.update(_ - placeName)
+                  }
+              }
+            )
+          )
         }
       )
     )
@@ -78,11 +89,9 @@ object ScenePage {
 
     camera.position.set(0, 0, 5)
 
-    val renderer = new WebGLRenderer(
-      js.Dynamic.literal(
-        antialias = true,
-        alpha = false
-      )
+    val renderer = WebGLRenderer(
+      antialias = true,
+      alpha = false
     )
     renderer.setPixelRatio(window.devicePixelRatio)
     val orbitControl = OrbitControls(camera, renderer.domElement)
@@ -95,7 +104,7 @@ object ScenePage {
     loader.load(
       "/ThreeScalaJS/demo/res/scala.glb",
       obj => {
-        scalaMesh.set(Some(obj)) // Lauzane
+        scalaMesh.set(Some(obj))
       }
     )
 
