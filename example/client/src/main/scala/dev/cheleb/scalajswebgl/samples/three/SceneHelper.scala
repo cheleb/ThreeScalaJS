@@ -27,22 +27,26 @@ object SceneHelper {
   }
 
   def createTextSprite(text: String): Sprite = {
-    // Create canvas for the texture
-    val canvas  = js.Dynamic.newInstance(js.Dynamic.global.OffscreenCanvas)(256, 128)
+    // Create canvas for the texture - smaller dimensions for reduced size
+    val canvas  = js.Dynamic.newInstance(js.Dynamic.global.OffscreenCanvas)(128, 64)
     val context = canvas.getContext("2d").asInstanceOf[js.Dynamic]
 
-    // Style the text
-    context.font = "Bold 24px Arial"
-    context.fillStyle = "white"
+    // Style the text - smaller font size
+    context.font = "Bold 12px Arial"
     context.textAlign = "center"
 
-    // Add a background
-    context.fillStyle = "rgba(0,0,0,0.5)"
-    context.fillRect(0, 0, 256, 128)
+    // No background - removed background fill
 
-    // Draw the text
+    // Draw the text with a slight glow effect for better visibility
+    // Add slight shadow for better visibility against different backgrounds
+    context.shadowColor = "rgba(0, 0, 0, 0.7)"
+    context.shadowBlur = 3
+    context.shadowOffsetX = 1
+    context.shadowOffsetY = 1
+
+    // Draw text with white color
     context.fillStyle = "white"
-    context.fillText(text, 128, 64)
+    context.fillText(text, 64, 32)
 
     // Create a sprite with this texture
     val texture = new CanvasTexture(canvas)
@@ -55,7 +59,8 @@ object SceneHelper {
     )
 
     val sprite = new Sprite(material)
-    sprite.scale.set(0.5, 0.25, 1.0)
+    // Keep the small scale
+    sprite.scale.set(0.3, 0.15, 1.0)
     sprite
   }
 
