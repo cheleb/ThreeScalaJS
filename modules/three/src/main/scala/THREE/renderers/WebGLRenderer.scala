@@ -3,6 +3,7 @@ package THREE
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*
 import org.scalajs.dom
+import org.scalajs.dom.WebGLRenderingContext
 
 /**
  * The WebGL renderer displays your scenes using WebGL.
@@ -48,4 +49,35 @@ class WebGLRenderer(parameters: js.UndefOr[js.Object] = js.undefined) extends js
   def setAnimationLoop(callback: js.Function0[Unit]): Unit = js.native
 
   def info: js.Object = js.native
+}
+
+object WebGLRenderer {
+
+  def apply(
+    canvas: js.UndefOr[dom.html.Canvas] = js.undefined,
+    context: js.UndefOr[WebGLRenderingContext] = js.undefined,
+    depth: Boolean = true,
+    stencil: Boolean = false,
+    alpha: Boolean = false,
+    antialias: Boolean = false,
+    premultipliedAlpha: Boolean = true,
+    preserveDrawingBuffer: Boolean = false,
+    powerPreference: String = "default",
+    failIfMajorPerformanceCaveat: Boolean = false,
+    reverseDepthBuffer: Boolean = false
+  ): WebGLRenderer = new WebGLRenderer(
+    js.Dynamic.literal(
+      "canvas"                       -> canvas,
+      "context"                      -> context,
+      "depth"                        -> depth,
+      "stencil"                      -> stencil,
+      "alpha"                        -> alpha,
+      "antialias"                    -> antialias,
+      "premultipliedAlpha"           -> premultipliedAlpha,
+      "preserveDrawingBuffer"        -> preserveDrawingBuffer,
+      "powerPreference"              -> powerPreference,
+      "failIfMajorPerformanceCaveat" -> failIfMajorPerformanceCaveat,
+      "reverseDepthBuffer"           -> reverseDepthBuffer
+    )
+  )
 }
