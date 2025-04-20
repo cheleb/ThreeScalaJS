@@ -106,3 +106,34 @@ ui5-input[type="Number"] {
 .srf-invalid {
   border: 1px solid red;
 }
+
+.scene-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.canvas-container {
+  flex: 1;
+}
+
+.places-sidebar {
+  width: 200px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  margin-right: 10px;
+  border-radius: 5px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.place-item {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.place-item label {
+  margin-left: 5px;
+  cursor: pointer;
+}

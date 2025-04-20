@@ -19,41 +19,55 @@ object ScenePage {
     val eartthDiv = div(
       h1("Scene 1"),
       div(
-        h3("Famous Places"),
-        // Create a checkbox for each place in the famousPlace map
-        famousPlace.toSeq.sortBy(_._1).map { case (placeName, location) =>
-          div(
-            label(placeName),
-            input(
-              tpe := "checkbox",
-              value <-- placeGroups.signal.map(_.contains(placeName)).map {
-                case false => s"Show $placeName"
-                case true  => s"Hide $placeName"
-              },
-              disabled <-- scalaMesh.signal.map(_.isEmpty),
-              onClick.mapToChecked --> {
-                case true =>
-                  println(s"add $placeName")
-                  scalaMesh.now().foreach { mesh =>
-                    println(s"add ${mesh.scene.id}")
-                    val pinner = SceneHelper.newPinner(R, famousPlace(placeName))(mesh)
-                    // Update the map with the new group
-                    placeGroups.update(_ + (placeName -> pinner))
-                    globeGroup.add(pinner)
-                  }
-                case false =>
-                  println(s"remove $placeName")
-                  placeGroups.now().get(placeName).foreach { group =>
-                    println(s"remove ${group.id}")
-                    val ll = globeGroup.remove(group)
-                    println(s"removed from group: ${ll.id}")
-                    // Remove the place from the map
-                    placeGroups.update(_ - placeName)
-                  }
-              }
+        cls := "scene-container",
+        // Places sidebar
+        div(
+          cls := "places-sidebar",
+          h3("Famous Places"),
+          // Create a checkbox for each place in the famousPlace map
+          famousPlace.toSeq.sortBy(_._1).map { case (placeName, location) =>
+            div(
+              cls := "place-item",
+              input(
+                tpe    := "checkbox",
+                idAttr := s"place-$placeName",
+                value <-- placeGroups.signal.map(_.contains(placeName)).map {
+                  case false => s"Show $placeName"
+                  case true  => s"Hide $placeName"
+                },
+                disabled <-- scalaMesh.signal.map(_.isEmpty),
+                onClick.mapToChecked --> {
+                  case true =>
+                    println(s"add $placeName")
+                    scalaMesh.now().foreach { mesh =>
+                      println(s"add ${mesh.scene.id}")
+                      val pinner = SceneHelper.newPinner(R, famousPlace(placeName))(mesh)
+                      // Update the map with the new group
+                      placeGroups.update(_ + (placeName -> pinner))
+                      globeGroup.add(pinner)
+                    }
+                  case false =>
+                    println(s"remove $placeName")
+                    placeGroups.now().get(placeName).foreach { group =>
+                      println(s"remove ${group.id}")
+                      val ll = globeGroup.remove(group)
+                      println(s"removed from group: ${ll.id}")
+                      // Remove the place from the map
+                      placeGroups.update(_ - placeName)
+                    }
+                }
+              ),
+              label(
+                forId := s"place-$placeName",
+                placeName
+              )
             )
-          )
-        }
+          }
+        ),
+        // Canvas container
+        div(
+          cls := "canvas-container"
+        )
       )
     )
 
@@ -124,7 +138,8 @@ object ScenePage {
     light.lookAt(0, 0, 0)
     scene.add(light)
 
-    eartthDiv.ref.append(renderer.domElement)
+    // Append the renderer to the canvas container instead of eartthDiv directly
+    eartthDiv.ref.querySelector(".canvas-container").appendChild(renderer.domElement)
 
     eartthDiv
 }
