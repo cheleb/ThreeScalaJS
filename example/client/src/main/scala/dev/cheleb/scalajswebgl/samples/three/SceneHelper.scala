@@ -9,20 +9,40 @@ object SceneHelper {
 
   def newPinner(r: Int, location: LatLon, placeName: String = ""): GLTFResult => Group = obj => {
     val pinnerGroup = new Group()
-    val pinner      = obj.scene.jsClone(true)
-    val (x, y, z)   = location.xyz(r + 0.02)
+    println(s"Creating pinner for $placeName at ${location.lat}, ${location.lon}")
+    println(s"pinnerGroup: ${pinnerGroup.id}")
+    val pinner = obj.scene.jsClone(true)
+
+    println(s"pinner: ${pinner.id}")
+
+    val (x, y, z) = location.xyz(r + 0.02)
     pinner.position.set(x, y, z)
     pinner.lookAt(0, 0, 0)
 
-    // Add tooltip as a small text sprite
+    // Create tooltip but initially hide it
     if (placeName.nonEmpty) {
       val tooltipSprite = createTextSprite(placeName)
-      tooltipSprite.position.set(x * 1.1, y * 1.1, z * 1.1)
-      pinnerGroup.add(tooltipSprite)
-    }
+      println("Sprite: " + tooltipSprite.id)
 
+      tooltipSprite.position.set(x * 1.1, y * 1.1, z * 1.1)
+      // Hide tooltip initially
+      tooltipSprite.visible = false
+      tooltipSprite.userData.asInstanceOf[js.Dynamic].isTooltip = true
+      //  pinnerGroup.add(tooltipSprite)
+
+      // Tag the pinner to identify it for raycasting
+      pinnerGroup.userData.asInstanceOf[js.Dynamic].isPinner = true
+      pinnerGroup.userData.asInstanceOf[js.Dynamic].placeName = placeName
+
+      pinnerGroup.userData = PinnerData(pinnerGroup.id, placeName, tooltipSprite)
+
+      // Store a reference to
+      // the tooltip in the pinner for easy access
+      pinner.userData.asInstanceOf[js.Dynamic].tooltip = tooltipSprite
+
+    }
     pinnerGroup.add(pinner)
-    pinnerGroup.add(drawLine(x * 1.1, y * 1.1, z * 1.1))
+    pinnerGroup.add(drawLine(x, y, z))
 
     pinnerGroup
   }
@@ -72,12 +92,12 @@ object SceneHelper {
   ) = {
     // Create positions array for LineSegmentsGeometry
     val positions = js.Array[Double](
-      0,
-      0,
-      0, // start point
       x,
       y,
-      z // end point
+      z, // start point
+      x * 1.1,
+      y * 1.1,
+      z * 1.1 // end point
     )
 
     // Create LineSegmentsGeometry and set positions
@@ -95,6 +115,8 @@ object SceneHelper {
 
     // Create LineSegments2 with the geometry and material
     val line = new LineSegments2(geometry, material)
+    println(s"Line: ${line.id}")
+    line.userData.asInstanceOf[js.Dynamic].name = "Line to "
     line
   }
 

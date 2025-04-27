@@ -23,11 +23,6 @@ class Raycaster(
   var params: js.Dynamic = js.native
 
   /**
-   * The precision factor of the raycaster when intersecting Line objects.
-   */
-  var linePrecision: Double = js.native
-
-  /**
    * The Ray used for the raycasting.
    */
   val ray: Ray = js.native
@@ -44,8 +39,8 @@ class Raycaster(
   def intersectObject(
     obj: Object3D,
     recursive: js.UndefOr[Boolean] = js.undefined,
-    optionalTarget: js.UndefOr[js.Array[js.Object]] = js.undefined
-  ): js.Array[js.Object] = js.native
+    optionalTarget: js.UndefOr[js.Array[RaycasterIntersection]] = js.undefined
+  ): js.Array[RaycasterIntersection] = js.native
 
   /**
    * Checks all intersection between the ray and the array of objects.
@@ -54,11 +49,11 @@ class Raycaster(
   def intersectObjects(
     objects: js.Array[Object3D],
     recursive: js.UndefOr[Boolean] = js.undefined,
-    optionalTarget: js.UndefOr[js.Array[js.Object]] = js.undefined
-  ): js.Array[js.Object] = js.native
+    optionalTarget: js.UndefOr[js.Array[RaycasterIntersection]] = js.undefined
+  ): js.Array[RaycasterIntersection] = js.native
 
   /**
    * Updates the ray with new origin and direction.
    */
-  def setFromCamera(coords: js.Dynamic, camera: Camera): Unit = js.native
+  def setFromCamera(coords: Vector2, camera: Camera): Unit = js.native
 }
