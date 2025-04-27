@@ -44,6 +44,6 @@ val famousPlaces = List(
 class PinnerData(
   val id: Int,
   val city: String,
-  var tooltip: js.UndefOr[Sprite] = js.undefined
+  var tooltip: Sprite
 ) extends js.Object:
   var pinner: js.UndefOr[Object3D] = js.undefined

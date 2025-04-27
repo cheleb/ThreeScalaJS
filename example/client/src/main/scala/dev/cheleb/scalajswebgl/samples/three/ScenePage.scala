@@ -26,8 +26,9 @@ object ScenePage {
 
     // Elements for raycast hovering
     val raycaster = new Raycaster()
-    raycaster.params.Points.threshold = 10
-    raycaster.params.Line.threshold = 10
+    raycaster.params.Points.threshold = 100
+    raycaster.params.Line.threshold = 100
+
     val mouse                                    = new Vector2()
     var currentIntersected: js.UndefOr[Object3D] = js.undefined
 
@@ -137,19 +138,6 @@ object ScenePage {
       }
     )
 
-    // Mouse move handler for hover detection
-    val onMouseMove: dom.MouseEvent => Unit = { event =>
-      // Calculate mouse position in normalized device coordinates
-      // (-1 to +1) for both components
-      val rect = renderer.domElement.getBoundingClientRect()
-
-      mouse.x = ((event.clientX - rect.left) / renderer.domElement.clientWidth) * 2 - 1
-      mouse.y = -((event.clientY - rect.top) / renderer.domElement.clientHeight) * 2 + 1
-    }
-
-    // Add event listener for mouse movement
-    renderer.domElement.addEventListener("mousemove", onMouseMove)
-
     // Raycasting function to detect hover on pinners
     def checkIntersection(): Unit = {
       // Update the picking ray with the camera and mouse position
@@ -173,28 +161,40 @@ object ScenePage {
               val pinnerData = parent.userData.asInstanceOf[PinnerData]
 
               println(s"Pinner ${pinnerData.id} Data: ${pinnerData.city}")
-              // pinnerGroup.add(tooltipSprite)
-              pinnerData.tooltip.foreach { tooltip =>
-                if (currentIntersected != intersectedObject) {
-                  // Hide the previous tooltip
-                  currentIntersected.foreach { obj =>
-                    obj.userData.asInstanceOf[PinnerData].tooltip.foreach(_.visible = false)
-                  }
-                }
-                parent.add(pinnerData.tooltip.get)
-                pinnerData.tooltip.foreach(_.visible = true)
-                currentIntersected = parent
 
+              if (currentIntersected != intersectedObject) {
+                // Hide the previous tooltip
+                currentIntersected.foreach { obj =>
+                  obj.userData.asInstanceOf[PinnerData].tooltip.visible = false
+                }
               }
-            } else {}
+              pinnerData.tooltip.visible = true
+              currentIntersected = parent
+
+            }
           }
-        }
+        } else
+          currentIntersected.foreach { obj =>
+            obj.userData.asInstanceOf[PinnerData].tooltip.visible = false
+          }
       }
     }
 
-    val animate: () => Unit = () => {
-      // Check for marker intersections to show/hide tooltips
+    // Mouse move handler for hover detection
+    val onMouseMove: dom.MouseEvent => Unit = { event =>
+      // Calculate mouse position in normalized device coordinates
+      // (-1 to +1) for both components
+      val rect = renderer.domElement.getBoundingClientRect()
+
+      mouse.x = ((event.clientX - rect.left) / renderer.domElement.clientWidth) * 2 - 1
+      mouse.y = -((event.clientY - rect.top) / renderer.domElement.clientHeight) * 2 + 1
       checkIntersection()
+
+    }
+
+    renderer.domElement.addEventListener("mousemove", onMouseMove)
+
+    val animate: () => Unit = () => {
 
       // globeGroup.rotation.y += 0.0005;
 

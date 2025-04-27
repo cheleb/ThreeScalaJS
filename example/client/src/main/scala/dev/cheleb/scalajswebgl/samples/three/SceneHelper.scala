@@ -28,7 +28,7 @@ object SceneHelper {
       // Hide tooltip initially
       tooltipSprite.visible = false
       tooltipSprite.userData.asInstanceOf[js.Dynamic].isTooltip = true
-      //  pinnerGroup.add(tooltipSprite)
+      pinnerGroup.add(tooltipSprite)
 
       // Tag the pinner to identify it for raycasting
       pinnerGroup.userData.asInstanceOf[js.Dynamic].isPinner = true
@@ -115,7 +115,6 @@ object SceneHelper {
 
     // Create LineSegments2 with the geometry and material
     val line = new LineSegments2(geometry, material)
-    println(s"Line: ${line.id}")
     line.userData.asInstanceOf[js.Dynamic].name = "Line to "
     line
   }
