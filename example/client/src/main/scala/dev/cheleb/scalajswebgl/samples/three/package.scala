@@ -2,6 +2,10 @@ package dev.cheleb.scalajswebgl.samples.three
 
 import java.lang.Math.{PI, cos, sin}
 
+import scala.scalajs.js
+import THREE.Object3D
+import THREE.Sprite
+
 case class LatLon(lat: Double, lon: Double):
   override def toString(): String = s"$lat,$lon"
 
@@ -35,3 +39,11 @@ val famousPlaces = List(
   Place("Tokyo", LatLon(35.682839, 139.759455)),
   Place("Warsaw", LatLon(52.2297, 21.0122))
 )
+
+//@js.native
+class PinnerData(
+  val id: Int,
+  val city: String,
+  var tooltip: Sprite
+) extends js.Object:
+  var pinner: js.UndefOr[Object3D] = js.undefined

@@ -3,8 +3,10 @@ package dev.cheleb.scalajswebgl.samples.three
 import com.raquo.laminar.api.L.*
 import THREE.*
 
+import org.scalajs.dom
 import org.scalajs.dom.window
 import scala.scalajs.js
+import scalajs.js.JSConverters.*
 
 import scala.collection.mutable.Map as MutableMap
 
@@ -21,6 +23,14 @@ object ScenePage {
     // when the checkbox is checked/unchecked
     // This is a mutable map, so we can add/remove groups as needed
     val placeGroups = MutableMap.empty[String, Group]
+
+    // Elements for raycast hovering
+    val raycaster = new Raycaster()
+    raycaster.params.Points.threshold = 100
+    raycaster.params.Line.threshold = 100
+
+    val mouse                                    = new Vector2()
+    var currentIntersected: js.UndefOr[Object3D] = js.undefined
 
     val eartthDiv = div(
       h1("World of Scala"),
@@ -128,9 +138,65 @@ object ScenePage {
       }
     )
 
+    // Raycasting function to detect hover on pinners
+    def checkIntersection(): Unit = {
+      // Update the picking ray with the camera and mouse position
+      raycaster.setFromCamera(mouse, camera)
+
+      // Get all objects in the scene (excluding the earth and points)
+      val objects = placeGroups.values.toSeq.map(_.asInstanceOf[Object3D]).toJSArray
+
+      // Calculate objects intersecting the picking ray
+      if (objects.length > 0) {
+        val intersects = raycaster
+          .intersectObjects(objects, true)
+          .filterNot(_.`object`.isInstanceOf[Sprite])
+
+        if (intersects.length > 0) {
+
+          val intersectedObject = intersects(0).`object`
+
+          intersectedObject.parent.foreach { parent =>
+            if (parent.userData.isInstanceOf[PinnerData]) {
+              val pinnerData = parent.userData.asInstanceOf[PinnerData]
+
+              println(s"Pinner ${pinnerData.id} Data: ${pinnerData.city}")
+
+              if (currentIntersected != intersectedObject) {
+                // Hide the previous tooltip
+                currentIntersected.foreach { obj =>
+                  obj.userData.asInstanceOf[PinnerData].tooltip.visible = false
+                }
+              }
+              pinnerData.tooltip.visible = true
+              currentIntersected = parent
+
+            }
+          }
+        } else
+          currentIntersected.foreach { obj =>
+            obj.userData.asInstanceOf[PinnerData].tooltip.visible = false
+          }
+      }
+    }
+
+    // Mouse move handler for hover detection
+    val onMouseMove: dom.MouseEvent => Unit = { event =>
+      // Calculate mouse position in normalized device coordinates
+      // (-1 to +1) for both components
+      val rect = renderer.domElement.getBoundingClientRect()
+
+      mouse.x = ((event.clientX - rect.left) / renderer.domElement.clientWidth) * 2 - 1
+      mouse.y = -((event.clientY - rect.top) / renderer.domElement.clientHeight) * 2 + 1
+      checkIntersection()
+
+    }
+
+    renderer.domElement.addEventListener("mousemove", onMouseMove)
+
     val animate: () => Unit = () => {
 
-      globeGroup.rotation.y += 0.0005;
+      // globeGroup.rotation.y += 0.0005;
 
       orbitControl.update()
 
