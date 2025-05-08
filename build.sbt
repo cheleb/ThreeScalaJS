@@ -9,20 +9,48 @@ import Dependencies._
 //
 import DeploymentSettings._
 
-val scala3 = "3.6.4"
+val scala3 = "3.7.0"
 
 name := "ScalaThree.js"
 
 inThisBuild(
   List(
-    scalaVersion      := scala3,
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+    scalaVersion           := scala3,
+    organization           := "dev.cheleb",
+    homepage               := Some(url("https://github.com/cheleb/")),
+    sonatypeCredentialHost := "s01.oss.sonatype.org",
+    sonatypeRepository     := "https://s01.oss.sonatype.org/service/local",
+    semanticdbEnabled      := true,
+    semanticdbVersion      := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-feature",
       "-Wunused:all"
 //      "-Xfatal-warnings"
+    ),
+    pgpPublicRing := file("/tmp/public.asc"),
+    pgpSecretRing := file("/tmp/secret.asc"),
+    pgpPassphrase := sys.env.get("PGP_PASSWORD").map(_.toArray),
+    scmInfo := Some(
+      ScmInfo(
+        url("https://github.com/cheleb/ThreeScalaJS/"),
+        "scm:git:git@github.com:cheleb/ThreeScalaJS.git"
+      )
+    ),
+    developers := List(
+      Developer(
+        "cheleb",
+        "Olivier NOUGUIER",
+        "olivier.nouguier@gmail.com",
+        url("https://github.com/cheleb")
+      )
+    ),
+    startYear := Some(2023),
+    licenses += (
+      "Apache-2.0",
+      url(
+        "http://www.apache.org/licenses/LICENSE-2.0"
+      )
     ),
     run / fork := true
   )
@@ -34,7 +62,8 @@ inThisBuild(
 lazy val root = project
   .in(file("."))
   .aggregate(
-    client
+    client,
+    three
   )
   .settings(
     publish / skip := true
@@ -57,8 +86,11 @@ lazy val core = scalajsProject("core")
       "com.raquo"    %%% "laminar"     % "17.2.0"
     )
   )
+  .settings(
+    publish / skip := true
+  )
 
-lazy val three = scalajsProject("three")
+lazy val three = scalajsProject("threesjs", Some("three"))
   .settings(
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "2.8.0"
@@ -93,10 +125,10 @@ lazy val client = scalajsExampleProject("client")
     publish / skip := true
   )
 
-def scalajsProject(projectId: String): Project =
+def scalajsProject(projectId: String, folder: Option[String] = None): Project =
   Project(
-    id = projectId,
-    base = file(s"modules/$projectId")
+    id = s"$projectId",
+    base = file(s"modules/${folder.getOrElse(projectId)}")
   )
     .enablePlugins(scalaJSPlugin)
     .settings(nexusNpmSettings)
@@ -125,6 +157,9 @@ def scalajsExampleProject(projectId: String): Project =
         "-feature",
         "-Xfatal-warnings"
       )
+    )
+    .settings(
+      publish / skip := true
     )
 
 //
