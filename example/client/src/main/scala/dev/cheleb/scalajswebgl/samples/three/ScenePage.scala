@@ -93,7 +93,7 @@ object ScenePage {
     val geometry      = new IcosahedronGeometry(R - 0.05, 10)
     val pointGeometry = new IcosahedronGeometry(R, detail);
 
-    val material = MeshBasicMaterial(
+    val material = MeshPhongMaterial(
       color = 0x555555,
       wireframe = true
     )
@@ -112,7 +112,7 @@ object ScenePage {
     val earth = new Mesh(geometry, material);
     globeGroup.add(earth)
     globeGroup.add(points)
-
+    println(points)
     scene.add(globeGroup)
 
     val camera = new PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 100);
@@ -204,11 +204,14 @@ object ScenePage {
     }
     renderer.setAnimationLoop(animate)
 
-    val light = DirectionalLight(0xffffff, 100)
+    val light = DirectionalLight(0xff00ff, 100)
 
     light.position.set(5, 5, 5)
     light.lookAt(0, 0, 0)
     scene.add(light)
+
+    val ambientLight = AmbientLight(0x404040, 2)
+    scene.add(ambientLight)
 
     // Append the renderer to the canvas container instead of eartthDiv directly
     eartthDiv.ref.querySelector(".canvas-container").appendChild(renderer.domElement)
