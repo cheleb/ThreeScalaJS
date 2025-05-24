@@ -8,7 +8,7 @@ addSbtPlugin("ch.epfl.scala" % "sbt-web-scalajs-bundler" % "0.21.1")
 
 addSbtPlugin("org.scalameta"  % "sbt-scalafmt"        % "2.5.2")
 addSbtPlugin("org.xerial.sbt" % "sbt-sonatype"        % "3.10.0")
-addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.5.12")
+addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.11.0")
 addSbtPlugin("com.eed3si9n"   % "sbt-assembly"        % "2.3.0")
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.10.4")
 // Cross project support, to spread project resources between js and jvm world
