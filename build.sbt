@@ -15,13 +15,18 @@ name := "ScalaThree.js"
 
 inThisBuild(
   List(
-    scalaVersion           := scala3,
-    organization           := "dev.cheleb",
-    homepage               := Some(url("https://github.com/cheleb/")),
-    sonatypeCredentialHost := "s01.oss.sonatype.org",
-    sonatypeRepository     := "https://s01.oss.sonatype.org/service/local",
-    semanticdbEnabled      := true,
-    semanticdbVersion      := scalafixSemanticdb.revision,
+    scalaVersion := scala3,
+    organization := "dev.cheleb",
+    homepage     := Some(url("https://github.com/cheleb/")),
+    publishTo := {
+      val centralSnapshots =
+        "https://central.sonatype.com/repository/maven-snapshots/"
+      if (isSnapshot.value) Some("central-snapshots" at centralSnapshots)
+      else localStaging.value
+    },
+    versionScheme     := Some("early-semver"),
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-feature",
