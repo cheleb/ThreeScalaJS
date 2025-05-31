@@ -6,11 +6,6 @@ import scala.scalajs.js.annotation.*
 /**
  * This light globally illuminates all objects in the scene equally. It cannot
  * be used to cast shadows as it does not have a direction.
- *
- * ```scala
- * val light = new AmbientLight(0x404040) // soft white light
- * scene.add(light)
- * ```
  */
 @js.native
 @JSImport("three", "AmbientLight")
