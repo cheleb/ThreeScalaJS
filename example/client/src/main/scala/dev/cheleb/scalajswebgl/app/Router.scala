@@ -56,7 +56,7 @@ object Router:
           // potentially children
 
           pathPrefix(uiBase) {
-            path("demo") {
+            pathPrefix("demo") {
               firstMatch(
                 pathEnd {
                   dev.cheleb.scalajswebgl.samples.three.ScenePage()
