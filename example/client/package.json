@@ -13,7 +13,7 @@
   "dependencies": {
     "@ui5/webcomponents": "2.1.0",
     "@ui5/webcomponents-fiori": "2.1.0",
-    "@ui5/webcomponents-icons": "2.1.0",
+    "@ui5/webcomponents-icons": "2.13.2",
     "gl-matrix": "^3.4.3",
     "three": "0.178.0"
   },
