@@ -18,7 +18,7 @@ inThisBuild(
     scalaVersion := scala3,
     organization := "dev.cheleb",
     homepage     := Some(url("https://github.com/cheleb/")),
-    publishTo := {
+    publishTo    := {
       val centralSnapshots =
         "https://central.sonatype.com/repository/maven-snapshots/"
       if (isSnapshot.value) Some("central-snapshots" at centralSnapshots)
@@ -36,7 +36,7 @@ inThisBuild(
     pgpPublicRing := file("/tmp/public.asc"),
     pgpSecretRing := file("/tmp/secret.asc"),
     pgpPassphrase := sys.env.get("PGP_PASSWORD").map(_.toArray),
-    scmInfo := Some(
+    scmInfo       := Some(
       ScmInfo(
         url("https://github.com/cheleb/ThreeScalaJS/"),
         "scm:git:git@github.com:cheleb/ThreeScalaJS.git"
@@ -87,10 +87,21 @@ val usedScalacOptions = Seq(
 lazy val core = scalajsProject("core")
   .settings(
     libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "2.8.0"
+    )
+  )
+  .settings(
+    publish / skip := true
+  )
+
+lazy val laminar = scalajsProject("laminar")
+  .settings(
+    libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "2.8.0",
       "com.raquo"    %%% "laminar"     % "17.2.0"
     )
   )
+  .dependsOn(core)
   .settings(
     publish / skip := true
   )
@@ -125,7 +136,7 @@ lazy val client = scalajsExampleProject("client")
   )
   .settings(scalacOptions ++= usedScalacOptions)
   .settings(clientLibraryDependencies)
-  .dependsOn(core, three)
+  .dependsOn(core, three, laminar)
   .settings(
     publish / skip := true
   )
