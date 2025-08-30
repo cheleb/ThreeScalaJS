@@ -1,6 +1,9 @@
 package dev.cheleb.scalajswebgl.samples.three
 
 import com.raquo.laminar.api.L.*
+
+import dev.cheleb.threesjs.*
+
 import THREE.*
 
 import org.scalajs.dom
@@ -9,6 +12,7 @@ import scala.scalajs.js
 import scalajs.js.JSConverters.*
 
 import scala.collection.mutable.Map as MutableMap
+import org.scalajs.dom.Event
 
 object ScenePage {
 
@@ -218,20 +222,7 @@ object ScenePage {
     // Append the renderer to the canvas container instead of eartthDiv directly
     eartthDiv.ref.querySelector(".canvas-container").appendChild(renderer.domElement)
 
-    def onWindowResize = {
-
-      val SCREEN_WIDTH  = window.innerWidth;
-      val SCREEN_HEIGHT = window.innerHeight;
-      val aspect        = SCREEN_WIDTH / SCREEN_HEIGHT;
-
-      renderer.setSize(SCREEN_WIDTH * margin, SCREEN_HEIGHT * margin);
-
-      camera.aspect = aspect;
-      camera.updateProjectionMatrix();
-
-    }
-
-    window.addEventListener("resize", _ => onWindowResize)
+    window.addEventListener("resize", onWindowResize(camera, renderer, margin))
 
     eartthDiv
 }
