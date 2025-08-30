@@ -56,15 +56,20 @@ object Router:
           // potentially children
 
           pathPrefix(uiBase) {
-            pathPrefix("demo") {
-              firstMatch(
-                pathEnd {
-                  dev.cheleb.scalajswebgl.samples.three.ScenePage()
-                },
-                webglRoutes(),
-                threeRoutes()
-              )
-            }
+            firstMatch(
+              webglRoutes(),
+              threeRoutes(),
+              pathPrefix("demo") {
+                firstMatch(
+                  pathEnd {
+                    dev.cheleb.scalajswebgl.samples.three.ScenePage()
+                  }
+                )
+              },
+              pathEnd {
+                HomePage()
+              }
+            )
           },
           noneMatched {
             div("404 Not Found")
