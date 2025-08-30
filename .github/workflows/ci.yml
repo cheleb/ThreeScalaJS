@@ -47,4 +47,4 @@ jobs:
       # - name: Tests
       #   run: sbt +test
       - name: example/dist
-        run: DEV=prod sbt "~client/fastLinkJS"
+        run: DEV=prod sbt "client/fastLinkJS"

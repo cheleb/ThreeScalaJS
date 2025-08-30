@@ -8,13 +8,20 @@ object HomePage:
     div(
       h1("Scala.js WebGL"),
       ul(
-        demo("WebGL Sample", Router.uiRoute("webgl")),
-        demo("Shaders", Router.uiRoute("webgl", "shaders")),
-        demo("Sphere", Router.uiRoute("webgl", "sphere")),
-        demo("Triangle", Router.uiRoute("webgl", "adammurray", "triangle")),
-        demo("Laminar WebGL Sample", Router.uiRoute("webgl", "detect")),
-        demo("Math", Router.uiRoute("three", "math")),
-        demo("ThreeJS", Router.uiRoute("three", "scene"))
+        "Adammmuray",
+        ul(demo("Triangle", Router.uiRoute("webgl", "adammurray", "triangle"))),
+        "WebGL",
+        ul(
+          demo("WebGL Sample", Router.uiRoute("webgl")),
+          demo("Shaders", Router.uiRoute("webgl", "shaders")),
+          demo("Triangle", Router.uiRoute("webgl", "adammurray", "triangle")),
+          demo("Laminar WebGL Sample", Router.uiRoute("webgl", "detect"))
+        ),
+        "ThreeJS",
+        ul(
+          demo("Math", Router.uiRoute("three", "math")),
+          demo("ThreeJS", Router.uiRoute("three", "scene"))
+        )
       )
     )
 
