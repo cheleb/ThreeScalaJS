@@ -12,7 +12,7 @@ import scala.collection.mutable.Map as MutableMap
 
 object ScenePage {
 
-  val R = 1
+  val R       = 1
   def apply() =
 
     val scalaMesh  = Var(Option.empty[GLTFResult])
@@ -89,6 +89,8 @@ object ScenePage {
 
     val scene = Scene()
 
+    val margin = 0.8
+
     val detail        = 300
     val geometry      = new IcosahedronGeometry(R - 0.05, 10)
     val pointGeometry = new IcosahedronGeometry(R, detail);
@@ -127,7 +129,7 @@ object ScenePage {
     val orbitControl = OrbitControls(camera, renderer.domElement)
 
     renderer.setClearColor("#AAAAAA", 1)
-    renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8)
+    renderer.setSize(window.innerWidth * margin, window.innerHeight * margin)
 
     val loader = new GLTFLoader()
 
@@ -215,6 +217,21 @@ object ScenePage {
 
     // Append the renderer to the canvas container instead of eartthDiv directly
     eartthDiv.ref.querySelector(".canvas-container").appendChild(renderer.domElement)
+
+    def onWindowResize = {
+
+      val SCREEN_WIDTH  = window.innerWidth;
+      val SCREEN_HEIGHT = window.innerHeight;
+      val aspect        = SCREEN_WIDTH / SCREEN_HEIGHT;
+
+      renderer.setSize(SCREEN_WIDTH * margin, SCREEN_HEIGHT * margin);
+
+      camera.aspect = aspect;
+      camera.updateProjectionMatrix();
+
+    }
+
+    window.addEventListener("resize", _ => onWindowResize)
 
     eartthDiv
 }
