@@ -42,7 +42,8 @@ object HomePage:
             demo("MeshNormalMaterial", Router.uiRoute("three", "material", "meshnormal")),
             demo("MeshDepthMaterial", Router.uiRoute("three", "material", "meshdepth")),
             demo("MeshDistanceMaterial", Router.uiRoute("three", "material", "meshdistance")),
-            demo("LineDashedMaterial", Router.uiRoute("three", "material", "linedashed"))
+            demo("LineDashedMaterial", Router.uiRoute("three", "material", "linedashed")),
+            demo("ShaderMaterial", Router.uiRoute("three", "material", "shadermaterial"))
           )
         )
       )

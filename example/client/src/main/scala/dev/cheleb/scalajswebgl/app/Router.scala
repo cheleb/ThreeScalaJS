@@ -105,6 +105,9 @@ object Router:
             },
             path("linedashed") {
               dev.cheleb.scalajswebgl.samples.three.LineDashedMaterialSample()
+            },
+            path("shadermaterial") {
+              dev.cheleb.scalajswebgl.samples.three.ShaderMaterialSample()
             }
           )
         }
