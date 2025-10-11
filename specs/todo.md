@@ -23,7 +23,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **MeshMatcapMaterial** - Matcap (material capture) shading
 - [x] **MeshNormalMaterial** - Normal map visualization
 - [x] **MeshDepthMaterial** - Depth-based rendering
-- **MeshDistanceMaterial** - Distance-based rendering
+- [x] **MeshDistanceMaterial** - Distance-based rendering
 - **ShaderMaterial** - Custom GLSL shaders
 - **RawShaderMaterial** - Unlit custom shaders
 - **LineDashedMaterial** - Dashed line rendering

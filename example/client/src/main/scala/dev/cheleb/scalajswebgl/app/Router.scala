@@ -99,6 +99,9 @@ object Router:
             },
             path("meshdepth") {
               dev.cheleb.scalajswebgl.samples.three.MeshDepthMaterialSample()
+            },
+            path("meshdistance") {
+              dev.cheleb.scalajswebgl.samples.three.MeshDistanceMaterialSample()
             }
           )
         }

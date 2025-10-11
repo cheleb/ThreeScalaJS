@@ -40,7 +40,8 @@ object HomePage:
             demo("MeshPhysicalMaterial", Router.uiRoute("three", "material", "meshphysical")),
             demo("MeshMatcapMaterial", Router.uiRoute("three", "material", "meshmatcap")),
             demo("MeshNormalMaterial", Router.uiRoute("three", "material", "meshnormal")),
-            demo("MeshDepthMaterial", Router.uiRoute("three", "material", "meshdepth"))
+            demo("MeshDepthMaterial", Router.uiRoute("three", "material", "meshdepth")),
+            demo("MeshDistanceMaterial", Router.uiRoute("three", "material", "meshdistance"))
           )
         )
       )
