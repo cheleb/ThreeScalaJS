@@ -49,6 +49,9 @@ object Router:
         },
         path("plane") {
           dev.cheleb.scalajswebgl.samples.three.PlaneSample()
+        },
+        path("cylinder") {
+          dev.cheleb.scalajswebgl.samples.three.CylinderSample()
         }
       )
     }
