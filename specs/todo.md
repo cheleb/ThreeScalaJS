@@ -7,9 +7,9 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **PlaneGeometry** - Flat planes
 - [x] **CylinderGeometry** - Cylindrical shapes
 - [x] **ConeGeometry** - Conical shapes
-- **TorusGeometry** - Donut/torus shapes
-- **RingGeometry** - Ring shapes
-- **CircleGeometry** - Circular shapes
+- [x] **TorusGeometry** - Donut/torus shapes
+- [x] **RingGeometry** - Ring shapes
+- [x] **CircleGeometry** - Circular shapes
 - **ShapeGeometry** - Custom 2D shapes extruded to 3D
 - **ExtrudeGeometry** - Extruded 2D shapes
 - **LatheGeometry** - Rotationally symmetric shapes

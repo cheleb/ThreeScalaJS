@@ -55,6 +55,15 @@ object Router:
         },
         path("cone") {
           dev.cheleb.scalajswebgl.samples.three.ConeSample()
+        },
+        path("torus") {
+          dev.cheleb.scalajswebgl.samples.three.TorusSample()
+        },
+        path("ring") {
+          dev.cheleb.scalajswebgl.samples.three.RingSample()
+        },
+        path("circle") {
+          dev.cheleb.scalajswebgl.samples.three.CircleSample()
         }
       )
     }
