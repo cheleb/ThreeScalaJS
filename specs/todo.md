@@ -18,9 +18,9 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 
 ### **Materials** (Major Gaps)
 - [x] **MeshLambertMaterial** - Diffuse lighting model
-- **MeshStandardMaterial** - Physically-based rendering (PBR)
-- **MeshPhysicalMaterial** - Advanced PBR with clearcoat, etc.
-- **MeshMatcapMaterial** - Matcap (material capture) shading
+- [x] **MeshStandardMaterial** - Physically-based rendering (PBR)
+- [x] **MeshPhysicalMaterial** - Advanced PBR with clearcoat, etc.
+- [x] **MeshMatcapMaterial** - Matcap (material capture) shading
 - **MeshNormalMaterial** - Normal map visualization
 - **MeshDepthMaterial** - Depth-based rendering
 - **MeshDistanceMaterial** - Distance-based rendering

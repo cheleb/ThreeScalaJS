@@ -84,6 +84,15 @@ object Router:
           firstMatch(
             path("meshlambert") {
               dev.cheleb.scalajswebgl.samples.three.MeshLambertMaterialSample()
+            },
+            path("meshstandard") {
+              dev.cheleb.scalajswebgl.samples.three.MeshStandardMaterialSample()
+            },
+            path("meshphysical") {
+              dev.cheleb.scalajswebgl.samples.three.MeshPhysicalMaterialSample()
+            },
+            path("meshmatcap") {
+              dev.cheleb.scalajswebgl.samples.three.MeshMatcapMaterialSample()
             }
           )
         }
