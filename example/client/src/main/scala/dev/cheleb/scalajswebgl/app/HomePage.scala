@@ -46,6 +46,12 @@ object HomePage:
             demo("ShaderMaterial", Router.uiRoute("three", "material", "shadermaterial")),
             demo("RawShaderMaterial", Router.uiRoute("three", "material", "rawshadermaterial")),
             demo("ShadowMaterial", Router.uiRoute("three", "material", "shadowmaterial"))
+          ),
+          "Lights",
+          ul(
+            demo("PointLight", Router.uiRoute("three", "light", "pointlight")),
+            demo("SpotLight", Router.uiRoute("three", "light", "spotlight")),
+            demo("HemisphereLight", Router.uiRoute("three", "light", "hemispherelight"))
           )
         )
       )

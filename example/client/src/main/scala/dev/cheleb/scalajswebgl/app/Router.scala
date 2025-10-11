@@ -116,6 +116,19 @@ object Router:
               dev.cheleb.scalajswebgl.samples.three.ShadowMaterialSample()
             }
           )
+        },
+        pathPrefix("light") {
+          firstMatch(
+            path("pointlight") {
+              dev.cheleb.scalajswebgl.samples.three.PointLightSample()
+            },
+            path("spotlight") {
+              dev.cheleb.scalajswebgl.samples.three.SpotLightSample()
+            },
+            path("hemispherelight") {
+              dev.cheleb.scalajswebgl.samples.three.HemisphereLightSample()
+            }
+          )
         }
       )
     }
