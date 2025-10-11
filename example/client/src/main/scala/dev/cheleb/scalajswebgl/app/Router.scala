@@ -92,6 +92,9 @@ object Router:
         path("lensflare") {
           dev.cheleb.scalajswebgl.samples.three.LensFlareSample()
         },
+        path("reflector") {
+          dev.cheleb.scalajswebgl.samples.three.ReflectorSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {

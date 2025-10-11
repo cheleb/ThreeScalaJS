@@ -43,7 +43,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **Bone** - Individual bones for skeletal animation
 - [x] **Sprite** - Billboard sprites (implementation missing)
 - [x] **LensFlare** - Camera lens flare effects
-- **Reflector** - Reflective surfaces
+- [x] **Reflector** - Reflective surfaces
 - **Refractor** - Refractive surfaces
 - **Water** - Water surface simulation
 
