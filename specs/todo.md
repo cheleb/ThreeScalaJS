@@ -33,7 +33,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **PointLight** - Omnidirectional point lights
 - [x] **SpotLight** - Directional cone lights
 - [x] **HemisphereLight** - Sky-like ambient lighting
-- **RectAreaLight** - Rectangular area lights
+- [x] **RectAreaLight** - Rectangular area lights
 - **LightProbe** - Image-based lighting
 - **AmbientLightProbe** - Ambient light probes
 

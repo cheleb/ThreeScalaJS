@@ -127,6 +127,9 @@ object Router:
             },
             path("hemispherelight") {
               dev.cheleb.scalajswebgl.samples.three.HemisphereLightSample()
+            },
+            path("rectarealight") {
+              dev.cheleb.scalajswebgl.samples.three.RectAreaLightSample()
             }
           )
         }
