@@ -83,6 +83,9 @@ object Router:
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
+        path("skinnedmesh") {
+          dev.cheleb.scalajswebgl.samples.three.SkinnedMeshSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {
