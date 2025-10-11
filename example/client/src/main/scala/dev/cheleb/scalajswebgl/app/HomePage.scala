@@ -35,6 +35,7 @@ object HomePage:
           demo("BufferGeometryUtils", Router.uiRoute("demo", "three", "bufferutils")),
           demo("LOD", Router.uiRoute("demo", "three", "lod")),
           demo("SkinnedMesh", Router.uiRoute("demo", "three", "skinnedmesh")),
+          demo("Sprite", Router.uiRoute("demo", "three", "sprite")),
           "Materials",
           ul(
             demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),

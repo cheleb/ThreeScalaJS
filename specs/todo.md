@@ -41,7 +41,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **SkinnedMesh** - Skeletal animation support
 - [x] **Skeleton** - Bone structure for animation
 - [x] **Bone** - Individual bones for skeletal animation
-- **Sprite** - Billboard sprites (implementation missing)
+- [x] **Sprite** - Billboard sprites (implementation missing)
 - **LensFlare** - Camera lens flare effects
 - **Reflector** - Reflective surfaces
 - **Refractor** - Refractive surfaces
