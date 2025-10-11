@@ -102,6 +102,9 @@ object Router:
             },
             path("meshdistance") {
               dev.cheleb.scalajswebgl.samples.three.MeshDistanceMaterialSample()
+            },
+            path("linedashed") {
+              dev.cheleb.scalajswebgl.samples.three.LineDashedMaterialSample()
             }
           )
         }
