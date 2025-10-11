@@ -45,7 +45,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **LensFlare** - Camera lens flare effects
 - [x] **Reflector** - Reflective surfaces
 - [x] **Refractor** - Refractive surfaces
-- **Water** - Water surface simulation
+- [x] **Water** - Water surface simulation
 
 ### **Animation System** (Completely Missing)
 - **AnimationClip** - Animation data container
