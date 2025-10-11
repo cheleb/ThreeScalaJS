@@ -11,7 +11,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **RingGeometry** - Ring shapes
 - [x] **CircleGeometry** - Circular shapes
 - [x] **ShapeGeometry** - Custom 2D shapes extruded to 3D
-- **ExtrudeGeometry** - Extruded 2D shapes
+- [x] **ExtrudeGeometry** - Extruded 2D shapes
 - **LatheGeometry** - Rotationally symmetric shapes
 - **TextGeometry** - 3D text rendering
 - **BufferGeometry utilities** - Advanced vertex manipulation

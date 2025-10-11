@@ -28,7 +28,8 @@ object HomePage:
           demo("TorusGeometry", Router.uiRoute("three", "torus")),
           demo("RingGeometry", Router.uiRoute("three", "ring")),
           demo("CircleGeometry", Router.uiRoute("three", "circle")),
-          demo("ShapeGeometry", Router.uiRoute("three", "shape"))
+          demo("ShapeGeometry", Router.uiRoute("three", "shape")),
+          demo("ExtrudeGeometry", Router.uiRoute("three", "extrude"))
         )
       )
     )
