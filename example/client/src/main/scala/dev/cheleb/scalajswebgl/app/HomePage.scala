@@ -44,7 +44,8 @@ object HomePage:
             demo("MeshDistanceMaterial", Router.uiRoute("three", "material", "meshdistance")),
             demo("LineDashedMaterial", Router.uiRoute("three", "material", "linedashed")),
             demo("ShaderMaterial", Router.uiRoute("three", "material", "shadermaterial")),
-            demo("RawShaderMaterial", Router.uiRoute("three", "material", "rawshadermaterial"))
+            demo("RawShaderMaterial", Router.uiRoute("three", "material", "rawshadermaterial")),
+            demo("ShadowMaterial", Router.uiRoute("three", "material", "shadowmaterial"))
           )
         )
       )

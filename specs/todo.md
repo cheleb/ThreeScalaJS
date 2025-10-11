@@ -24,10 +24,10 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **MeshNormalMaterial** - Normal map visualization
 - [x] **MeshDepthMaterial** - Depth-based rendering
 - [x] **MeshDistanceMaterial** - Distance-based rendering
-- **ShaderMaterial** - Custom GLSL shaders
-- **RawShaderMaterial** - Unlit custom shaders
-- **LineDashedMaterial** - Dashed line rendering
-- **ShadowMaterial** - Shadow casting materials
+- [x] **ShaderMaterial** - Custom GLSL shaders
+- [x] **RawShaderMaterial** - Unlit custom shaders
+- [x] **LineDashedMaterial** - Dashed line rendering
+- [x] **ShadowMaterial** - Shadow casting materials
 
 ### **Lights** (Missing Several)
 - **PointLight** - Omnidirectional point lights
