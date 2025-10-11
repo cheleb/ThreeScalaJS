@@ -17,7 +17,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **BufferGeometry utilities** - Advanced vertex manipulation
 
 ### **Materials** (Major Gaps)
-- **MeshLambertMaterial** - Diffuse lighting model
+- [x] **MeshLambertMaterial** - Diffuse lighting model
 - **MeshStandardMaterial** - Physically-based rendering (PBR)
 - **MeshPhysicalMaterial** - Advanced PBR with clearcoat, etc.
 - **MeshMatcapMaterial** - Matcap (material capture) shading

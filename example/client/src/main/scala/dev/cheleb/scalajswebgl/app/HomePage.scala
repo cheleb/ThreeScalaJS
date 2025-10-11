@@ -32,7 +32,11 @@ object HomePage:
           demo("ExtrudeGeometry", Router.uiRoute("three", "extrude")),
           demo("LatheGeometry", Router.uiRoute("three", "lathe")),
           demo("TextGeometry", Router.uiRoute("three", "text")),
-          demo("BufferGeometryUtils", Router.uiRoute("three", "bufferutils"))
+          demo("BufferGeometryUtils", Router.uiRoute("three", "bufferutils")),
+          "Materials",
+          ul(
+            demo("MeshLambertMaterial", Router.uiRoute("three", "material", "meshlambert"))
+          )
         )
       )
     )
