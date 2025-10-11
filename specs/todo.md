@@ -35,7 +35,6 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **HemisphereLight** - Sky-like ambient lighting
 - [x] **RectAreaLight** - Rectangular area lights
 - [x] **LightProbe** - Image-based lighting
-- **AmbientLightProbe** - Ambient light probes
 
 ### **Objects** (Missing Advanced Objects)
 - **LOD (Level of Detail)** - Multiple distance-based models

@@ -14,7 +14,7 @@ object Router:
   val writer                     = externalUrlBus.writer
 
   def webglRoutes(): Route =
-    pathPrefix("webgl") {
+    pathPrefix("demo" / "webgl") {
       firstMatch(
         path("shaders") {
           Shaders()
@@ -36,7 +36,7 @@ object Router:
       )
     }
   def threeRoutes(): Route =
-    pathPrefix("three") {
+    pathPrefix("demo" / "three") {
       firstMatch(
         path("math") {
           dev.cheleb.scalajswebgl.samples.three.Math()
