@@ -52,7 +52,8 @@ object HomePage:
             demo("PointLight", Router.uiRoute("three", "light", "pointlight")),
             demo("SpotLight", Router.uiRoute("three", "light", "spotlight")),
             demo("HemisphereLight", Router.uiRoute("three", "light", "hemispherelight")),
-            demo("RectAreaLight", Router.uiRoute("three", "light", "rectarealight"))
+            demo("RectAreaLight", Router.uiRoute("three", "light", "rectarealight")),
+            demo("LightProbe", Router.uiRoute("three", "light", "lightprobe"))
           )
         )
       )

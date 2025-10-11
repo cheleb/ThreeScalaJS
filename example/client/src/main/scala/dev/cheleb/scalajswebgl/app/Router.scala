@@ -130,6 +130,9 @@ object Router:
             },
             path("rectarealight") {
               dev.cheleb.scalajswebgl.samples.three.RectAreaLightSample()
+            },
+            path("lightprobe") {
+              dev.cheleb.scalajswebgl.samples.three.LightProbeSample()
             }
           )
         }
