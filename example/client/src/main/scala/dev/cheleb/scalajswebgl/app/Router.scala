@@ -108,6 +108,9 @@ object Router:
             },
             path("shadermaterial") {
               dev.cheleb.scalajswebgl.samples.three.ShaderMaterialSample()
+            },
+            path("rawshadermaterial") {
+              dev.cheleb.scalajswebgl.samples.three.RawShaderMaterialSample()
             }
           )
         }
