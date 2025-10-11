@@ -4,7 +4,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 
 ### **Geometries** (Missing Many)
 - [x] **SphereGeometry** - Spherical shapes
-- **PlaneGeometry** - Flat planes
+- [x] **PlaneGeometry** - Flat planes
 - **CylinderGeometry** - Cylindrical shapes  
 - **ConeGeometry** - Conical shapes
 - **TorusGeometry** - Donut/torus shapes

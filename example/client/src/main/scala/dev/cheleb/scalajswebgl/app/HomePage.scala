@@ -21,7 +21,8 @@ object HomePage:
         ul(
           demo("Math", Router.uiRoute("three", "math")),
           demo("ThreeJS", Router.uiRoute("three", "scene")),
-          demo("SphereGeometry", Router.uiRoute("three", "sphere"))
+          demo("SphereGeometry", Router.uiRoute("three", "sphere")),
+          demo("PlaneGeometry", Router.uiRoute("three", "plane"))
         )
       )
     )
