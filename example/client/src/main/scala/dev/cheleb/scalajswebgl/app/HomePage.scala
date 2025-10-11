@@ -30,7 +30,9 @@ object HomePage:
           demo("CircleGeometry", Router.uiRoute("three", "circle")),
           demo("ShapeGeometry", Router.uiRoute("three", "shape")),
           demo("ExtrudeGeometry", Router.uiRoute("three", "extrude")),
-          demo("LatheGeometry", Router.uiRoute("three", "lathe"))
+          demo("LatheGeometry", Router.uiRoute("three", "lathe")),
+          demo("TextGeometry", Router.uiRoute("three", "text")),
+          demo("BufferGeometryUtils", Router.uiRoute("three", "bufferutils"))
         )
       )
     )

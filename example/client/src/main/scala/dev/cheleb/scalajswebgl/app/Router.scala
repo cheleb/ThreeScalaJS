@@ -73,6 +73,12 @@ object Router:
         },
         path("lathe") {
           dev.cheleb.scalajswebgl.samples.three.LatheSample()
+        },
+        path("text") {
+          dev.cheleb.scalajswebgl.samples.three.TextSample()
+        },
+        path("bufferutils") {
+          dev.cheleb.scalajswebgl.samples.three.BufferGeometryUtilsSample()
         }
       )
     }

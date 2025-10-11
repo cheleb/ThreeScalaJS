@@ -13,8 +13,8 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **ShapeGeometry** - Custom 2D shapes extruded to 3D
 - [x] **ExtrudeGeometry** - Extruded 2D shapes
 - [x] **LatheGeometry** - Rotationally symmetric shapes
-- **TextGeometry** - 3D text rendering
-- **BufferGeometry utilities** - Advanced vertex manipulation
+- [x] **TextGeometry** - 3D text rendering
+- [x] **BufferGeometry utilities** - Advanced vertex manipulation
 
 ### **Materials** (Major Gaps)
 - **MeshLambertMaterial** - Diffuse lighting model
