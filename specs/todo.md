@@ -12,7 +12,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **CircleGeometry** - Circular shapes
 - [x] **ShapeGeometry** - Custom 2D shapes extruded to 3D
 - [x] **ExtrudeGeometry** - Extruded 2D shapes
-- **LatheGeometry** - Rotationally symmetric shapes
+- [x] **LatheGeometry** - Rotationally symmetric shapes
 - **TextGeometry** - 3D text rendering
 - **BufferGeometry utilities** - Advanced vertex manipulation
 

@@ -70,6 +70,9 @@ object Router:
         },
         path("extrude") {
           dev.cheleb.scalajswebgl.samples.three.ExtrudeSample()
+        },
+        path("lathe") {
+          dev.cheleb.scalajswebgl.samples.three.LatheSample()
         }
       )
     }
