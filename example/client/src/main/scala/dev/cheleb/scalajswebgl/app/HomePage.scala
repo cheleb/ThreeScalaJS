@@ -23,7 +23,8 @@ object HomePage:
           demo("ThreeJS", Router.uiRoute("three", "scene")),
           demo("SphereGeometry", Router.uiRoute("three", "sphere")),
           demo("PlaneGeometry", Router.uiRoute("three", "plane")),
-          demo("CylinderGeometry", Router.uiRoute("three", "cylinder"))
+          demo("CylinderGeometry", Router.uiRoute("three", "cylinder")),
+          demo("ConeGeometry", Router.uiRoute("three", "cone"))
         )
       )
     )
