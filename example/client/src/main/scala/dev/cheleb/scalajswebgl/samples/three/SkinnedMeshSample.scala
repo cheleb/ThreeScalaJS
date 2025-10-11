@@ -37,17 +37,20 @@ object SkinnedMeshSample:
     // Root bone (hips)
     val rootBone = new Bone()
     rootBone.position.y = -2
+    rootBone.name = "root"
     bones.push(rootBone)
 
     // Left leg
     val leftThigh = new Bone()
     leftThigh.position.y = -2
     leftThigh.position.x = -0.5
+    leftThigh.name = "leftThigh"
     rootBone.add(leftThigh)
     bones.push(leftThigh)
 
     val leftShin = new Bone()
     leftShin.position.y = -2
+    leftShin.name = "leftShin"
     leftThigh.add(leftShin)
     bones.push(leftShin)
 
@@ -55,13 +58,22 @@ object SkinnedMeshSample:
     val rightThigh = new Bone()
     rightThigh.position.y = -2
     rightThigh.position.x = 0.5
+    rightThigh.name = "rightThigh"
     rootBone.add(rightThigh)
     bones.push(rightThigh)
 
     val rightShin = new Bone()
     rightShin.position.y = -2
+    rightShin.name = "rightShin"
     rightThigh.add(rightShin)
     bones.push(rightShin)
+
+    // Create the skeleton with the bones
+    val skeleton = new Skeleton(bones)
+
+    // Initialize and calculate bone inverses
+    skeleton.init()
+    skeleton.calculateInverses()
 
     // Create simple geometry and materials for demonstration
     val characterGeometry = BoxGeometry(1, 3, 0.5)
@@ -108,6 +120,16 @@ object SkinnedMeshSample:
       // Rotate the entire character slowly
       characterMesh.rotation.y = time * 0.2
 
+      // Update skeleton bone matrices
+      skeleton.update()
+
+      // Demonstrate skeleton functionality by finding bones by name
+      val foundBone = skeleton.getBoneByName("leftThigh")
+      foundBone.foreach { bone =>
+        // Add a slight rotation to demonstrate bone animation capability
+        bone.rotation.x = scala.math.sin(walkCycle * 2) * 0.1
+      }
+
       renderer.render(scene, camera)
     }
     renderer.setAnimationLoop(animate)
@@ -123,9 +145,11 @@ object SkinnedMeshSample:
     // Add instructions
     val instructions = div(
       styleAttr := "position: absolute; top: 10px; right: 10px; color: white; font-family: monospace;",
-      p("Bone Hierarchy & Skeleton Demo"),
-      p("Shows bone structure for skeletal animation"),
-      p("Watch the floating animation!")
+      p("Skeleton & Bone Demo"),
+      p(s"Skeleton UUID: ${skeleton.uuid}"),
+      p(s"Number of bones: ${bones.length}"),
+      p("Demonstrates proper Skeleton and Bone usage"),
+      p("Watch the floating animation with bone manipulation!")
     )
 
     // Append renderer to container

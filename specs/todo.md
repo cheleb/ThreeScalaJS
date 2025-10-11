@@ -39,8 +39,8 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 ### **Objects** (Missing Advanced Objects)
 - [x] **LOD (Level of Detail)** - Multiple distance-based models
 - [x] **SkinnedMesh** - Skeletal animation support
-- **Skeleton** - Bone structure for animation
-- **Bone** - Individual bones for skeletal animation
+- [x] **Skeleton** - Bone structure for animation
+- [x] **Bone** - Individual bones for skeletal animation
 - **Sprite** - Billboard sprites (implementation missing)
 - **LensFlare** - Camera lens flare effects
 - **Reflector** - Reflective surfaces
