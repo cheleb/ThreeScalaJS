@@ -36,6 +36,7 @@ object HomePage:
           demo("LOD", Router.uiRoute("demo", "three", "lod")),
           demo("SkinnedMesh", Router.uiRoute("demo", "three", "skinnedmesh")),
           demo("Sprite", Router.uiRoute("demo", "three", "sprite")),
+          demo("LensFlare", Router.uiRoute("demo", "three", "lensflare")),
           "Materials",
           ul(
             demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),
