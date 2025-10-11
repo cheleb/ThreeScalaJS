@@ -15,7 +15,7 @@ addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.3")
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "1.3.2")
 addSbtPlugin("com.github.sbt"     % "sbt-dynver"               % "5.1.1")
 addSbtPlugin("com.github.sbt"     % "sbt-unidoc"               % "0.6.0")
-addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.8.0")
+addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.9.0")
 // will reStart server on code modification.
 // Giter8 support
 // Scalafix
