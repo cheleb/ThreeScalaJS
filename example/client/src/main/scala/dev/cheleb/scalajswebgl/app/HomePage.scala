@@ -38,7 +38,9 @@ object HomePage:
             demo("MeshLambertMaterial", Router.uiRoute("three", "material", "meshlambert")),
             demo("MeshStandardMaterial", Router.uiRoute("three", "material", "meshstandard")),
             demo("MeshPhysicalMaterial", Router.uiRoute("three", "material", "meshphysical")),
-            demo("MeshMatcapMaterial", Router.uiRoute("three", "material", "meshmatcap"))
+            demo("MeshMatcapMaterial", Router.uiRoute("three", "material", "meshmatcap")),
+            demo("MeshNormalMaterial", Router.uiRoute("three", "material", "meshnormal")),
+            demo("MeshDepthMaterial", Router.uiRoute("three", "material", "meshdepth"))
           )
         )
       )

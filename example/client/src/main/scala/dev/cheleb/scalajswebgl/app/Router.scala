@@ -93,6 +93,12 @@ object Router:
             },
             path("meshmatcap") {
               dev.cheleb.scalajswebgl.samples.three.MeshMatcapMaterialSample()
+            },
+            path("meshnormal") {
+              dev.cheleb.scalajswebgl.samples.three.MeshNormalMaterialSample()
+            },
+            path("meshdepth") {
+              dev.cheleb.scalajswebgl.samples.three.MeshDepthMaterialSample()
             }
           )
         }
