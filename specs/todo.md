@@ -37,7 +37,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **LightProbe** - Image-based lighting
 
 ### **Objects** (Missing Advanced Objects)
-- **LOD (Level of Detail)** - Multiple distance-based models
+- [x] **LOD (Level of Detail)** - Multiple distance-based models
 - **SkinnedMesh** - Skeletal animation support
 - **Skeleton** - Bone structure for animation
 - **Bone** - Individual bones for skeletal animation

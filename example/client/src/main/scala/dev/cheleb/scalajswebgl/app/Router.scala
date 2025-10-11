@@ -80,6 +80,9 @@ object Router:
         path("bufferutils") {
           dev.cheleb.scalajswebgl.samples.three.BufferGeometryUtilsSample()
         },
+        path("lod") {
+          dev.cheleb.scalajswebgl.samples.three.LODSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {
