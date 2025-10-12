@@ -110,6 +110,9 @@ object Router:
         path("advancedloaders") {
           dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
         },
+        path("audio") {
+          dev.cheleb.scalajswebgl.samples.three.AudioSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {

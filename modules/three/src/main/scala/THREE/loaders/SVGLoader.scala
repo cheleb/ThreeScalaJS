@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * Class for loading SVG files.
  */
 @js.native
-@JSImport("three", "SVGLoader")
+@JSImport("three/addons/loaders/SVGLoader.js", "SVGLoader")
 class SVGLoader(loadingManager: js.UndefOr[LoadingManager] = js.undefined) extends js.Object {
 
   /**

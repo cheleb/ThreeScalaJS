@@ -164,41 +164,44 @@ object AdvancedLoadersSample {
 
   private def loadAudioDemo(): Unit = {
     // Demonstrate AudioLoader
-    @nowarn // FIXME: Warning "a pure expression does nothing in statement position" --- IGNORE ---
+
     val audioLoader = new AudioLoader()
 
     // In a real application, you would load an audio file:
-    // audioLoader.load(
-    //   "audio/background.mp3",
-    //   { audioBuffer =>
-    //     val audioListener = new AudioListener()
-    //     camera.add(audioListener)
-    //
-    //     val audio = new PositionalAudio(audioListener)
-    //     audio.setBuffer(audioBuffer)
-    //     audio.setRefDistance(20)
-    //     audio.play()
-    //   }
-    // )
+    audioLoader.load(
+      "/ThreeScalaJS/demo/sounds/zogzog.mp3",
+      { audioBuffer =>
+        val audioListener = new AudioListener()
+
+        val audio = new PositionalAudio(audioListener)
+        audio.setBuffer(audioBuffer)
+        audio.setRefDistance(20)
+        audio.play()
+      }
+    )
 
     dom.console.log("AudioLoader demo - would load and play audio file")
   }
 
   private def loadSVGDemo(): Unit = {
     // Demonstrate SVGLoader
-    @nowarn // FIXME: Warning "a pure expression does nothing in statement position" --- IGNORE ---
     val svgLoader = new SVGLoader()
 
     // In a real application, you would load an SVG file:
-    // svgLoader.load(
-    //   "images/example.svg",
-    //   { svgResult =>
-    //     svgResult.paths.foreach { path =>
-    //       val pathShapes = svgLoader.parse(path.path)
-    //       // Create geometry from SVG paths
-    //     }
-    //   }
-    // )
+    svgLoader.load(
+      "/ThreeScalaJS/demo/img/scala.svg",
+      svgResult =>
+        dom.console.log("SVG loaded:", svgResult)
+        svgResult.paths.foreach { path =>
+          val pathShapes = svgLoader.parse(path.path)
+          // Create geometry from SVG paths
+          val geometry  = new ShapeGeometry(pathShapes)
+          val scalaMesh = new Mesh(geometry, MeshBasicMaterial(color = 0x008f4c))
+          scalaMesh.position.set(-3, 0, 0)
+          scene.add(scalaMesh)
+          dom.console.log(s"SVG path added to scene: $pathShapes")
+        }
+    )
 
     dom.console.log("SVGLoader demo - would load and parse SVG file")
   }

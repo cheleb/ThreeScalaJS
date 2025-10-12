@@ -43,6 +43,7 @@ object HomePage:
           demo("Animation", Router.uiRoute("demo", "three", "animation")),
           demo("PostProcessing", Router.uiRoute("demo", "three", "postprocessing")),
           demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders")),
+          demo("Audio", Router.uiRoute("demo", "three", "audio")),
           "Materials",
           ul(
             demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),
