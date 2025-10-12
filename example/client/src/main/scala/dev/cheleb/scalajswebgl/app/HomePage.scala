@@ -7,20 +7,27 @@ object HomePage:
   def apply(): HtmlElement =
     div(
       h1("Scala.js WebGL"),
-      ul(
-        "WebGL Fundamentals",
+      div(
+        cls := "demo",
+        h2("WebGL Fundamentals"),
         ul(
           demo("WebGL Sample", Router.uiRoute("demo", "webgl")),
           demo("Shaders", Router.uiRoute("demo", "webgl", "shaders")),
           demo("Triangle", Router.uiRoute("demo", "webgl", "adammurray", "triangle")),
           demo("Laminar WebGL Sample", Router.uiRoute("demo", "webgl", "detect"))
-        ),
-        "Three.js Basics",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Three.js Basics"),
         ul(
           demo("ThreeJS Scene", Router.uiRoute("demo", "three", "scene")),
           demo("Math Utils", Router.uiRoute("demo", "three", "math"))
-        ),
-        "Geometries",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Geometries"),
         ul(
           demo("SphereGeometry", Router.uiRoute("demo", "three", "sphere")),
           demo("PlaneGeometry", Router.uiRoute("demo", "three", "plane")),
@@ -34,8 +41,11 @@ object HomePage:
           demo("LatheGeometry", Router.uiRoute("demo", "three", "lathe")),
           demo("TextGeometry", Router.uiRoute("demo", "three", "text")),
           demo("BufferGeometryUtils", Router.uiRoute("demo", "three", "bufferutils"))
-        ),
-        "Materials",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Materials"),
         ul(
           demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),
           demo("MeshStandardMaterial", Router.uiRoute("demo", "three", "material", "meshstandard")),
@@ -48,16 +58,22 @@ object HomePage:
           demo("ShaderMaterial", Router.uiRoute("demo", "three", "material", "shadermaterial")),
           demo("RawShaderMaterial", Router.uiRoute("demo", "three", "material", "rawshadermaterial")),
           demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial"))
-        ),
-        "Lighting",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Lighting"),
         ul(
           demo("PointLight", Router.uiRoute("demo", "three", "light", "pointlight")),
           demo("SpotLight", Router.uiRoute("demo", "three", "light", "spotlight")),
           demo("HemisphereLight", Router.uiRoute("demo", "three", "light", "hemispherelight")),
           demo("RectAreaLight", Router.uiRoute("demo", "three", "light", "rectarealight")),
           demo("LightProbe", Router.uiRoute("demo", "three", "light", "lightprobe"))
-        ),
-        "Objects & Effects",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Objects & Effects"),
         ul(
           demo("LOD", Router.uiRoute("demo", "three", "lod")),
           demo("SkinnedMesh", Router.uiRoute("demo", "three", "skinnedmesh")),
@@ -66,13 +82,19 @@ object HomePage:
           demo("Reflector", Router.uiRoute("demo", "three", "reflector")),
           demo("Refractor", Router.uiRoute("demo", "three", "refractor")),
           demo("Water", Router.uiRoute("demo", "three", "water"))
-        ),
-        "Animation & Audio",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Animation & Audio"),
         ul(
           demo("Animation", Router.uiRoute("demo", "three", "animation")),
           demo("Audio", Router.uiRoute("demo", "three", "audio"))
-        ),
-        "Post-Processing",
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Post-Processing"),
         ul(
           demo("PostProcessing", Router.uiRoute("demo", "three", "postprocessing")),
           demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders"))
