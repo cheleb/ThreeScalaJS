@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+h1 {
+  margin-left: 2em;
+}
+
 /** Reducing the size of ui5 inputs of type number to only 100px */
 ui5-input[type="Number"] {
   width: 100px;
@@ -140,5 +144,7 @@ ui5-input[type="Number"] {
 
 .demo {
   float: left;
-  margin: 2em;
+  margin: 5px;
+  padding: 1em;
+
 }

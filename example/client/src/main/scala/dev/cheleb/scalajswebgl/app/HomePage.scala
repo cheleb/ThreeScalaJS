@@ -6,7 +6,6 @@ object HomePage:
 
   def apply(): HtmlElement =
     div(
-      h1("Scala.js WebGL"),
       div(
         cls := "demo",
         h2("WebGL Fundamentals"),
