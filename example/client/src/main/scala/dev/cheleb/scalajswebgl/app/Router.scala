@@ -190,9 +190,9 @@ object Router:
                     dev.cheleb.scalajswebgl.samples.three.ScenePage()
                   }
                 )
-              },
-              pathEnd {
-                HomePage()
+                pathEnd {
+                  HomePage()
+                }
               }
             )
           },
