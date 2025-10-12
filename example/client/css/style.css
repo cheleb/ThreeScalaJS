@@ -137,3 +137,8 @@ ui5-input[type="Number"] {
   margin-left: 5px;
   cursor: pointer;
 }
+
+.demo {
+  float: left;
+  margin: 2em;
+}
