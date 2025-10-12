@@ -69,15 +69,15 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [ ] **SSRPass** - Screen space reflections
 - [ ] **SSAOPass** - Screen space ambient occlusion
 
-### **Advanced Loaders** (Missing Several)
-- **ObjectLoader** - Scene object loading
-- **MaterialLoader** - Material definition loading
-- **BufferGeometryLoader** - Geometry data loading
-- **ImageBitmapLoader** - Image bitmap loading
-- **FontLoader** - Font data for TextGeometry
-- **FileLoader** - Generic file loading
-- **AudioLoader** - Audio file loading
-- **SVGLoader** - SVG file parsing
+### **Advanced Loaders** (✅ **COMPLETED**)
+- [x] **ObjectLoader** - Scene object loading
+- [x] **MaterialLoader** - Material definition loading
+- [x] **BufferGeometryLoader** - Geometry data loading
+- [x] **ImageBitmapLoader** - Image bitmap loading
+- [x] **FontLoader** - Font data for TextGeometry
+- [x] **FileLoader** - Generic file loading
+- [x] **AudioLoader** - Audio file loading
+- [x] **SVGLoader** - SVG file parsing
 
 ### **Helpers and Utilities** (Mostly Missing)
 - **AxesHelper** - Coordinate axes visualization

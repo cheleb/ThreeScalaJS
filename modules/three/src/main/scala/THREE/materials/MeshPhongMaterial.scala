@@ -192,11 +192,13 @@ object MeshPhongMaterial:
     color: Int | String | Color = 0xffffff,
     wireframe: Boolean = false,
     specular: js.UndefOr[Int | String | Color] = js.undefined,
-    shininess: js.UndefOr[Double] = js.undefined
+    shininess: js.UndefOr[Double] = js.undefined,
+    map: js.UndefOr[Texture] = js.undefined
   ): MeshPhongMaterial = {
     val params = js.Dynamic.literal(
       color = color.asInstanceOf[js.Any],
-      wireframe = wireframe
+      wireframe = wireframe,
+      map = map
     )
 
     if (!js.isUndefined(specular)) params.specular = specular.asInstanceOf[js.Any]

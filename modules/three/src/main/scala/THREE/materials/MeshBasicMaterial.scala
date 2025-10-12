@@ -29,3 +29,5 @@ object MeshBasicMaterial:
 
   def apply(color: Int, wireframe: Boolean = false) =
     new MeshBasicMaterial(js.Dynamic.literal(color = color, wireframe = wireframe))
+  def apply(map: Texture, wireframe: Boolean) =
+    new MeshBasicMaterial(js.Dynamic.literal(map = map, wireframe = wireframe))

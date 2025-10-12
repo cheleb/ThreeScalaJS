@@ -107,6 +107,9 @@ object Router:
         path("postprocessing") {
           dev.cheleb.scalajswebgl.samples.three.PostProcessingSample()
         },
+        path("advancedloaders") {
+          dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {
