@@ -8,19 +8,20 @@ object HomePage:
     div(
       h1("Scala.js WebGL"),
       ul(
-        "Adammmuray",
-        ul(demo("Triangle", Router.uiRoute("demo", "webgl", "adammurray", "triangle"))),
-        "WebGL",
+        "WebGL Fundamentals",
         ul(
           demo("WebGL Sample", Router.uiRoute("demo", "webgl")),
           demo("Shaders", Router.uiRoute("demo", "webgl", "shaders")),
           demo("Triangle", Router.uiRoute("demo", "webgl", "adammurray", "triangle")),
           demo("Laminar WebGL Sample", Router.uiRoute("demo", "webgl", "detect"))
         ),
-        "ThreeJS",
+        "Three.js Basics",
         ul(
-          demo("Math", Router.uiRoute("demo", "three", "math")),
-          demo("ThreeJS", Router.uiRoute("demo", "three", "scene")),
+          demo("ThreeJS Scene", Router.uiRoute("demo", "three", "scene")),
+          demo("Math Utils", Router.uiRoute("demo", "three", "math"))
+        ),
+        "Geometries",
+        ul(
           demo("SphereGeometry", Router.uiRoute("demo", "three", "sphere")),
           demo("PlaneGeometry", Router.uiRoute("demo", "three", "plane")),
           demo("CylinderGeometry", Router.uiRoute("demo", "three", "cylinder")),
@@ -32,40 +33,49 @@ object HomePage:
           demo("ExtrudeGeometry", Router.uiRoute("demo", "three", "extrude")),
           demo("LatheGeometry", Router.uiRoute("demo", "three", "lathe")),
           demo("TextGeometry", Router.uiRoute("demo", "three", "text")),
-          demo("BufferGeometryUtils", Router.uiRoute("demo", "three", "bufferutils")),
+          demo("BufferGeometryUtils", Router.uiRoute("demo", "three", "bufferutils"))
+        ),
+        "Materials",
+        ul(
+          demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),
+          demo("MeshStandardMaterial", Router.uiRoute("demo", "three", "material", "meshstandard")),
+          demo("MeshPhysicalMaterial", Router.uiRoute("demo", "three", "material", "meshphysical")),
+          demo("MeshMatcapMaterial", Router.uiRoute("demo", "three", "material", "meshmatcap")),
+          demo("MeshNormalMaterial", Router.uiRoute("demo", "three", "material", "meshnormal")),
+          demo("MeshDepthMaterial", Router.uiRoute("demo", "three", "material", "meshdepth")),
+          demo("MeshDistanceMaterial", Router.uiRoute("demo", "three", "material", "meshdistance")),
+          demo("LineDashedMaterial", Router.uiRoute("demo", "three", "material", "linedashed")),
+          demo("ShaderMaterial", Router.uiRoute("demo", "three", "material", "shadermaterial")),
+          demo("RawShaderMaterial", Router.uiRoute("demo", "three", "material", "rawshadermaterial")),
+          demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial"))
+        ),
+        "Lighting",
+        ul(
+          demo("PointLight", Router.uiRoute("demo", "three", "light", "pointlight")),
+          demo("SpotLight", Router.uiRoute("demo", "three", "light", "spotlight")),
+          demo("HemisphereLight", Router.uiRoute("demo", "three", "light", "hemispherelight")),
+          demo("RectAreaLight", Router.uiRoute("demo", "three", "light", "rectarealight")),
+          demo("LightProbe", Router.uiRoute("demo", "three", "light", "lightprobe"))
+        ),
+        "Objects & Effects",
+        ul(
           demo("LOD", Router.uiRoute("demo", "three", "lod")),
           demo("SkinnedMesh", Router.uiRoute("demo", "three", "skinnedmesh")),
           demo("Sprite", Router.uiRoute("demo", "three", "sprite")),
           demo("LensFlare", Router.uiRoute("demo", "three", "lensflare")),
           demo("Reflector", Router.uiRoute("demo", "three", "reflector")),
           demo("Refractor", Router.uiRoute("demo", "three", "refractor")),
-          demo("Water", Router.uiRoute("demo", "three", "water")),
+          demo("Water", Router.uiRoute("demo", "three", "water"))
+        ),
+        "Animation & Audio",
+        ul(
           demo("Animation", Router.uiRoute("demo", "three", "animation")),
+          demo("Audio", Router.uiRoute("demo", "three", "audio"))
+        ),
+        "Post-Processing",
+        ul(
           demo("PostProcessing", Router.uiRoute("demo", "three", "postprocessing")),
-          demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders")),
-          demo("Audio", Router.uiRoute("demo", "three", "audio")),
-          "Materials",
-          ul(
-            demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),
-            demo("MeshStandardMaterial", Router.uiRoute("demo", "three", "material", "meshstandard")),
-            demo("MeshPhysicalMaterial", Router.uiRoute("demo", "three", "material", "meshphysical")),
-            demo("MeshMatcapMaterial", Router.uiRoute("demo", "three", "material", "meshmatcap")),
-            demo("MeshNormalMaterial", Router.uiRoute("demo", "three", "material", "meshnormal")),
-            demo("MeshDepthMaterial", Router.uiRoute("demo", "three", "material", "meshdepth")),
-            demo("MeshDistanceMaterial", Router.uiRoute("demo", "three", "material", "meshdistance")),
-            demo("LineDashedMaterial", Router.uiRoute("demo", "three", "material", "linedashed")),
-            demo("ShaderMaterial", Router.uiRoute("demo", "three", "material", "shadermaterial")),
-            demo("RawShaderMaterial", Router.uiRoute("demo", "three", "material", "rawshadermaterial")),
-            demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial"))
-          ),
-          "Lights",
-          ul(
-            demo("PointLight", Router.uiRoute("demo", "three", "light", "pointlight")),
-            demo("SpotLight", Router.uiRoute("demo", "three", "light", "spotlight")),
-            demo("HemisphereLight", Router.uiRoute("demo", "three", "light", "hemispherelight")),
-            demo("RectAreaLight", Router.uiRoute("demo", "three", "light", "rectarealight")),
-            demo("LightProbe", Router.uiRoute("demo", "three", "light", "lightprobe"))
-          )
+          demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders"))
         )
       )
     )
