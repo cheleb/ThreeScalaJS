@@ -12,8 +12,8 @@ object AudioSample {
 
   // Create audio listener and attach to camera
   val audioListener = new AudioListener()
-  val audioAnalyser = new AudioAnalyser(audioListener, 32)
   val audio         = new PositionalAudio(audioListener)
+  val audioAnalyser = new AudioAnalyser(audio, 32)
 
   def apply() =
 
@@ -104,10 +104,15 @@ object AudioSample {
       source2Mesh.scale.set(pulse * 1.2, pulse * 1.2, pulse * 1.2)
       source3Mesh.scale.set(pulse * 0.6, pulse * 0.6, pulse * 0.6)
 
-      // Update audio analyser (if needed for visualizations)
+      //   // Update audio analyser (if needed for visualizations)
       val frequencyData = audioAnalyser.getFrequencyData()
-      // Here you could use frequencyData to drive visual effects
+      //   // Here you could use frequencyData to drive visual effects
       source1Mesh.material.asInstanceOf[MeshBasicMaterial].color.setHSL(frequencyData(0) / 255.0, 1.0, 0.5)
+      source3Mesh.scale.set(
+        frequencyData(1) / 255.0 + 0.5,
+        frequencyData(1) / 255.0 + 0.5,
+        frequencyData(1) / 255.0 + 0.5
+      )
 
       renderer.render(scene, camera)
     }

@@ -10,7 +10,7 @@ import scala.scalajs.js.typedarray.Uint8Array
  */
 @js.native
 @JSImport("three", "AudioAnalyser")
-class AudioAnalyser(audio: js.Any, fftSize: js.UndefOr[Int] = js.undefined) extends js.Object {
+class AudioAnalyser(audio: Audio, fftSize: js.UndefOr[Int] = js.undefined) extends js.Object {
 
   /**
    * The analyser node for this analyser.
