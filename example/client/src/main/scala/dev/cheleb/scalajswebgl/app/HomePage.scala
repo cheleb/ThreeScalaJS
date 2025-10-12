@@ -40,6 +40,7 @@ object HomePage:
           demo("Reflector", Router.uiRoute("demo", "three", "reflector")),
           demo("Refractor", Router.uiRoute("demo", "three", "refractor")),
           demo("Water", Router.uiRoute("demo", "three", "water")),
+          demo("Animation", Router.uiRoute("demo", "three", "animation")),
           "Materials",
           ul(
             demo("MeshLambertMaterial", Router.uiRoute("demo", "three", "material", "meshlambert")),

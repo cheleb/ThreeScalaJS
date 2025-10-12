@@ -101,6 +101,9 @@ object Router:
         path("water") {
           dev.cheleb.scalajswebgl.samples.three.WaterSample()
         },
+        path("animation") {
+          dev.cheleb.scalajswebgl.samples.three.AnimationSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {
