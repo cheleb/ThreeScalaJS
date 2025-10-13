@@ -22,6 +22,6 @@ object Header:
           idAttr := profileId,
           img(src := "img/avatars/ono.png")
         ),
-        _.events.onProfileClick.mapTo("https://github.com/cheleb/ThreeScalaJS/") --> Router.writer
+        _.events.onProfileClick.mapTo("https://github.com/cheleb/") --> Router.writer
       )
     )
