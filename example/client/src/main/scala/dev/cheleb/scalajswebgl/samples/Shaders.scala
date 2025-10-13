@@ -4,6 +4,10 @@ import org.scalajs.dom.{WebGLRenderingContext => GL}
 import dev.cheleb.webgl.*
 import dev.cheleb.webglaminar.webglCanvas
 
+/**
+ * A simple example of WebGL2 rendering a green triangle using shaders.
+ */
+
 object Shaders {
 
   val vertexShader =
@@ -28,7 +32,7 @@ object Shaders {
        |}"""
 
   def apply() = webglCanvas(vertexShader, fragmentShader) { ctx =>
-    val gl = ctx.gl2
+    val gl       = ctx.gl2
     val vertices = Array(
       Coord(-1.0f, -1.0f, 0.0f), //
       Coord(1.0f, -1.0f, 0.0f),  //
