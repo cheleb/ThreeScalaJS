@@ -96,6 +96,7 @@ object HomePage:
         h2("Post-Processing"),
         ul(
           demo("PostProcessing", Router.uiRoute("demo", "three", "postprocessing")),
+          demo("GlitchPass", Router.uiRoute("demo", "three", "glitchpass")),
           demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders"))
         )
       )

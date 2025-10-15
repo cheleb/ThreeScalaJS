@@ -107,6 +107,9 @@ object Router:
         path("postprocessing") {
           dev.cheleb.scalajswebgl.samples.three.PostProcessingSample()
         },
+        path("glitchpass") {
+          dev.cheleb.scalajswebgl.samples.three.GlitchPassSample()
+        },
         path("advancedloaders") {
           dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
         },

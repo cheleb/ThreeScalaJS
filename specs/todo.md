@@ -64,7 +64,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **FilmPass** - Film grain effects
 - [x] **DotScreenPass** - Dot screen/halftone effects
 - [x] **UnrealBloomPass** - Advanced bloom effects
-- [ ] **GlitchPass** - Digital glitch effects
+- [x] **GlitchPass** - Digital glitch effects
 - [ ] **BokehPass** - Depth of field effects
 - [ ] **SSRPass** - Screen space reflections
 - [ ] **SSAOPass** - Screen space ambient occlusion
