@@ -96,7 +96,7 @@ object SSAOPassSample {
 
     // Create render pass
     val renderPass = RenderPass(scene, camera)
-    composer.addPass(renderPass)
+//    composer.addPass(renderPass)
 
     // Create SSAOPass for screen space ambient occlusion
     val ssaoPass = SSAOPass(
@@ -107,7 +107,7 @@ object SSAOPassSample {
       kernelSize = 32
     )
 
-//    val outputPass = OutputPass()
+    val outputPass = OutputPass()
 
     @nowarn
     var currentEffect: String = "none"
@@ -123,6 +123,8 @@ object SSAOPassSample {
         case "ssao" =>
           composer.addPass(renderPass)
           composer.addPass(ssaoPass)
+          composer.addPass(outputPass)
+
           currentEffect = "ssao"
         case _ =>
           composer.addPass(renderPass)
