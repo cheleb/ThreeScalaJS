@@ -110,6 +110,9 @@ object Router:
         path("glitchpass") {
           dev.cheleb.scalajswebgl.samples.three.GlitchPassSample()
         },
+        path("bokehpass") {
+          dev.cheleb.scalajswebgl.samples.three.BokehPassSample()
+        },
         path("advancedloaders") {
           dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
         },
