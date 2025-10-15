@@ -113,6 +113,9 @@ object Router:
         path("bokehpass") {
           dev.cheleb.scalajswebgl.samples.three.BokehPassSample()
         },
+        path("ssrpass") {
+          dev.cheleb.scalajswebgl.samples.three.SSRPassSample()
+        },
         path("advancedloaders") {
           dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
         },

@@ -66,7 +66,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **UnrealBloomPass** - Advanced bloom effects
 - [x] **GlitchPass** - Digital glitch effects
 - [x] **BokehPass** - Depth of field effects
-- [ ] **SSRPass** - Screen space reflections
+- [x] **SSRPass** - Screen space reflections
 - [ ] **SSAOPass** - Screen space ambient occlusion
 
 ### **Advanced Loaders** (✅ **COMPLETED**)
