@@ -116,6 +116,9 @@ object Router:
         path("ssrpass") {
           dev.cheleb.scalajswebgl.samples.three.SSRPassSample()
         },
+        path("ssaopass") {
+          dev.cheleb.scalajswebgl.samples.three.SSAOPassSample()
+        },
         path("advancedloaders") {
           dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
         },
