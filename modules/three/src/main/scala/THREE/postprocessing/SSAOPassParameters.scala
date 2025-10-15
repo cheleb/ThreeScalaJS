@@ -21,25 +21,25 @@ trait SSAOPassParameters extends js.Object {
 object SSAOPassParameters {
 
   def apply(
-    sceneValue: js.UndefOr[Scene] = js.undefined,
-    cameraValue: js.UndefOr[Camera] = js.undefined,
-    widthValue: js.UndefOr[Double] = js.undefined,
-    heightValue: js.UndefOr[Double] = js.undefined,
-    kernelSizeValue: js.UndefOr[Double] = js.undefined,
-    kernelRadiusValue: js.UndefOr[Double] = js.undefined,
-    minDistanceValue: js.UndefOr[Double] = js.undefined,
-    maxDistanceValue: js.UndefOr[Double] = js.undefined,
-    outputValue: js.UndefOr[Double] = js.undefined
+    pscene: js.UndefOr[Scene] = js.undefined,
+    pcamera: js.UndefOr[Camera] = js.undefined,
+    pwidth: js.UndefOr[Double] = js.undefined,
+    pheight: js.UndefOr[Double] = js.undefined,
+    pkernelSize: js.UndefOr[Double] = js.undefined,
+    pkernelRadius: js.UndefOr[Double] = js.undefined,
+    pminDistance: js.UndefOr[Double] = js.undefined,
+    pmaxDistance: js.UndefOr[Double] = js.undefined,
+    poutput: js.UndefOr[Double] = js.undefined
   ): SSAOPassParameters =
     new SSAOPassParameters {
-      this.scene = sceneValue
-      this.camera = cameraValue
-      this.width = widthValue
-      this.height = heightValue
-      this.kernelSize = kernelSizeValue
-      this.kernelRadius = kernelRadiusValue
-      this.minDistance = minDistanceValue
-      this.maxDistance = maxDistanceValue
-      this.output = outputValue
+      this.scene = pscene
+      this.camera = pcamera
+      this.width = pwidth
+      this.height = pheight
+      this.kernelSize = pkernelSize
+      this.kernelRadius = pkernelRadius
+      this.minDistance = pminDistance
+      this.maxDistance = pmaxDistance
+      this.output = poutput
     }
 }

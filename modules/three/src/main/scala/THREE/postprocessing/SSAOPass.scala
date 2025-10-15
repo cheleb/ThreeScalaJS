@@ -9,10 +9,9 @@ import scala.scalajs.js.annotation.*
  */
 @js.native
 @JSImport("three/examples/jsm/postprocessing/SSAOPass.js", "SSAOPass")
-class SSAOPass(parameters: SSAOPassParameters) extends EffectPass {
+class SSAOPass(scene: Scene, camera: Camera, width: Double = 512, height: Double = 512, kernelSize: Double = 32)
+    extends EffectPass {
 
-  var width: Double        = js.native
-  var height: Double       = js.native
   var kernelRadius: Double = js.native
   var minDistance: Double  = js.native
   var maxDistance: Double  = js.native
@@ -25,23 +24,13 @@ class SSAOPass(parameters: SSAOPassParameters) extends EffectPass {
 
 object SSAOPass {
 
-  def apply(parameters: SSAOPassParameters): SSAOPass =
-    new SSAOPass(parameters)
-
   def apply(
     scene: Scene,
     camera: Camera,
     width: Double = 512,
     height: Double = 512,
     kernelSize: Double = 32
-  ): SSAOPass = {
-    val parameters = SSAOPassParameters(
-      sceneValue = scene,
-      cameraValue = camera,
-      widthValue = width,
-      heightValue = height,
-      kernelSizeValue = kernelSize
-    )
-    new SSAOPass(parameters)
-  }
+  ): SSAOPass =
+    new SSAOPass(scene, camera, width, height, kernelSize)
+
 }
