@@ -107,6 +107,8 @@ object SSAOPassSample {
       kernelSize = 32
     )
 
+//    val outputPass = OutputPass()
+
     @nowarn
     var currentEffect: String = "none"
     var kernelRadius          = 8.0
