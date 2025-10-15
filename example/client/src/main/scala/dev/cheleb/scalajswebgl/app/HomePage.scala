@@ -98,6 +98,7 @@ object HomePage:
           demo("PostProcessing", Router.uiRoute("demo", "three", "postprocessing")),
           demo("GlitchPass", Router.uiRoute("demo", "three", "glitchpass")),
           demo("BokehPass", Router.uiRoute("demo", "three", "bokehpass")),
+          demo("SSRPass", Router.uiRoute("demo", "three", "ssrpass")),
           demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders"))
         )
       )
