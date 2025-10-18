@@ -81,7 +81,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **SVGLoader** - SVG file parsing
 
 ### **Helpers and Utilities** (Mostly Missing)
-- **AxesHelper** - Coordinate axes visualization
+- [x] **AxesHelper** - Coordinate axes visualization
 - **GridHelper** - Grid plane visualization
 - **PolarGridHelper** - Polar coordinate grid
 - **ArrowHelper** - Arrow direction indicator
