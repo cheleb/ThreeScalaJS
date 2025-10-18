@@ -80,6 +80,9 @@ object Router:
         path("bufferutils") {
           dev.cheleb.scalajswebgl.samples.three.BufferGeometryUtilsSample()
         },
+        path("axeshelper") {
+          dev.cheleb.scalajswebgl.samples.three.AxesHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
