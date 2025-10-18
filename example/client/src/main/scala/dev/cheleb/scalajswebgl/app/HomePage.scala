@@ -78,6 +78,7 @@ object HomePage:
           demo("SkinnedMesh", Router.uiRoute("demo", "three", "skinnedmesh")),
           demo("Sprite", Router.uiRoute("demo", "three", "sprite")),
           demo("AxesHelper", Router.uiRoute("demo", "three", "axeshelper")),
+          demo("GridHelper", Router.uiRoute("demo", "three", "gridhelper")),
           demo("LensFlare", Router.uiRoute("demo", "three", "lensflare")),
           demo("Reflector", Router.uiRoute("demo", "three", "reflector")),
           demo("Refractor", Router.uiRoute("demo", "three", "refractor")),

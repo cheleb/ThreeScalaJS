@@ -83,6 +83,9 @@ object Router:
         path("axeshelper") {
           dev.cheleb.scalajswebgl.samples.three.AxesHelperSample()
         },
+        path("gridhelper") {
+          dev.cheleb.scalajswebgl.samples.three.GridHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
