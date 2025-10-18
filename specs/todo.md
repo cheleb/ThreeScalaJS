@@ -67,7 +67,8 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **GlitchPass** - Digital glitch effects
 - [x] **BokehPass** - Depth of field effects
 - [x] **SSRPass** - Screen space reflections
-- [ ] **SSAOPass** - Screen space ambient occlusion
+- [x] **SSAOPass** - Screen space ambient occlusion
+- [x] **OutputPass** - Tone mapping and color space conversion
 
 ### **Advanced Loaders** (✅ **COMPLETED**)
 - [x] **ObjectLoader** - Scene object loading

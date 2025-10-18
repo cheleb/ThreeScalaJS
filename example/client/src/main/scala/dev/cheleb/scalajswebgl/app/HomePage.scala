@@ -99,6 +99,8 @@ object HomePage:
           demo("GlitchPass", Router.uiRoute("demo", "three", "glitchpass")),
           demo("BokehPass", Router.uiRoute("demo", "three", "bokehpass")),
           demo("SSRPass", Router.uiRoute("demo", "three", "ssrpass")),
+          demo("SSAOPass", Router.uiRoute("demo", "three", "ssaopass")),
+          demo("OutputPass", Router.uiRoute("demo", "three", "outputpass")),
           demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders"))
         )
       )
