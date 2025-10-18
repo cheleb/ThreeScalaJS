@@ -86,6 +86,9 @@ object Router:
         path("gridhelper") {
           dev.cheleb.scalajswebgl.samples.three.GridHelperSample()
         },
+        path("polargridhelper") {
+          dev.cheleb.scalajswebgl.samples.three.PolarGridHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
