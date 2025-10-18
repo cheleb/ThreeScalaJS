@@ -75,7 +75,8 @@ object HomePage:
         h2("Helpers and Utilities"),
         ul(
           demo("AxesHelper", Router.uiRoute("demo", "three", "axeshelper")),
-          demo("GridHelper", Router.uiRoute("demo", "three", "gridhelper"))
+          demo("GridHelper", Router.uiRoute("demo", "three", "gridhelper")),
+          demo("PolarGridHelper", Router.uiRoute("demo", "three", "polargridhelper"))
         )
       ),
       div(
