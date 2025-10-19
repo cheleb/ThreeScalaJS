@@ -35,12 +35,12 @@ object ShadowMaterialSample:
     val groundGeometry = PlaneGeometry(10, 10)
     groundGeometry.rotateX(-scala.math.Pi / 2) // Rotate to be horizontal
 
-    val groundMaterial = new ShadowMaterial(
-      js.Dynamic.literal(
-        color = 0x000000,
-        transparent = true
-      )
+    val groundMaterial = ShadowMaterial(
+      color = 0x000000,
+      transparent = true,
+      fog = false
     )
+
     groundMaterial.opacity = 0.3
 
     val ground = Mesh(groundGeometry, groundMaterial)

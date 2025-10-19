@@ -36,6 +36,18 @@ class ShadowMaterial(parameters: js.Object = js.Object()) extends Material {
 /**
  * Companion object for ShadowMaterial with factory method
  */
-@js.native
-@JSImport("three", "ShadowMaterial")
-object ShadowMaterial extends js.Object
+// Manual customization of the constructor
+object ShadowMaterial:
+
+  def apply(
+    color: Int = 0x000000,
+    transparent: Boolean = true,
+    fog: Boolean = true
+  ) =
+    new ShadowMaterial(
+      js.Dynamic.literal(
+        color = color,
+        transparent = transparent,
+        fog = fog
+      )
+    )
