@@ -85,7 +85,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **GridHelper** - Grid plane visualization
 - [x] **PolarGridHelper** - Polar coordinate grid
 - [x] **ArrowHelper** - Arrow direction indicator
-- **Box3Helper** - Box3 bounding box visualization
+- [x] **Box3Helper** - Box3 bounding box visualization
 - **BoxHelper** - Object bounding box
 - **CameraHelper** - Camera frustum visualization
 - **DirectionalLightHelper** - Light direction visualization
