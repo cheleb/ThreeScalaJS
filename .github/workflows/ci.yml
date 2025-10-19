@@ -13,7 +13,7 @@ jobs:
       - name: Setup JVM
         uses: actions/setup-java@v5
         with:
-          java-version: "23"
+          java-version: "25"
           distribution: "zulu"
           cache: "sbt"
       - name: Install sbt
