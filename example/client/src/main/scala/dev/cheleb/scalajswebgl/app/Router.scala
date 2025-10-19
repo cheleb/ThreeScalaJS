@@ -143,6 +143,9 @@ object Router:
         path("animation") {
           dev.cheleb.scalajswebgl.samples.three.AnimationSample()
         },
+        path("fog") {
+          dev.cheleb.scalajswebgl.samples.three.FogSample()
+        },
         path("postprocessing") {
           dev.cheleb.scalajswebgl.samples.three.PostProcessingSample()
         },
