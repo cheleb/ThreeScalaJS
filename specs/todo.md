@@ -87,7 +87,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **ArrowHelper** - Arrow direction indicator
 - [x] **Box3Helper** - Box3 bounding box visualization
 - [x] **BoxHelper** - Object bounding box
-- **CameraHelper** - Camera frustum visualization
+- [x] **CameraHelper** - Camera frustum visualization
 - **DirectionalLightHelper** - Light direction visualization
 - **FaceNormalsHelper** - Face normal visualization
 - **PlaneHelper** - Plane visualization

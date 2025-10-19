@@ -79,7 +79,8 @@ object HomePage:
           demo("PolarGridHelper", Router.uiRoute("demo", "three", "polargridhelper")),
           demo("ArrowHelper", Router.uiRoute("demo", "three", "arrowhelper")),
           demo("Box3Helper", Router.uiRoute("demo", "three", "box3helper")),
-          demo("BoxHelper", Router.uiRoute("demo", "three", "boxhelper"))
+          demo("BoxHelper", Router.uiRoute("demo", "three", "boxhelper")),
+          demo("CameraHelper", Router.uiRoute("demo", "three", "camerahelper"))
         )
       ),
       div(
