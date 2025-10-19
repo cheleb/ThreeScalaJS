@@ -90,7 +90,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **CameraHelper** - Camera frustum visualization
 - [x] **DirectionalLightHelper** - Light direction visualization
 - [-] **FaceNormalsHelper** - Face normal visualization
-- **PlaneHelper** - Plane visualization
+- [x] **PlaneHelper** - Plane visualization
 - **PointLightHelper** - Point light visualization
 - **SkeletonHelper** - Skeleton bone visualization
 - **SpotLightHelper** - Spot light visualization

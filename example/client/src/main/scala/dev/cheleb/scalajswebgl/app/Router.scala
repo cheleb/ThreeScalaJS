@@ -107,6 +107,9 @@ object Router:
         path("vertexnormalshelper") {
           dev.cheleb.scalajswebgl.samples.three.VertexNormalsHelperSample()
         },
+        path("planehelper") {
+          dev.cheleb.scalajswebgl.samples.three.PlaneHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
