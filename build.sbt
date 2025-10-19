@@ -71,7 +71,8 @@ lazy val root = project
     three
   )
   .settings(
-    publish / skip := true
+    publish / skip                             := true,
+    ScalaUnidoc / unidoc / unidocProjectFilter := inAnyProject -- inProjects(client)
   )
 
 val usedScalacOptions = Seq(
