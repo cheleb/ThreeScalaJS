@@ -101,6 +101,9 @@ object Router:
         path("camerahelper") {
           dev.cheleb.scalajswebgl.samples.three.CameraHelperSample()
         },
+        path("directionallighthelper") {
+          dev.cheleb.scalajswebgl.samples.three.DirectionalLightHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },

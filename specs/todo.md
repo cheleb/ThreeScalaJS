@@ -88,7 +88,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **Box3Helper** - Box3 bounding box visualization
 - [x] **BoxHelper** - Object bounding box
 - [x] **CameraHelper** - Camera frustum visualization
-- **DirectionalLightHelper** - Light direction visualization
+- [x] **DirectionalLightHelper** - Light direction visualization
 - **FaceNormalsHelper** - Face normal visualization
 - **PlaneHelper** - Plane visualization
 - **PointLightHelper** - Point light visualization
