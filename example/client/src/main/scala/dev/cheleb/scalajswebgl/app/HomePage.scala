@@ -83,7 +83,8 @@ object HomePage:
           demo("CameraHelper", Router.uiRoute("demo", "three", "camerahelper")),
           demo("DirectionalLightHelper", Router.uiRoute("demo", "three", "directionallighthelper")),
           demo("VertexNormalsHelper", Router.uiRoute("demo", "three", "vertexnormalshelper")),
-          demo("PlaneHelper", Router.uiRoute("demo", "three", "planehelper"))
+          demo("PlaneHelper", Router.uiRoute("demo", "three", "planehelper")),
+          demo("PointLightHelper", Router.uiRoute("demo", "three", "pointlighthelper"))
         )
       ),
       div(

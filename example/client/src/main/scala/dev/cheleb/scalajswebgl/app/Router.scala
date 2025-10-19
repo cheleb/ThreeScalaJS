@@ -110,6 +110,9 @@ object Router:
         path("planehelper") {
           dev.cheleb.scalajswebgl.samples.three.PlaneHelperSample()
         },
+        path("pointlighthelper") {
+          dev.cheleb.scalajswebgl.samples.three.PointLightHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
