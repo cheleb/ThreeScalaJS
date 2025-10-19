@@ -94,7 +94,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - **PointLightHelper** - Point light visualization
 - **SkeletonHelper** - Skeleton bone visualization
 - **SpotLightHelper** - Spot light visualization
-- **VertexNormalsHelper** - Vertex normal visualization
+- [x] **VertexNormalsHelper** - Vertex normal visualization
 
 ### **Fog Effects** (Completely Missing)
 - **Fog** - Linear fog effect

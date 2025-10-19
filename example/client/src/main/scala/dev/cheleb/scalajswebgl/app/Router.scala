@@ -104,6 +104,9 @@ object Router:
         path("directionallighthelper") {
           dev.cheleb.scalajswebgl.samples.three.DirectionalLightHelperSample()
         },
+        path("vertexnormalshelper") {
+          dev.cheleb.scalajswebgl.samples.three.VertexNormalsHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
