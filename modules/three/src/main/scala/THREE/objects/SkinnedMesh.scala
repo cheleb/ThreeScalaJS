@@ -17,7 +17,10 @@ import scala.scalajs.js.|
  */
 @js.native
 @JSImport("three", "SkinnedMesh")
-class SkinnedMesh extends Mesh {
+class SkinnedMesh(
+  geo: js.UndefOr[BufferGeometry] = js.undefined,
+  mat: js.UndefOr[Material | js.Array[Material]] = js.undefined
+) extends Mesh(geo, mat) {
 
   /**
    * This flag can be used for type testing.
