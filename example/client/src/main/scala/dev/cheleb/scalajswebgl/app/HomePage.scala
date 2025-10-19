@@ -85,7 +85,8 @@ object HomePage:
           demo("VertexNormalsHelper", Router.uiRoute("demo", "three", "vertexnormalshelper")),
           demo("PlaneHelper", Router.uiRoute("demo", "three", "planehelper")),
           demo("PointLightHelper", Router.uiRoute("demo", "three", "pointlighthelper")),
-          demo("SkeletonHelper", Router.uiRoute("demo", "three", "skeletonhelper"))
+          demo("SkeletonHelper", Router.uiRoute("demo", "three", "skeletonhelper")),
+          demo("SpotLightHelper", Router.uiRoute("demo", "three", "spotlighthelper"))
         )
       ),
       div(
