@@ -116,6 +116,9 @@ object Router:
         path("skeletonhelper") {
           dev.cheleb.scalajswebgl.samples.three.SkeletonHelperSample()
         },
+        path("spotlighthelper") {
+          dev.cheleb.scalajswebgl.samples.three.SpotLightHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
