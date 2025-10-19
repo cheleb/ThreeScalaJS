@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.*
  */
 @js.native
 @JSImport("three", "ShadowMaterial")
-class ShadowMaterial(parameters: js.UndefOr[js.Object] = js.undefined) extends Material {
+class ShadowMaterial(parameters: js.Object = js.Object()) extends Material {
 
   /**
    * This flag can be used for type testing.
@@ -24,20 +24,18 @@ class ShadowMaterial(parameters: js.UndefOr[js.Object] = js.undefined) extends M
    * Whether the material is affected by fog or not.
    */
   var fog: Boolean = js.native
+
+  /**
+   * Copies the values of the given material instance to this instance.
+   */
+  override def copy(material: Material): this.type = js.native
+
+  def this() = this(js.Object())
 }
 
-// Manual customization of the constructor
-object ShadowMaterial:
-
-  def apply(
-    color: Int = 0x000000,
-    transparent: Boolean = true,
-    fog: Boolean = true
-  ) =
-    new ShadowMaterial(
-      js.Dynamic.literal(
-        color = color,
-        transparent = transparent,
-        fog = fog
-      )
-    )
+/**
+ * Companion object for ShadowMaterial with factory method
+ */
+@js.native
+@JSImport("three", "ShadowMaterial")
+object ShadowMaterial extends js.Object

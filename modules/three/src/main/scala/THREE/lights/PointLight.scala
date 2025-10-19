@@ -32,7 +32,7 @@ class PointLight(
   /**
    * The light's shadow configuration.
    */
-  var shadow: js.Object = js.native
+  var shadow: PointLightShadow = js.native
 
   /**
    * The light's power in lumens.

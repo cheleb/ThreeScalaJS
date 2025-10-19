@@ -146,6 +146,9 @@ object Router:
         path("fog") {
           dev.cheleb.scalajswebgl.samples.three.FogSample()
         },
+        path("shadows") {
+          dev.cheleb.scalajswebgl.samples.three.ShadowSample()
+        },
         path("postprocessing") {
           dev.cheleb.scalajswebgl.samples.three.PostProcessingSample()
         },

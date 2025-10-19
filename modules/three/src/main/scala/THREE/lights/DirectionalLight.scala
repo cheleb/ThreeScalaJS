@@ -24,7 +24,7 @@ class DirectionalLight(
   /**
    * Shadow camera frustum far plane.
    */
-  var shadow: js.Object = js.native
+  var shadow: DirectionalLightShadow = js.native
 
 }
 

@@ -52,7 +52,7 @@ class SpotLight(
   /**
    * The light's shadow configuration.
    */
-  var shadow: js.Object = js.native
+  var shadow: SpotLightShadow = js.native
 
   /**
    * The light's power in lumens.
