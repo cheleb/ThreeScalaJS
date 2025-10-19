@@ -95,6 +95,9 @@ object Router:
         path("box3helper") {
           dev.cheleb.scalajswebgl.samples.three.Box3HelperSample()
         },
+        path("boxhelper") {
+          dev.cheleb.scalajswebgl.samples.three.BoxHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
