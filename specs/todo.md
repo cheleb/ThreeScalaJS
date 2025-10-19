@@ -92,7 +92,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [-] **FaceNormalsHelper** - Face normal visualization
 - [x] **PlaneHelper** - Plane visualization
 - [x] **PointLightHelper** - Point light visualization
-- **SkeletonHelper** - Skeleton bone visualization
+- [x] **SkeletonHelper** - Skeleton bone visualization
 - **SpotLightHelper** - Spot light visualization
 - [x] **VertexNormalsHelper** - Vertex normal visualization
 
