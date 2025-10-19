@@ -98,6 +98,9 @@ object Router:
         path("boxhelper") {
           dev.cheleb.scalajswebgl.samples.three.BoxHelperSample()
         },
+        path("camerahelper") {
+          dev.cheleb.scalajswebgl.samples.three.CameraHelperSample()
+        },
         path("lod") {
           dev.cheleb.scalajswebgl.samples.three.LODSample()
         },
