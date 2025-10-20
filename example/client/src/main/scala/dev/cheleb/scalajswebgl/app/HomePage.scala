@@ -56,7 +56,8 @@ object HomePage:
           demo("LineDashedMaterial", Router.uiRoute("demo", "three", "material", "linedashed")),
           demo("ShaderMaterial", Router.uiRoute("demo", "three", "material", "shadermaterial")),
           demo("RawShaderMaterial", Router.uiRoute("demo", "three", "material", "rawshadermaterial")),
-          demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial"))
+          demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial")),
+          demo("LinearFilter", Router.uiRoute("demo", "three", "linearfilter"))
         )
       ),
       div(
