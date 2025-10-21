@@ -13,18 +13,12 @@ val LinearSRGBColorSpace: String = js.native
 
 @js.native
 @JSImport("three", "SRGBTransfer")
-object SRGBTransfer extends js.Object {
-  override def toString(): String = js.native
-}
+val SRGBTransfer: String = js.native
 
 @js.native
 @JSImport("three", "LinearTransfer")
-object LinearTransfer extends js.Object {
-  override def toString(): String = js.native
-}
+val LinearTransfer: String = js.native
 
 @js.native
 @JSImport("three", "NoColorSpace")
-object NoColorSpace extends js.Object {
-  override def toString(): String = js.native
-}
+val NoColorSpace: String = js.native
