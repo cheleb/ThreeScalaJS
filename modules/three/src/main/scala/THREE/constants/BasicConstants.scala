@@ -10,8 +10,7 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "REVISION")
-object REVISION extends js.Object:
-  override def toString(): String = js.native
+val REVISION: Int = js.native
 
 /**
  * Represents mouse buttons and interaction types in context of controls.

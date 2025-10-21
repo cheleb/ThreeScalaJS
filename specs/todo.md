@@ -79,6 +79,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **FileLoader** - Generic file loading
 - [x] **AudioLoader** - Audio file loading
 - [x] **SVGLoader** - SVG file parsing
+- [x] **DDSLoader** - DDS compressed texture loading
 
 ### **Helpers and Utilities** (Mostly Missing)
 - [x] **AxesHelper** - Coordinate axes visualization
@@ -106,7 +107,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **Shadow materials** - Shadow rendering materials
 
 ### **Advanced Textures** (Missing Several)
-- **CompressedTexture** - Compressed texture formats
+- [x] **CompressedTexture** - Compressed texture formats
 - **DepthTexture** - Depth buffer textures
 - **FramebufferTexture** - Render target textures
 

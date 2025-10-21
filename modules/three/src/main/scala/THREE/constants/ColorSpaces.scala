@@ -5,15 +5,11 @@ import scala.scalajs.js.annotation._
 
 @js.native
 @JSImport("three", "SRGBColorSpace")
-object SRGBColorSpace extends js.Object {
-  override def toString(): String = js.native
-}
+val SRGBColorSpace: String = js.native
 
 @js.native
 @JSImport("three", "LinearSRGBColorSpace")
-object LinearSRGBColorSpace extends js.Object {
-  override def toString(): String = js.native
-}
+val LinearSRGBColorSpace: String = js.native
 
 @js.native
 @JSImport("three", "SRGBTransfer")
