@@ -114,7 +114,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 ### **Renderers** (Missing Advanced Features)
 - [x] **WebGL2Renderer** - WebGL 2.0 features
 - [x] **WebGLMultipleRenderTargets** - Multiple render targets
-- **WebGLRenderTarget** - Custom render targets
+- [x] **WebGLRenderTarget** - Custom render targets
 - **WebGLCubeRenderTarget** - Cube map render targets
 
 ### **Audio** (✅ **COMPLETED**)
