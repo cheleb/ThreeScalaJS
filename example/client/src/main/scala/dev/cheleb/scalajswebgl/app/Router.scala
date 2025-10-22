@@ -252,6 +252,9 @@ object Router:
         },
         path("dragcontrols") {
           dev.cheleb.scalajswebgl.samples.three.DragControlsSample()
+        },
+        path("transformcontrols") {
+          dev.cheleb.scalajswebgl.samples.three.TransformControlsSample()
         }
       )
     }
