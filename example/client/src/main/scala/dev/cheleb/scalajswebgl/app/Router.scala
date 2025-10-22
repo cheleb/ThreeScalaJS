@@ -264,6 +264,9 @@ object Router:
         },
         path("firstpersoncontrols") {
           dev.cheleb.scalajswebgl.samples.three.FirstPersonControlsSample()
+        },
+        path("trackballcontrols") {
+          dev.cheleb.scalajswebgl.samples.three.TrackballControlsSample()
         }
       )
     }

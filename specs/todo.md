@@ -131,7 +131,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **FlyControls** - Flight simulator controls
 - [-] **DeviceOrientationControls** - Mobile device orientation
 - [x] **FirstPersonControls** - First-person camera controls
-- **TrackballControls** - Trackball camera manipulation
+- [x] **TrackballControls** - Trackball camera manipulation
 
 ### **Curves and Paths** (Completely Missing)
 - **Curve** - Base curve class
