@@ -128,7 +128,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **TransformControls** - Gizmo-based transformation
 - [x] **PointerLockControls** - Mouse lock for FPS controls
 - [o] **DeviceOrientationControls** - Mobile device orientation
-- **FlyControls** - Flight simulator controls
+- [x] **FlyControls** - Flight simulator controls
 - **FirstPersonControls** - First-person camera controls
 - **TrackballControls** - Trackball camera manipulation
 
