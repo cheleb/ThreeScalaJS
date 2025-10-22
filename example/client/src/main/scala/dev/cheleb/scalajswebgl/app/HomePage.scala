@@ -133,7 +133,8 @@ object HomePage:
         cls := "demo",
         h2("Controls"),
         ul(
-          demo("DragControls", Router.uiRoute("demo", "three", "dragcontrols"))
+          demo("DragControls", Router.uiRoute("demo", "three", "dragcontrols")),
+          demo("TransformControls", Router.uiRoute("demo", "three", "transformcontrols"))
         )
       ),
       div(

@@ -125,7 +125,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 
 ### **Advanced Controls** (Missing)
 - [x] **DragControls** - Drag object manipulation
-- **TransformControls** - Gizmo-based transformation
+- [x] **TransformControls** - Gizmo-based transformation
 - **PointerLockControls** - Mouse lock for FPS controls
 - **DeviceOrientationControls** - Mobile device orientation
 - **FlyControls** - Flight simulator controls
