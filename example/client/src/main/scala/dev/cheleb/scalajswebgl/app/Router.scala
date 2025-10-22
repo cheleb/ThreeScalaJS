@@ -261,6 +261,9 @@ object Router:
         },
         path("flycontrols") {
           dev.cheleb.scalajswebgl.samples.three.FlyControlsSample()
+        },
+        path("firstpersoncontrols") {
+          dev.cheleb.scalajswebgl.samples.three.FirstPersonControlsSample()
         }
       )
     }
