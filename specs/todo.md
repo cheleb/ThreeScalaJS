@@ -129,6 +129,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **PointerLockControls** - Mouse lock for FPS controls
 - [o] **DeviceOrientationControls** - Mobile device orientation
 - [x] **FlyControls** - Flight simulator controls
+- [-] **DeviceOrientationControls** - Mobile device orientation
 - **FirstPersonControls** - First-person camera controls
 - **TrackballControls** - Trackball camera manipulation
 
