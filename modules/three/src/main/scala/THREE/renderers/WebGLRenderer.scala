@@ -48,6 +48,8 @@ class WebGLRenderer(parameters: js.UndefOr[js.Object] = js.undefined) extends js
   def render(scene: Object3D, camera: Camera): Unit        = js.native
   def setAnimationLoop(callback: js.Function0[Unit]): Unit = js.native
 
+  def copyFramebufferToTexture(texture: FramebufferTexture, position: Vector2 = null, level: Int = 0): Unit = js.native
+
   def info: js.Object = js.native
 }
 

@@ -59,6 +59,7 @@ object HomePage:
           demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial")),
           demo("CompressedTexture", Router.uiRoute("demo", "three", "compressedtexture")),
           demo("DepthTexture", Router.uiRoute("demo", "three", "depthtexture")),
+          demo("FramebufferTexture", Router.uiRoute("demo", "three", "framebuffertexture")),
           demo("DDSLoader", Router.uiRoute("demo", "three", "ddsloader"))
         )
       ),
