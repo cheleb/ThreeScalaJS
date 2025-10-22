@@ -9,9 +9,8 @@ import scala.scalajs.js.annotation._
  *   2200
  */
 @js.native
-@JSImport("three", "LoopRepeat")
-object LoopRepeat extends js.Object:
-  override def toString(): String = js.native
+@JSGlobal("THREE.LoopRepeat")
+val LoopRepeat: Int = js.native
 
 /**
  * Loop once mode.
@@ -19,9 +18,8 @@ object LoopRepeat extends js.Object:
  *   2201
  */
 @js.native
-@JSImport("three", "LoopOnce")
-object LoopOnce extends js.Object:
-  override def toString(): String = js.native
+@JSGlobal("THREE.LoopOnce")
+val LoopOnce: Int = js.native
 
 /**
  * Loop ping pong mode.
@@ -29,6 +27,5 @@ object LoopOnce extends js.Object:
  *   2202
  */
 @js.native
-@JSImport("three", "LoopPingPong")
-object LoopPingPong extends js.Object:
-  override def toString(): String = js.native
+@JSGlobal("THREE.LoopPingPong")
+val LoopPingPong: Int = js.native

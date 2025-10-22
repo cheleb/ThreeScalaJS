@@ -1,6 +1,5 @@
 package THREE
 
-import THREE._
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*
 import org.scalajs.dom

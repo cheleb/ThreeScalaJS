@@ -10,8 +10,7 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "NormalAnimationBlendMode")
-object NormalAnimationBlendMode extends js.Object:
-  override def toString(): String = js.native
+val NormalAnimationBlendMode: Int = js.native
 
 /**
  * Additive animation blend mode.
@@ -20,5 +19,4 @@ object NormalAnimationBlendMode extends js.Object:
  */
 @js.native
 @JSImport("three", "AdditiveAnimationBlendMode")
-object AdditiveAnimationBlendMode extends js.Object:
-  override def toString(): String = js.native
+val AdditiveAnimationBlendMode: Int = js.native

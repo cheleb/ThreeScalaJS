@@ -79,6 +79,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **FileLoader** - Generic file loading
 - [x] **AudioLoader** - Audio file loading
 - [x] **SVGLoader** - SVG file parsing
+- [x] **DDSLoader** - DDS compressed texture loading
 
 ### **Helpers and Utilities** (Mostly Missing)
 - [x] **AxesHelper** - Coordinate axes visualization

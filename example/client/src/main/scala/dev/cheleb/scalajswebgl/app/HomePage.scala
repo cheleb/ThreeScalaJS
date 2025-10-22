@@ -57,7 +57,9 @@ object HomePage:
           demo("ShaderMaterial", Router.uiRoute("demo", "three", "material", "shadermaterial")),
           demo("RawShaderMaterial", Router.uiRoute("demo", "three", "material", "rawshadermaterial")),
           demo("ShadowMaterial", Router.uiRoute("demo", "three", "material", "shadowmaterial")),
-          demo("LinearFilter", Router.uiRoute("demo", "three", "linearfilter"))
+          demo("LinearFilter", Router.uiRoute("demo", "three", "linearfilter")),
+          demo("CompressedTexture", Router.uiRoute("demo", "three", "compressedtexture")),
+          demo("DDSLoader", Router.uiRoute("demo", "three", "ddsloader"))
         )
       ),
       div(
