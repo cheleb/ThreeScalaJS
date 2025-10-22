@@ -134,7 +134,8 @@ object HomePage:
         h2("Renderers"),
         ul(
           demo("WebGL2Renderer", Router.uiRoute("demo", "three", "webgl2renderer")),
-          demo("WebGLMultipleRenderTargets", Router.uiRoute("demo", "three", "webglmultiplerendertargets"))
+          demo("WebGLMultipleRenderTargets", Router.uiRoute("demo", "three", "webglmultiplerendertargets")),
+          demo("WebGLCubeRenderTarget", Router.uiRoute("demo", "three", "webglcuberendertarget"))
         )
       )
     )
