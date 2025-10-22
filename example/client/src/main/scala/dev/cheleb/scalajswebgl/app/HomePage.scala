@@ -21,7 +21,8 @@ object HomePage:
         h2("Three.js Basics"),
         ul(
           demo("ThreeJS Scene", Router.uiRoute("demo", "three", "scene")),
-          demo("Math Utils", Router.uiRoute("demo", "three", "math"))
+          demo("Math Utils", Router.uiRoute("demo", "three", "math")),
+          demo("Curves", Router.uiRoute("demo", "three", "curve"))
         )
       ),
       div(

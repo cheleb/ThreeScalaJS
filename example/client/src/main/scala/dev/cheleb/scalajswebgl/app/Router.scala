@@ -267,6 +267,9 @@ object Router:
         },
         path("trackballcontrols") {
           dev.cheleb.scalajswebgl.samples.three.TrackballControlsSample()
+        },
+        path("curve") {
+          dev.cheleb.scalajswebgl.samples.three.CurveSample()
         }
       )
     }
