@@ -112,7 +112,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 - [x] **FramebufferTexture** - Render target textures
 
 ### **Renderers** (Missing Advanced Features)
-- **WebGL2Renderer** - WebGL 2.0 features
+- [x] **WebGL2Renderer** - WebGL 2.0 features
 - **WebGLMultipleRenderTargets** - Multiple render targets
 - **WebGLRenderTarget** - Custom render targets
 - **WebGLCubeRenderTarget** - Cube map render targets

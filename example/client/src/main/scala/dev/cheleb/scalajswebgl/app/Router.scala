@@ -240,6 +240,9 @@ object Router:
               dev.cheleb.scalajswebgl.samples.three.LightProbeSample()
             }
           )
+        },
+        path("webgl2renderer") {
+          dev.cheleb.scalajswebgl.samples.three.WebGL2RendererSample()
         }
       )
     }
