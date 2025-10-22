@@ -249,6 +249,9 @@ object Router:
         },
         path("webglcuberendertarget") {
           dev.cheleb.scalajswebgl.samples.three.WebGLCubeRenderTargetSample()
+        },
+        path("dragcontrols") {
+          dev.cheleb.scalajswebgl.samples.three.DragControlsSample()
         }
       )
     }
