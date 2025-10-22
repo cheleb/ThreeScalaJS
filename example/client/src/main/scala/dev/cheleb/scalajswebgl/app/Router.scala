@@ -243,6 +243,9 @@ object Router:
         },
         path("webgl2renderer") {
           dev.cheleb.scalajswebgl.samples.three.WebGL2RendererSample()
+        },
+        path("webglmultiplerendertargets") {
+          dev.cheleb.scalajswebgl.samples.three.WebGLMultipleRenderTargetsSample()
         }
       )
     }
