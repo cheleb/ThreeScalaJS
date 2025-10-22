@@ -131,6 +131,13 @@ object HomePage:
       ),
       div(
         cls := "demo",
+        h2("Controls"),
+        ul(
+          demo("DragControls", Router.uiRoute("demo", "three", "dragcontrols"))
+        )
+      ),
+      div(
+        cls := "demo",
         h2("Renderers"),
         ul(
           demo("WebGL2Renderer", Router.uiRoute("demo", "three", "webgl2renderer")),
