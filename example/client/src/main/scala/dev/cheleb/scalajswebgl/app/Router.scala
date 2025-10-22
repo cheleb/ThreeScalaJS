@@ -258,6 +258,9 @@ object Router:
         },
         path("pointerlockcontrols") {
           dev.cheleb.scalajswebgl.samples.three.PointerLockControlsSample()
+        },
+        path("flycontrols") {
+          dev.cheleb.scalajswebgl.samples.three.FlyControlsSample()
         }
       )
     }
