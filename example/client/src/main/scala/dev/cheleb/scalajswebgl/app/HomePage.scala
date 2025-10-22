@@ -128,6 +128,13 @@ object HomePage:
           demo("OutputPass", Router.uiRoute("demo", "three", "outputpass")),
           demo("AdvancedLoaders", Router.uiRoute("demo", "three", "advancedloaders"))
         )
+      ),
+      div(
+        cls := "demo",
+        h2("Renderers"),
+        ul(
+          demo("WebGL2Renderer", Router.uiRoute("demo", "three", "webgl2renderer"))
+        )
       )
     )
 
