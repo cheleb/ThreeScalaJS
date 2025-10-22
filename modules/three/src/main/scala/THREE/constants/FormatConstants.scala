@@ -9,24 +9,21 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "AlphaFormat")
-object AlphaFormat extends js.Object:
-  override def toString(): String = js.native
+val AlphaFormat: Int = js.native
 
 /**
  * Discards the alpha component and reads the red, green and blue component.
  */
 @js.native
 @JSImport("three", "RGBFormat")
-object RGBFormat extends js.Object:
-  override def toString(): String = js.native
+val RGBFormat: Int = js.native
 
 /**
  * Reads the red, green, blue and alpha components.
  */
 @js.native
 @JSImport("three", "RGBAFormat")
-object RGBAFormat extends js.Object:
-  override def toString(): String = js.native
+val RGBAFormat: Int = js.native
 
 /**
  * Reads each element as a single depth value, converts it to floating point,
@@ -34,8 +31,7 @@ object RGBAFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "DepthFormat")
-object DepthFormat extends js.Object:
-  override def toString(): String = js.native
+val DepthFormat: Int = js.native
 
 /**
  * Reads each element is a pair of depth and stencil values. The depth component
@@ -44,8 +40,7 @@ object DepthFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "DepthStencilFormat")
-object DepthStencilFormat extends js.Object:
-  override def toString(): String = js.native
+val DepthStencilFormat: Int = js.native
 
 /**
  * Discards the green, blue and alpha components and reads just the red
@@ -53,8 +48,7 @@ object DepthStencilFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "RedFormat")
-object RedFormat extends js.Object:
-  override def toString(): String = js.native
+val RedFormat: Int = js.native
 
 /**
  * Discards the green, blue and alpha components and reads just the red
@@ -62,8 +56,7 @@ object RedFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "RedIntegerFormat")
-object RedIntegerFormat extends js.Object:
-  override def toString(): String = js.native
+val RedIntegerFormat: Int = js.native
 
 /**
  * Discards the alpha, and blue components and reads the red, and green
@@ -71,8 +64,7 @@ object RedIntegerFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "RGFormat")
-object RGFormat extends js.Object:
-  override def toString(): String = js.native
+val RGFormat: Int = js.native
 
 /**
  * Discards the alpha, and blue components and reads the red, and green
@@ -80,8 +72,7 @@ object RGFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "RGIntegerFormat")
-object RGIntegerFormat extends js.Object:
-  override def toString(): String = js.native
+val RGIntegerFormat: Int = js.native
 
 /**
  * Discards the alpha component and reads the red, green and blue component. The
@@ -89,8 +80,7 @@ object RGIntegerFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "RGBIntegerFormat")
-object RGBIntegerFormat extends js.Object:
-  override def toString(): String = js.native
+val RGBIntegerFormat: Int = js.native
 
 /**
  * Reads the red, green, blue and alpha components. The texels are read as
@@ -98,5 +88,4 @@ object RGBIntegerFormat extends js.Object:
  */
 @js.native
 @JSImport("three", "RGBAIntegerFormat")
-object RGBAIntegerFormat extends js.Object:
-  override def toString(): String = js.native
+val RGBAIntegerFormat: Int = js.native

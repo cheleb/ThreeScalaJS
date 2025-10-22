@@ -75,10 +75,7 @@ object FogSample {
     scene.add(ground)
 
     // Add fog effects
-    val linearFog = new Fog()
-    linearFog.color = new Color(0x87ceeb)
-    linearFog.near = 15
-    linearFog.far = 35
+    val linearFog = Fog(color = 0xaaaaaa, near = 5, far = 16)
     scene.fog = linearFog
 
     // Animation loop
