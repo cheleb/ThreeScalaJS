@@ -133,7 +133,8 @@ object HomePage:
         cls := "demo",
         h2("Renderers"),
         ul(
-          demo("WebGL2Renderer", Router.uiRoute("demo", "three", "webgl2renderer"))
+          demo("WebGL2Renderer", Router.uiRoute("demo", "three", "webgl2renderer")),
+          demo("WebGLMultipleRenderTargets", Router.uiRoute("demo", "three", "webglmultiplerendertargets"))
         )
       )
     )
