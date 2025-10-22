@@ -11,13 +11,13 @@ import scala.scalajs.js.annotation.*
 class CubeCamera(
   near: Double,
   far: Double,
-  val renderTarget: js.Object
-) extends js.Object {
+  renderTarget: WebGLCubeRenderTarget
+) extends Object3D {
 
   /**
-   * The parent Object3D containing the 6 perspective cameras.
+   * This flag can be used for type testing.
    */
-  val parent: Object3D = js.native
+  val isCubeCamera: Boolean = js.native
 
   /**
    * Updates the render target cube with the camera views.

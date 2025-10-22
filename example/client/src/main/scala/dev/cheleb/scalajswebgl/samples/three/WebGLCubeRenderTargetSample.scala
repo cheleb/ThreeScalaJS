@@ -105,7 +105,7 @@ object WebGLCubeRenderTargetSample {
     scene.add(ambientLight)
 
     // Create a cube camera for updating the cube render target
-    val cubeCamera = CubeCamera(0.1, 100, cubeRenderTarget)
+    val cubeCamera = new CubeCamera(0.1, 100, cubeRenderTarget)
 
     // Animation loop
     val animate: () => Unit = () => {
@@ -124,9 +124,9 @@ object WebGLCubeRenderTargetSample {
 
       // Update the cube render target from the sphere's perspective
       // This captures the surrounding scene for reflections
-      cubeCamera.parent.position.x = reflectiveSphere.position.x
-      cubeCamera.parent.position.y = reflectiveSphere.position.y
-      cubeCamera.parent.position.z = reflectiveSphere.position.z
+      cubeCamera.position.x = reflectiveSphere.position.x
+      cubeCamera.position.y = reflectiveSphere.position.y
+      cubeCamera.position.z = reflectiveSphere.position.z
       cubeCamera.update(renderer, scene)
 
       // Render the scene
