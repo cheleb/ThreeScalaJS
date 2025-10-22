@@ -19,6 +19,8 @@ class MeshBasicMaterial(parameters: js.UndefOr[js.Object] = js.undefined) extend
   var specularMap: js.UndefOr[js.Object] = js.native
   var alphaMap: js.UndefOr[js.Object]    = js.native
 
+  var envMap: js.UndefOr[js.Object] = js.native
+
   var fog: Boolean               = js.native
   var wireframe: Boolean         = js.native
   var wireframeLinewidth: Double = js.native
@@ -27,7 +29,10 @@ class MeshBasicMaterial(parameters: js.UndefOr[js.Object] = js.undefined) extend
 // Manual customization of the constructor
 object MeshBasicMaterial:
 
-  def apply(color: Int, wireframe: Boolean = false) =
-    new MeshBasicMaterial(js.Dynamic.literal(color = color, wireframe = wireframe))
-  def apply(map: Texture, wireframe: Boolean) =
-    new MeshBasicMaterial(js.Dynamic.literal(map = map, wireframe = wireframe))
+  def apply(
+    color: Int = 0xffffff,
+    map: js.UndefOr[Texture] = js.undefined,
+    envMap: js.UndefOr[js.Object] = js.undefined,
+    wireframe: Boolean = false
+  ) =
+    new MeshBasicMaterial(js.Dynamic.literal(color = color, map = map, envMap = envMap, wireframe = wireframe))

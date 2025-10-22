@@ -8,13 +8,11 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "WebGLCoordinateSystem")
-object WebGLCoordinateSystem extends js.Object:
-  override def toString(): String = js.native
+val WebGLCoordinateSystem: Int = js.native
 
 /**
  * WebGPU coordinate system.
  */
 @js.native
 @JSImport("three", "WebGPUCoordinateSystem")
-object WebGPUCoordinateSystem extends js.Object:
-  override def toString(): String = js.native
+val WebGPUCoordinateSystem: Int = js.native

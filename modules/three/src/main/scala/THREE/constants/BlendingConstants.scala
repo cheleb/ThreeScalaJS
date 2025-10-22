@@ -8,85 +8,74 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "NoBlending")
-object NoBlending extends js.Object:
-  override def toString(): String = js.native
+val NoBlending: Int = js.native
 
 /**
  * The default blending.
  */
 @js.native
 @JSImport("three", "NormalBlending")
-object NormalBlending extends js.Object:
-  override def toString(): String = js.native
+val NormalBlending: Int = js.native
 
 /**
  * Represents additive blending.
  */
 @js.native
 @JSImport("three", "AdditiveBlending")
-object AdditiveBlending extends js.Object:
-  override def toString(): String = js.native
+val AdditiveBlending: Int = js.native
 
 /**
  * Represents subtractive blending.
  */
 @js.native
 @JSImport("three", "SubtractiveBlending")
-object SubtractiveBlending extends js.Object:
-  override def toString(): String = js.native
+val SubtractiveBlending: Int = js.native
 
 /**
  * Represents multiply blending.
  */
 @js.native
 @JSImport("three", "MultiplyBlending")
-object MultiplyBlending extends js.Object:
-  override def toString(): String = js.native
+val MultiplyBlending: Int = js.native
 
 /**
  * Represents custom blending.
  */
 @js.native
 @JSImport("three", "CustomBlending")
-object CustomBlending extends js.Object:
-  override def toString(): String = js.native
+val CustomBlending: Int = js.native
 
 /**
  * A `source + destination` blending equation.
  */
 @js.native
 @JSImport("three", "AddEquation")
-object AddEquation extends js.Object:
-  override def toString(): String = js.native
+val AddEquation: Int = js.native
 
 /**
  * A `source - destination` blending equation.
  */
 @js.native
 @JSImport("three", "SubtractEquation")
-object SubtractEquation extends js.Object:
-  override def toString(): String = js.native
+val SubtractEquation: Int = js.native
 
 /**
  * A `destination - source` blending equation.
  */
 @js.native
 @JSImport("three", "ReverseSubtractEquation")
-object ReverseSubtractEquation extends js.Object:
-  override def toString(): String = js.native
+val ReverseSubtractEquation: Int = js.native
 
 /**
  * A blend equation that uses the minimum of source and destination.
  */
 @js.native
 @JSImport("three", "MinEquation")
-object MinEquation extends js.Object:
-  override def toString(): String = js.native
+val MinEquation: Int = js.native
 
 /**
  * A blend equation that uses the maximum of source and destination.
  */
 @js.native
 @JSImport("three", "MaxEquation")
-object MaxEquation extends js.Object:
-  override def toString(): String = js.native
+val MaxEquation: Int = js.native

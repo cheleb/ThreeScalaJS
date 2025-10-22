@@ -9,8 +9,7 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "NearestFilter")
-object NearestFilter extends js.Object:
-  override def toString(): String = js.native
+val NearestFilter: Int = js.native
 
 /**
  * Chooses the mipmap that most closely matches the size of the pixel being
@@ -19,8 +18,7 @@ object NearestFilter extends js.Object:
  */
 @js.native
 @JSImport("three", "NearestMipmapNearestFilter")
-object NearestMipmapNearestFilter extends js.Object:
-  override def toString(): String = js.native
+val NearestMipmapNearestFilter: Int = js.native
 
 /**
  * Chooses the two mipmaps that most closely match the size of the pixel being
@@ -30,8 +28,7 @@ object NearestMipmapNearestFilter extends js.Object:
  */
 @js.native
 @JSImport("three", "NearestMipmapLinearFilter")
-object NearestMipmapLinearFilter extends js.Object:
-  override def toString(): String = js.native
+val NearestMipmapLinearFilter: Int = js.native
 
 /**
  * Returns the weighted average of the four texture elements that are closest to
@@ -41,8 +38,7 @@ object NearestMipmapLinearFilter extends js.Object:
  */
 @js.native
 @JSImport("three", "LinearFilter")
-object LinearFilter extends js.Object:
-  override def toString(): String = js.native
+val LinearFilter: Int = js.native
 
 /**
  * Chooses the mipmap that most closely matches the size of the pixel being
@@ -52,8 +48,7 @@ object LinearFilter extends js.Object:
  */
 @js.native
 @JSImport("three", "LinearMipmapNearestFilter")
-object LinearMipmapNearestFilter extends js.Object:
-  override def toString(): String = js.native
+val LinearMipmapNearestFilter: Int = js.native
 
 /**
  * Chooses the two mipmaps that most closely match the size of the pixel being
@@ -63,5 +58,4 @@ object LinearMipmapNearestFilter extends js.Object:
  */
 @js.native
 @JSImport("three", "LinearMipmapLinearFilter")
-object LinearMipmapLinearFilter extends js.Object:
-  override def toString(): String = js.native
+val LinearMipmapLinearFilter: Int = js.native

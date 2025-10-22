@@ -173,6 +173,12 @@ object Router:
         path("audio") {
           dev.cheleb.scalajswebgl.samples.three.AudioSample()
         },
+        path("compressedtexture") {
+          dev.cheleb.scalajswebgl.samples.three.CompressedTextureSample()
+        },
+        path("ddsloader") {
+          dev.cheleb.scalajswebgl.samples.three.DDSLoaderSample()
+        },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {

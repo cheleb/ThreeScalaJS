@@ -8,8 +8,7 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "AttachedBindMode")
-object AttachedBindMode extends js.Object:
-  override def toString(): String = js.native
+val AttachedBindMode: String = js.native
 
 /**
  * The skinned mesh does not share the same world space as the skeleton. This is
@@ -17,5 +16,4 @@ object AttachedBindMode extends js.Object:
  */
 @js.native
 @JSImport("three", "DetachedBindMode")
-object DetachedBindMode extends js.Object:
-  override def toString(): String = js.native
+val DetachedBindMode: String = js.native

@@ -8,21 +8,18 @@ import scala.scalajs.js.annotation._
  */
 @js.native
 @JSImport("three", "ZeroCurvatureEnding")
-object ZeroCurvatureEnding extends js.Object:
-  override def toString(): String = js.native
+val ZeroCurvatureEnding: Int = js.native
 
 /**
  * Zero slope ending for animations.
  */
 @js.native
 @JSImport("three", "ZeroSlopeEnding")
-object ZeroSlopeEnding extends js.Object:
-  override def toString(): String = js.native
+val ZeroSlopeEnding: Int = js.native
 
 /**
  * Wrap around ending for animations.
  */
 @js.native
 @JSImport("three", "WrapAroundEnding")
-object WrapAroundEnding extends js.Object:
-  override def toString(): String = js.native
+val WrapAroundEnding: Int = js.native
