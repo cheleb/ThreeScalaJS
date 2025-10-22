@@ -134,7 +134,8 @@ object HomePage:
         h2("Controls"),
         ul(
           demo("DragControls", Router.uiRoute("demo", "three", "dragcontrols")),
-          demo("TransformControls", Router.uiRoute("demo", "three", "transformcontrols"))
+          demo("TransformControls", Router.uiRoute("demo", "three", "transformcontrols")),
+          demo("PointerLockControls", Router.uiRoute("demo", "three", "pointerlockcontrols"))
         )
       ),
       div(
