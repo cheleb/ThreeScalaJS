@@ -176,6 +176,9 @@ object Router:
         path("compressedtexture") {
           dev.cheleb.scalajswebgl.samples.three.CompressedTextureSample()
         },
+        path("depthtexture") {
+          dev.cheleb.scalajswebgl.samples.three.DepthTextureSample()
+        },
         path("ddsloader") {
           dev.cheleb.scalajswebgl.samples.three.DDSLoaderSample()
         },

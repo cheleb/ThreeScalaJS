@@ -108,7 +108,7 @@ Based on the current implementation, here's a comprehensive list of Three.js com
 
 ### **Advanced Textures** (Missing Several)
 - [x] **CompressedTexture** - Compressed texture formats
-- **DepthTexture** - Depth buffer textures
+- [x] **DepthTexture** - Depth buffer textures
 - **FramebufferTexture** - Render target textures
 
 ### **Renderers** (Missing Advanced Features)
