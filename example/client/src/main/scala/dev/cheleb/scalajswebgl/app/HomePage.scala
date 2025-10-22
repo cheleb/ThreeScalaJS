@@ -136,7 +136,8 @@ object HomePage:
           demo("DragControls", Router.uiRoute("demo", "three", "dragcontrols")),
           demo("TransformControls", Router.uiRoute("demo", "three", "transformcontrols")),
           demo("PointerLockControls", Router.uiRoute("demo", "three", "pointerlockcontrols")),
-          demo("FlyControls", Router.uiRoute("demo", "three", "flycontrols"))
+          demo("FlyControls", Router.uiRoute("demo", "three", "flycontrols")),
+          demo("FirstPersonControls", Router.uiRoute("demo", "three", "firstpersoncontrols"))
         )
       ),
       div(
