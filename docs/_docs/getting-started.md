@@ -4,7 +4,7 @@
 
 
 ```sbt
-libraryDependencies += "dev.cheleb" %%% "three-scalajs" % "{{ projectVersion }}"
+libraryDependencies += "dev.cheleb" %%% "threesjs" % "{{ projectVersion }}"
 ```
 
 ## Sample
