@@ -270,6 +270,9 @@ object Router:
         },
         path("curve") {
           dev.cheleb.scalajswebgl.samples.three.CurveSample()
+        },
+        path("carmovement") {
+          dev.cheleb.scalajswebgl.samples.three.CarMovementSample()
         }
       )
     }
