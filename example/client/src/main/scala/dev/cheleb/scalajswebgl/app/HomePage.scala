@@ -22,8 +22,7 @@ object HomePage:
         ul(
           demo("ThreeJS Scene", Router.uiRoute("demo", "three", "scene")),
           demo("Math Utils", Router.uiRoute("demo", "three", "math")),
-          demo("Curves", Router.uiRoute("demo", "three", "curve")),
-          demo("Car Movement", Router.uiRoute("demo", "three", "carmovement"))
+          demo("Curves", Router.uiRoute("demo", "three", "curve"))
         )
       ),
       div(
@@ -150,6 +149,13 @@ object HomePage:
           demo("WebGL2Renderer", Router.uiRoute("demo", "three", "webgl2renderer")),
           demo("WebGLMultipleRenderTargets", Router.uiRoute("demo", "three", "webglmultiplerendertargets")),
           demo("WebGLCubeRenderTarget", Router.uiRoute("demo", "three", "webglcuberendertarget"))
+        )
+      ),
+      div(
+        cls := "demo",
+        h2("Games & Interactions"),
+        ul(
+          demo("Car Movement", Router.uiRoute("demo", "three", "carmovement"))
         )
       )
     )
