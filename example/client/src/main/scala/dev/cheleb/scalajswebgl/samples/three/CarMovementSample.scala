@@ -80,8 +80,8 @@ object CarMovementSample {
     scene.add(carGroup)
 
     // Car movement variables
-    val carSpeed    = 0.1
-    val turnSpeed   = 0.05
+    var carSpeed    = 0.0
+    val turnSpeed   = 0.005
     var carX        = 0.0
     var carZ        = 0.0
     var carRotation = 0.0
@@ -118,17 +118,14 @@ object CarMovementSample {
     // Animation loop
     val animate: () => Unit = () => {
       // Handle car movement
-      var moveX   = 0.0
-      var moveZ   = 0.0
+
       var rotateY = 0.0
 
       if (keysPressed.contains("w") || keysPressed.contains("arrowup")) {
-        moveZ -= carSpeed * cos(carRotation)
-        moveX -= carSpeed * sin(carRotation)
+        carSpeed += 0.01
       }
       if (keysPressed.contains("s") || keysPressed.contains("arrowdown")) {
-        moveZ += carSpeed * cos(carRotation)
-        moveX += carSpeed * sin(carRotation)
+        carSpeed -= 0.01
       }
       if (keysPressed.contains("a") || keysPressed.contains("arrowleft")) {
         rotateY += turnSpeed
@@ -138,8 +135,8 @@ object CarMovementSample {
       }
 
       // Update car position and rotation
-      carX = carX + moveX
-      carZ = carZ + moveZ
+      carX = carX + carSpeed * sin(carRotation)
+      carZ = carZ + carSpeed * cos(carRotation)
       carRotation = carRotation + rotateY
 
       carGroup.position.set(carX, 0, carZ)
