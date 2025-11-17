@@ -162,7 +162,7 @@ object ScenePage {
 
           val intersectedObject = intersects(0).`object`
 
-          intersectedObject.parent.foreach_ { parent =>
+          intersectedObject.parent.foreach { parent =>
             if (parent.userData.isInstanceOf[PinnerData]) {
               val pinnerData = parent.userData.asInstanceOf[PinnerData]
 
@@ -170,7 +170,7 @@ object ScenePage {
 
               if (currentIntersected != intersectedObject) {
                 // Hide the previous tooltip
-                currentIntersected.foreach_ { obj =>
+                currentIntersected.foreach { obj =>
                   obj.userData.asInstanceOf[PinnerData].tooltip.visible = false
                 }
               }
@@ -180,7 +180,7 @@ object ScenePage {
             }
           }
         } else
-          currentIntersected.foreach_ { obj =>
+          currentIntersected.foreach { obj =>
             obj.userData.asInstanceOf[PinnerData].tooltip.visible = false
           }
       }

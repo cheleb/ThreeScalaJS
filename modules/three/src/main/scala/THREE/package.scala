@@ -4,15 +4,15 @@ import scala.scalajs.js.UndefOr
 
 extension [A](udo: UndefOr[A])
 
-  inline def foreach_(f: A => Unit): Unit =
-    inline udo match
-      case a: A => f(a)
-      case _    => ()
+  def foreach(f: A => Unit): Unit =
+    udo match
+      case _: Unit => ()
+      case a       => f(a.asInstanceOf[A])
 
-  inline def getOrElse_[B >: A](default: => B): B =
-    inline udo match
-      case a: A => a
-      case _    => default
+  def getOrElse[B >: A](default: => B): B =
+    udo match
+      case _: Unit => default
+      case a       => a.asInstanceOf[B]
 
   inline def isDefined: Boolean =
     udo match

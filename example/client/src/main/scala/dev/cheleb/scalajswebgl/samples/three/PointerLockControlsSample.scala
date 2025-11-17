@@ -131,8 +131,8 @@ object PointerLockControlsSample {
       val delta = 0.016 // Approximate 60fps
 
       // Update velocity based on input
-      val vx = velocity.x.getOrElse_(0.0)
-      val vz = velocity.z.getOrElse_(0.0)
+      val vx = velocity.x.getOrElse(0.0)
+      val vz = velocity.z.getOrElse(0.0)
       velocity.x = vx - (vx * 10.0 * delta)
       velocity.z = vz - (vz * 10.0 * delta)
 
@@ -140,16 +140,16 @@ object PointerLockControlsSample {
       direction.x = (if (moveLeft) 1.0 else 0.0) + (if (moveRight) -1.0 else 0.0)
 
       if (moveForward || moveBackward)
-        velocity.z = velocity.z.getOrElse_(0.0) - (direction.z.getOrElse_(0.0) * 400.0 * delta)
-      if (moveLeft || moveRight) velocity.x = velocity.x.getOrElse_(0.0) - (direction.x.getOrElse_(0.0) * 400.0 * delta)
+        velocity.z = velocity.z.getOrElse(0.0) - (direction.z.getOrElse(0.0) * 400.0 * delta)
+      if (moveLeft || moveRight) velocity.x = velocity.x.getOrElse(0.0) - (direction.x.getOrElse(0.0) * 400.0 * delta)
 
       // Apply movement if pointer is locked
       if (controls.isLocked) {
-        controls.moveRight(-(velocity.x.getOrElse_(0.0) * delta))
-        controls.moveForward(-(velocity.z.getOrElse_(0.0) * delta))
+        controls.moveRight(-(velocity.x.getOrElse(0.0) * delta))
+        controls.moveForward(-(velocity.z.getOrElse(0.0) * delta))
 
         // Keep camera above ground
-        if (camera.position.y.getOrElse_(0.0) < 1) {
+        if (camera.position.y.getOrElse(0.0) < 1) {
           camera.position.y = 1
         }
       }

@@ -117,9 +117,9 @@ object ArrowHelperSample {
       // Animate the sphere and its arrow
       sphere.position.y = 3 + scala.math.sin(time * 2) * 0.5
       sphereMoveArrow.position.set(
-        sphere.position.x.getOrElse_(0.0),
-        sphere.position.y.getOrElse_(0.0),
-        sphere.position.z.getOrElse_(0.0)
+        sphere.position.x.getOrElse(0.0),
+        sphere.position.y.getOrElse(0.0),
+        sphere.position.z.getOrElse(0.0)
       )
 
       renderer.render(scene, camera)

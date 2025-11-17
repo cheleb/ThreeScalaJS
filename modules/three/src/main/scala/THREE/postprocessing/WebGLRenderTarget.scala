@@ -178,7 +178,7 @@ object WebGLMultipleRenderTargets {
     count: Double,
     options: js.UndefOr[WebGLRenderTargetOptions] = js.undefined
   ): WebGLMultipleRenderTargets = {
-    val opts = options.getOrElse_(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
+    val opts = options.getOrElse(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
     opts.count = count
     new WebGLMultipleRenderTargets(width, height, count, opts)
   }

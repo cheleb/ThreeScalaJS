@@ -125,7 +125,7 @@ object SkinnedMeshSample:
 
       // Demonstrate skeleton functionality by finding bones by name
       val foundBone = skeleton.getBoneByName("leftThigh")
-      foundBone.foreach_ { bone =>
+      foundBone.foreach { bone =>
         // Add a slight rotation to demonstrate bone animation capability
         bone.rotation.x = scala.math.sin(walkCycle * 2) * 0.1
       }
