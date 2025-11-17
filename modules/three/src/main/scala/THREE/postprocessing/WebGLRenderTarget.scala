@@ -134,7 +134,10 @@ object WebGLRenderTarget {
     height: Double = 512,
     options: js.UndefOr[WebGLRenderTargetOptions] = js.undefined
   ): WebGLRenderTarget = {
-    val opts = options.getOrElse(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
+    val opts = options match {
+      case _: Unit => new js.Object().asInstanceOf[WebGLRenderTargetOptions]
+      case o       => o.asInstanceOf[WebGLRenderTargetOptions]
+    }
     opts.width = width
     opts.height = height
     new WebGLRenderTarget(opts)
@@ -175,7 +178,7 @@ object WebGLMultipleRenderTargets {
     count: Double,
     options: js.UndefOr[WebGLRenderTargetOptions] = js.undefined
   ): WebGLMultipleRenderTargets = {
-    val opts = options.getOrElse(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
+    val opts = options.getOrElse_(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
     opts.count = count
     new WebGLMultipleRenderTargets(width, height, count, opts)
   }

@@ -59,19 +59,19 @@ object WaterOptions {
     fog: js.UndefOr[Boolean] = js.undefined
   ): WaterOptions = {
     val opts = js.Dynamic.literal().asInstanceOf[WaterOptions]
-    textureWidth.foreach(v => opts.textureWidth = v)
-    textureHeight.foreach(v => opts.textureHeight = v)
-    clipBias.foreach(v => opts.clipBias = v)
-    alpha.foreach(v => opts.alpha = v)
-    time.foreach(v => opts.time = v)
-    waterNormals.foreach(v => opts.waterNormals = v)
-    sunDirection.foreach(v => opts.sunDirection = v)
-    sunColor.foreach(v => opts.sunColor = v)
-    waterColor.foreach(v => opts.waterColor = v)
-    eye.foreach(v => opts.eye = v)
-    distortionScale.foreach(v => opts.distortionScale = v)
-    side.foreach(v => opts.side = v)
-    fog.foreach(v => opts.fog = v)
+    textureWidth.foreach_(v => opts.textureWidth = v)
+    textureHeight.foreach_(v => opts.textureHeight = v)
+    clipBias.foreach_(v => opts.clipBias = v)
+    alpha.foreach_(v => opts.alpha = v)
+    time.foreach_(v => opts.time = v)
+    waterNormals.foreach_(v => opts.waterNormals = v)
+    sunDirection.foreach_(v => opts.sunDirection = v)
+    sunColor.foreach_(v => opts.sunColor = v)
+    waterColor.foreach_(v => opts.waterColor = v)
+    eye.foreach_(v => opts.eye = v)
+    distortionScale.foreach_(v => opts.distortionScale = v)
+    side.foreach_(v => opts.side = v)
+    fog.foreach_(v => opts.fog = v)
     opts
   }
 }

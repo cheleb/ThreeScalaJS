@@ -55,7 +55,7 @@ object WebGLCubeRenderTarget {
     size: Double = 1,
     options: js.UndefOr[WebGLRenderTargetOptions] = js.undefined
   ): WebGLCubeRenderTarget = {
-    val opts = options.getOrElse(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
+    val opts = options.getOrElse_(new js.Object().asInstanceOf[WebGLRenderTargetOptions])
     new WebGLCubeRenderTarget(size, opts)
   }
 

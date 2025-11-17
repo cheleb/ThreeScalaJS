@@ -80,9 +80,9 @@ object LODSample:
 
       // Show current LOD level in console for debugging
       val currentLevel = lod.getCurrentLevel()
-      val dx           = camera.position.x.getOrElse(0.0) - lod.position.x.getOrElse(0.0)
-      val dy           = camera.position.y.getOrElse(0.0) - lod.position.y.getOrElse(0.0)
-      val dz           = camera.position.z.getOrElse(0.0) - lod.position.z.getOrElse(0.0)
+      val dx           = camera.position.x.getOrElse_(0.0) - lod.position.x.getOrElse_(0.0)
+      val dy           = camera.position.y.getOrElse_(0.0) - lod.position.y.getOrElse_(0.0)
+      val dz           = camera.position.z.getOrElse_(0.0) - lod.position.z.getOrElse_(0.0)
       val distance     = scala.math.sqrt(dx * dx + dy * dy + dz * dz)
       println(s"Distance: $distance, Current LOD Level: $currentLevel")
 
