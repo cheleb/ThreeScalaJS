@@ -9,7 +9,7 @@ import Dependencies._
 //
 import DeploymentSettings._
 
-val scala3 = "3.7.4"
+val scala3 = "3.8.0-RC3"
 
 name := "ScalaThree.js"
 
@@ -31,7 +31,7 @@ inThisBuild(
       "-deprecation",
       "-feature",
       "-Wunused:all"
-//      "-Xfatal-warnings"
+//      "-Werror"
     ),
     pgpPublicRing := file("/tmp/public.asc"),
     pgpSecretRing := file("/tmp/secret.asc"),
@@ -155,7 +155,7 @@ def scalajsProject(projectId: String, folder: Option[String] = None): Project =
         "-scalajs",
         "-deprecation",
         "-feature",
-        "-Xfatal-warnings"
+        "-Werror"
       )
     )
 
@@ -172,7 +172,7 @@ def scalajsExampleProject(projectId: String): Project =
         "-scalajs",
         "-deprecation",
         "-feature",
-        "-Xfatal-warnings"
+        "-Werror"
       )
     )
     .settings(
