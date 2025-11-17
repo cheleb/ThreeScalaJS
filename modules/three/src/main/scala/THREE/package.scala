@@ -14,7 +14,7 @@ extension [A](udo: UndefOr[A])
       case _: Unit => default
       case a       => a.asInstanceOf[B]
 
-  inline def isDefined: Boolean =
+  def isDefined: Boolean =
     udo match
-      case a: A => true
-      case _    => false
+      case _: Unit => false
+      case _       => true
