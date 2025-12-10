@@ -15,64 +15,13 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+
 
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Fetch tags
-        run: git fetch --prune --unshallow --tags
-      - name: Setup JVM
-        uses: actions/setup-java@v5
-        with:
-          java-version: "25"
-          distribution: "zulu"
-      - name: Install sbt
-        uses: sbt/setup-sbt@v1
-      - name: Set up Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 23
-      #          cache: 'npm'
-      - name: Install dependencies
-        run: |
-          cd example/client
-          rm -rf package-lock.json
-          npm i
-      - name: Vite build
-        run: |
-          pushd example/client
-          npm run build
-          popd
-          cp -rf example/client/img docs/_assets/demo/img
-          cp -rf example/client/css docs/_assets/demo/css
-          cp -rf example/client/res docs/_assets/demo/res
-          cp -rf example/client/sounds docs/_assets/demo/sounds
-          cp -rf example/client/fonts docs/_assets/demo/fonts
 
-
-          export VERSION=`git describe --tags --abbrev=0 | sed "s/v//"`
-          echo "Documentation version: $VERSION"
-          sbt makeSite
-        env:
-          NODE_OPTIONS: "--openssl-legacy-provider"
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          # Upload dist repository
-          path: "target/site"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    uses: WorldOfScala/actions/.github/workflows/gh-pages.yml@master
+    with:
+      script: ./scripts/gh-pages.sh
+    secrets: inherit
