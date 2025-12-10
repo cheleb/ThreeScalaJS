@@ -1,17 +1,24 @@
 #!/usr/bin/env bash
-set -e
-. ./scripts/env.sh -d
 
-. $BUILD_ENV_FILE
+. ./scripts/target/build-env.sh
 
-echo "Waiting for $MAIN_JS_FILE to be compiled..."
-until [ -e $MAIN_JS_FILE ]; do
-    sleep 1
+echo -n "Waiting for npm dev server to start."
+
+until [ -e $NPM_DEV_PATH ]; do
     echo -n "."
+    sleep 2
 done
 
-echo "Watching client-fastopt/main.js for changes..."
+echo "  ✅"
+echo "NPM dev server started."
+echo "Waiting for client-fastopt/main.js to be generated."
 
-sleep 3
+until [ -e $MAIN_JS_PATH ]; do
+    echo -n "."
+    sleep 2
+done
+echo "  ✅"
+echo "⏱️ Watching client-fastopt/main.js for changes..."
 
-MOD=dev sbt '~client/fastLinkJS'
+
+DEV=1 sbt '~client/fastLinkJS'

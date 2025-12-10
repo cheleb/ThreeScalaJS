@@ -1,3 +1,6 @@
+//addCommandAlias("website", "docs/mdoc; makeSite")
+addCommandAlias("website", "makeSite")
+
 lazy val currentYear: String =
   java.util.Calendar.getInstance().get(java.util.Calendar.YEAR).toString
 

@@ -1,3 +1,7 @@
+# Scala CLI
+
+.scala-build/
+
 target/
 
 node_modules/
