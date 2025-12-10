@@ -1,4 +1,6 @@
 pushd example/client
+rm -rf package-lock.json
+npm i
 npm run build
 popd
 cp -rf example/client/img docs/_assets/demo/img
