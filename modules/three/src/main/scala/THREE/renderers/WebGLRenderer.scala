@@ -50,6 +50,22 @@ class WebGLRenderer(parameters: js.UndefOr[js.Object] = js.undefined) extends js
 
   def copyFramebufferToTexture(texture: FramebufferTexture, position: Vector2 = null, level: Int = 0): Unit = js.native
 
+  /**
+   * Gets the output buffer type used by the renderer. This replaces the
+   * deprecated getColorBufferType() method in r182.
+   *
+   * @return
+   *   The output buffer type constant
+   */
+  def getOutputBufferType(): Int = js.native
+
+  /**
+   * @deprecated
+   *   Use getOutputBufferType() instead (r182) Gets the color buffer type used
+   *   by the renderer.
+   */
+  def getColorBufferType(): Int = js.native
+
   def info: js.Object = js.native
 }
 

@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd example/client
-          npm ci
+          npm i
       # - name: Tests
       #   run: sbt +test
       - name: example/dist
