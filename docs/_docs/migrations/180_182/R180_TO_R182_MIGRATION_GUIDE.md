@@ -59,19 +59,19 @@ A complete ReflectorNode facade has been added with the following features:
 - This change provides more accurate naming for the method's purpose
 
 #### Before (r182-)
-```scala
+```scala sc:nocompile
 val bufferType = renderer.getColorBufferType()  // ❌ Deprecated in r182
 ```
 
 #### After (r182+)
-```scala
+```scala sc:nocompile
 val bufferType = renderer.getOutputBufferType()  // ✅ Recommended
 ```
 
 #### Backward Compatibility
 The deprecated method is still available for backward compatibility:
 
-```scala
+```scala sc:nocompile
 // Both methods are available
 val newWay = renderer.getOutputBufferType()      // ✅ Preferred
 val oldWay = renderer.getColorBufferType()      // ⚠️ Deprecated but still works
