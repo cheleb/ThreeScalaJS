@@ -37,7 +37,7 @@ This document outlines the migration plan for updating the ThreeScalaJS facades 
 - `modules/three/src/main/scala/THREE/objects/ReflectorNode.scala` (new file)
 
 **Implementation Details**:
-```scala
+```scala sc:nocompile
 @js.native
 @JSImport("three/nodes", "ReflectorNode")
 class ReflectorNode(
@@ -64,7 +64,7 @@ trait ReflectorNodeOptions extends js.Object {
 2. Consider adding deprecated `getColorBufferType()` for backward compatibility
 
 **Implementation**:
-```scala
+```scala sc:nocompile
 // Add to WebGLRenderer class
 def getOutputBufferType(): Int = js.native
 

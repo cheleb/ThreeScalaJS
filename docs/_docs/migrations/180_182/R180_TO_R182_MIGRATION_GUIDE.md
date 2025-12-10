@@ -19,7 +19,7 @@ This guide documents the migration from Three.js r180 to r182 for the ThreeScala
 - This was a breaking change introduced in r180
 
 #### Before (r180-)
-```scala
+```scala sc:nocompile
 // This would no longer work in r180+
 val reflector = new ReflectorNode(
   js.Dynamic.literal(
@@ -29,7 +29,7 @@ val reflector = new ReflectorNode(
 ```
 
 #### After (r180+)
-```scala
+```scala sc:nocompile
 // Correct usage in r180+
 val reflector = new ReflectorNode(
   js.Dynamic.literal(
@@ -117,8 +117,8 @@ Run your application and verify:
 ## New Features Available
 
 ### ReflectorNode Support
-```scala
-import THREE._
+```scala sc:nocompile
+import THREE.*
 
 // Create a reflector node for WebGPURenderer
 val reflectorNode = new ReflectorNode(
@@ -134,7 +134,7 @@ reflectorNode.update()  // Call before rendering
 ```
 
 ### Enhanced Renderer API
-```scala
+```scala sc:nocompile
 val renderer = new WebGLRenderer()
 val bufferType = renderer.getOutputBufferType()
 
@@ -144,13 +144,13 @@ val bufferType = renderer.getOutputBufferType()
 ## API Reference
 
 ### ReflectorNode Class
-```scala
+```scala sc:nocompile
 class ReflectorNode(options: js.UndefOr[ReflectorNodeOptions] = js.undefined)
   extends js.Object
 ```
 
 **Constructor Options**:
-```scala
+```scala sc:nocompile
 trait ReflectorNodeOptions extends js.Object {
   var resolutionScale: js.UndefOr[Double] = js.undefined  // 0.1 to 2.0 recommended
   var color: js.UndefOr[Int | String | Color] = js.undefined
@@ -160,7 +160,7 @@ trait ReflectorNodeOptions extends js.Object {
 ```
 
 ### WebGLRenderer Updates
-```scala
+```scala sc:nocompile
 // New method (r182+)
 def getOutputBufferType(): Int = js.native
 
