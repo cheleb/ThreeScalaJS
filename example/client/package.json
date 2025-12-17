@@ -11,9 +11,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ui5/webcomponents": "2.17.0",
-    "@ui5/webcomponents-fiori": "2.17.0",
-    "@ui5/webcomponents-icons": "2.17.0",
+    "@ui5/webcomponents": "2.17.1",
+    "@ui5/webcomponents-fiori": "2.17.1",
+    "@ui5/webcomponents-icons": "2.17.1",
     "gl-matrix": "^3.4.3",
     "three": "0.182.0"
   },
