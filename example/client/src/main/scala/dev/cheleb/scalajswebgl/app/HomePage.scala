@@ -150,6 +150,13 @@ object HomePage:
           demo("WebGLMultipleRenderTargets", Router.uiRoute("demo", "three", "webglmultiplerendertargets")),
           demo("WebGLCubeRenderTarget", Router.uiRoute("demo", "three", "webglcuberendertarget"))
         )
+      ),
+      div(
+        cls := "demo",
+        h2("Games"),
+        ul(
+          demo("Rocket Landing", Router.uiRoute("demo", "three", "rocket"))
+        )
       )
     )
 
