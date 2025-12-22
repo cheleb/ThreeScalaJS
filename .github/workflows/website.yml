@@ -6,6 +6,10 @@ on:
   push:
     branches: ["master", "website"]
 
+    paths-ignore:
+      - "project/**"
+      - ".github/**"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
