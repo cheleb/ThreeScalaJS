@@ -19,4 +19,4 @@ addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.9.0")
 // will reStart server on code modification.
 // Giter8 support
 // Scalafix
-addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.4")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.5")
