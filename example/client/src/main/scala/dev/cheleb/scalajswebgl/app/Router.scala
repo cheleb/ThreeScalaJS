@@ -6,6 +6,15 @@ import frontroute.*
 import org.scalajs.dom
 import dev.cheleb.app.world.*
 import dev.cheleb.scalajswebgl.samples.*
+import dev.cheleb.scalajswebgl.samples.three.geometries.*
+import dev.cheleb.scalajswebgl.samples.three.materials.*
+import dev.cheleb.scalajswebgl.samples.three.lighting.*
+import dev.cheleb.scalajswebgl.samples.three.helpers.*
+import dev.cheleb.scalajswebgl.samples.three.objects.*
+import dev.cheleb.scalajswebgl.samples.three.postprocessing.*
+import dev.cheleb.scalajswebgl.samples.three.controls.*
+import dev.cheleb.scalajswebgl.samples.three.renderers.*
+import dev.cheleb.scalajswebgl.samples.three.games.*
 
 object Router:
   val uiBase                     = "ThreeScalaJS"
@@ -45,234 +54,234 @@ object Router:
           dev.cheleb.scalajswebgl.samples.three.ScenePage()
         },
         path("sphere") {
-          dev.cheleb.scalajswebgl.samples.three.SphereSample()
+          SphereSample()
         },
         path("plane") {
-          dev.cheleb.scalajswebgl.samples.three.PlaneSample()
+          PlaneSample()
         },
         path("cylinder") {
-          dev.cheleb.scalajswebgl.samples.three.CylinderSample()
+          CylinderSample()
         },
         path("cone") {
-          dev.cheleb.scalajswebgl.samples.three.ConeSample()
+          ConeSample()
         },
         path("torus") {
-          dev.cheleb.scalajswebgl.samples.three.TorusSample()
+          TorusSample()
         },
         path("ring") {
-          dev.cheleb.scalajswebgl.samples.three.RingSample()
+          RingSample()
         },
         path("circle") {
-          dev.cheleb.scalajswebgl.samples.three.CircleSample()
+          CircleSample()
         },
         path("shape") {
-          dev.cheleb.scalajswebgl.samples.three.ShapeSample()
+          ShapeSample()
         },
         path("extrude") {
-          dev.cheleb.scalajswebgl.samples.three.ExtrudeSample()
+          ExtrudeSample()
         },
         path("lathe") {
-          dev.cheleb.scalajswebgl.samples.three.LatheSample()
+          LatheSample()
         },
         path("text") {
-          dev.cheleb.scalajswebgl.samples.three.TextSample()
+          TextSample()
         },
         path("bufferutils") {
-          dev.cheleb.scalajswebgl.samples.three.BufferGeometryUtilsSample()
+          BufferGeometryUtilsSample()
         },
         path("axeshelper") {
-          dev.cheleb.scalajswebgl.samples.three.AxesHelperSample()
+          AxesHelperSample()
         },
         path("gridhelper") {
-          dev.cheleb.scalajswebgl.samples.three.GridHelperSample()
+          GridHelperSample()
         },
         path("polargridhelper") {
-          dev.cheleb.scalajswebgl.samples.three.PolarGridHelperSample()
+          PolarGridHelperSample()
         },
         path("arrowhelper") {
-          dev.cheleb.scalajswebgl.samples.three.ArrowHelperSample()
+          ArrowHelperSample()
         },
         path("box3helper") {
-          dev.cheleb.scalajswebgl.samples.three.Box3HelperSample()
+          Box3HelperSample()
         },
         path("boxhelper") {
-          dev.cheleb.scalajswebgl.samples.three.BoxHelperSample()
+          BoxHelperSample()
         },
         path("camerahelper") {
-          dev.cheleb.scalajswebgl.samples.three.CameraHelperSample()
+          CameraHelperSample()
         },
         path("directionallighthelper") {
-          dev.cheleb.scalajswebgl.samples.three.DirectionalLightHelperSample()
+          DirectionalLightHelperSample()
         },
         path("vertexnormalshelper") {
-          dev.cheleb.scalajswebgl.samples.three.VertexNormalsHelperSample()
+          VertexNormalsHelperSample()
         },
         path("planehelper") {
-          dev.cheleb.scalajswebgl.samples.three.PlaneHelperSample()
+          PlaneHelperSample()
         },
         path("pointlighthelper") {
-          dev.cheleb.scalajswebgl.samples.three.PointLightHelperSample()
+          PointLightHelperSample()
         },
         path("skeletonhelper") {
-          dev.cheleb.scalajswebgl.samples.three.SkeletonHelperSample()
+          SkeletonHelperSample()
         },
         path("spotlighthelper") {
-          dev.cheleb.scalajswebgl.samples.three.SpotLightHelperSample()
+          SpotLightHelperSample()
         },
         path("lod") {
-          dev.cheleb.scalajswebgl.samples.three.LODSample()
+          LODSample()
         },
         path("skinnedmesh") {
-          dev.cheleb.scalajswebgl.samples.three.SkinnedMeshSample()
+          SkinnedMeshSample()
         },
         path("sprite") {
-          dev.cheleb.scalajswebgl.samples.three.SpriteSample()
+          SpriteSample()
         },
         path("lensflare") {
-          dev.cheleb.scalajswebgl.samples.three.LensFlareSample()
+          LensFlareSample()
         },
         path("reflector") {
-          dev.cheleb.scalajswebgl.samples.three.ReflectorSample()
+          ReflectorSample()
         },
         path("refractor") {
-          dev.cheleb.scalajswebgl.samples.three.RefractorSample()
+          RefractorSample()
         },
         path("water") {
-          dev.cheleb.scalajswebgl.samples.three.WaterSample()
+          WaterSample()
         },
         path("animation") {
           dev.cheleb.scalajswebgl.samples.three.AnimationSample()
         },
         path("fog") {
-          dev.cheleb.scalajswebgl.samples.three.FogSample()
+          FogSample()
         },
         path("shadows") {
-          dev.cheleb.scalajswebgl.samples.three.ShadowSample()
+          ShadowSample()
         },
         path("postprocessing") {
-          dev.cheleb.scalajswebgl.samples.three.PostProcessingSample()
+          PostProcessingSample()
         },
         path("glitchpass") {
-          dev.cheleb.scalajswebgl.samples.three.GlitchPassSample()
+          GlitchPassSample()
         },
         path("bokehpass") {
-          dev.cheleb.scalajswebgl.samples.three.BokehPassSample()
+          BokehPassSample()
         },
         path("ssrpass") {
-          dev.cheleb.scalajswebgl.samples.three.SSRPassSample()
+          SSRPassSample()
         },
         path("ssaopass") {
-          dev.cheleb.scalajswebgl.samples.three.SSAOPassSample()
+          SSAOPassSample()
         },
         path("outputpass") {
-          dev.cheleb.scalajswebgl.samples.three.OutputPassSample()
+          OutputPassSample()
         },
         path("advancedloaders") {
-          dev.cheleb.scalajswebgl.samples.three.AdvancedLoadersSample()
+          AdvancedLoadersSample()
         },
         path("audio") {
           dev.cheleb.scalajswebgl.samples.three.AudioSample()
         },
         path("compressedtexture") {
-          dev.cheleb.scalajswebgl.samples.three.CompressedTextureSample()
+          CompressedTextureSample()
         },
         path("depthtexture") {
-          dev.cheleb.scalajswebgl.samples.three.DepthTextureSample()
+          DepthTextureSample()
         },
         path("framebuffertexture") {
-          dev.cheleb.scalajswebgl.samples.three.FramebufferTextureSample()
+          FramebufferTextureSample()
         },
         path("ddsloader") {
-          dev.cheleb.scalajswebgl.samples.three.DDSLoaderSample()
+          DDSLoaderSample()
         },
         pathPrefix("material") {
           firstMatch(
             path("meshlambert") {
-              dev.cheleb.scalajswebgl.samples.three.MeshLambertMaterialSample()
+              MeshLambertMaterialSample()
             },
             path("meshstandard") {
-              dev.cheleb.scalajswebgl.samples.three.MeshStandardMaterialSample()
+              MeshStandardMaterialSample()
             },
             path("meshphysical") {
-              dev.cheleb.scalajswebgl.samples.three.MeshPhysicalMaterialSample()
+              MeshPhysicalMaterialSample()
             },
             path("meshmatcap") {
-              dev.cheleb.scalajswebgl.samples.three.MeshMatcapMaterialSample()
+              MeshMatcapMaterialSample()
             },
             path("meshnormal") {
-              dev.cheleb.scalajswebgl.samples.three.MeshNormalMaterialSample()
+              MeshNormalMaterialSample()
             },
             path("meshdepth") {
-              dev.cheleb.scalajswebgl.samples.three.MeshDepthMaterialSample()
+              MeshDepthMaterialSample()
             },
             path("meshdistance") {
-              dev.cheleb.scalajswebgl.samples.three.MeshDistanceMaterialSample()
+              MeshDistanceMaterialSample()
             },
             path("linedashed") {
-              dev.cheleb.scalajswebgl.samples.three.LineDashedMaterialSample()
+              LineDashedMaterialSample()
             },
             path("shadermaterial") {
-              dev.cheleb.scalajswebgl.samples.three.ShaderMaterialSample()
+              ShaderMaterialSample()
             },
             path("rawshadermaterial") {
-              dev.cheleb.scalajswebgl.samples.three.RawShaderMaterialSample()
+              RawShaderMaterialSample()
             },
             path("shadowmaterial") {
-              dev.cheleb.scalajswebgl.samples.three.ShadowMaterialSample()
+              ShadowMaterialSample()
             }
           )
         },
         pathPrefix("light") {
           firstMatch(
             path("pointlight") {
-              dev.cheleb.scalajswebgl.samples.three.PointLightSample()
+              PointLightSample()
             },
             path("spotlight") {
-              dev.cheleb.scalajswebgl.samples.three.SpotLightSample()
+              SpotLightSample()
             },
             path("hemispherelight") {
-              dev.cheleb.scalajswebgl.samples.three.HemisphereLightSample()
+              HemisphereLightSample()
             },
             path("rectarealight") {
-              dev.cheleb.scalajswebgl.samples.three.RectAreaLightSample()
+              RectAreaLightSample()
             },
             path("lightprobe") {
-              dev.cheleb.scalajswebgl.samples.three.LightProbeSample()
+              LightProbeSample()
             }
           )
         },
         path("webgl2renderer") {
-          dev.cheleb.scalajswebgl.samples.three.WebGL2RendererSample()
+          WebGL2RendererSample()
         },
         path("webglmultiplerendertargets") {
-          dev.cheleb.scalajswebgl.samples.three.WebGLMultipleRenderTargetsSample()
+          WebGLMultipleRenderTargetsSample()
         },
         path("webglcuberendertarget") {
-          dev.cheleb.scalajswebgl.samples.three.WebGLCubeRenderTargetSample()
+          WebGLCubeRenderTargetSample()
         },
         path("dragcontrols") {
-          dev.cheleb.scalajswebgl.samples.three.DragControlsSample()
+          DragControlsSample()
         },
         path("transformcontrols") {
-          dev.cheleb.scalajswebgl.samples.three.TransformControlsSample()
+          TransformControlsSample()
         },
         path("pointerlockcontrols") {
-          dev.cheleb.scalajswebgl.samples.three.PointerLockControlsSample()
+          PointerLockControlsSample()
         },
         path("flycontrols") {
-          dev.cheleb.scalajswebgl.samples.three.FlyControlsSample()
+          FlyControlsSample()
         },
         path("firstpersoncontrols") {
-          dev.cheleb.scalajswebgl.samples.three.FirstPersonControlsSample()
+          FirstPersonControlsSample()
         },
         path("trackballcontrols") {
-          dev.cheleb.scalajswebgl.samples.three.TrackballControlsSample()
+          TrackballControlsSample()
         },
         path("curve") {
           dev.cheleb.scalajswebgl.samples.three.CurveSample()
         },
         path("rocket") {
-          dev.cheleb.scalajswebgl.samples.three.RocketLandingSample()
+          RocketLandingSample()
         }
       )
     }

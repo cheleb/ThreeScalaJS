@@ -13,7 +13,7 @@ val buildEnv = os.pwd / "scripts" / "target" / "build-env.sh"
 val exampleClient = os.pwd / "example" / "client"
 val nodeModule    = exampleClient / "node_modules" / ".package-lock.json"
 val packageJson   = exampleClient / "package.json"
-val npmDevMarker  = exampleClient / "target" / "npm-dev-server-running.marker"
+val npmDevMarker  = os.pwd / "target" / "npm-dev-server-running.marker"
 
 os.remove(npmDevMarker)
 
