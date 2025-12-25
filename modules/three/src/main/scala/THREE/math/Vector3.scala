@@ -14,4 +14,8 @@ class Vector3(
 
   def set(x: Double, y: Double, z: Double): this.type         = js.native
   def setFromMatrix3Column(m: Matrix3, index: Int): this.type = js.native
+
+  def copy(v: Vector3): this.type          = js.native
+  def add(v: Vector3): this.type           = js.native
+  def multiplyScalar(s: Double): this.type = js.native
 }

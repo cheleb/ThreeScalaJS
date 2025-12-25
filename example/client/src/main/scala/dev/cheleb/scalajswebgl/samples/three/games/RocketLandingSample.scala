@@ -96,11 +96,12 @@ object RocketLandingSample {
     scene.add(stars)
 
     // Game State
-    var vy      = 0.0
-    var vx      = 0.0
-    var fuel    = 100.0
-    var landed  = false
-    var crashed = false
+    var vy        = 0.0
+    var vx        = 0.0
+    var fuel      = 100.0
+    var landed    = false
+    var crashed   = false
+    val explosion = new ExplosionEffect(scene)
 
     val keys = js.Dictionary[Boolean]()
     window.addEventListener("keydown", (e: dom.KeyboardEvent) => keys(e.key) = true)
@@ -117,6 +118,8 @@ object RocketLandingSample {
       landed = false
       crashed = false
       messageVar.set("")
+      explosion.clear()
+      rocketGroup.visible = true
     }
     reset()
 
@@ -163,10 +166,14 @@ object RocketLandingSample {
             } else {
               crashed = true
               messageVar.set(s"Crashed! Speed: ${(-vy * 100).toInt} (Max allowed: 10)")
+              explosion.trigger(rocketGroup.position)
+              rocketGroup.visible = false
             }
           } else if (rocketY < -10) {
             crashed = true
             messageVar.set("Missed the pad and crashed!")
+            explosion.trigger(rocketGroup.position)
+            rocketGroup.visible = false
           }
         }
 
@@ -174,9 +181,14 @@ object RocketLandingSample {
         if (abs(rocketX) > 15 || rocketY > 15) {
           crashed = true
           messageVar.set("Rocket exited the screen - Mission Lost!")
+          if (rocketY < 15) {
+            explosion.trigger(rocketGroup.position)
+            rocketGroup.visible = false
+          }
         }
       }
 
+      explosion.update()
       renderer.render(scene, camera)
     }
 
