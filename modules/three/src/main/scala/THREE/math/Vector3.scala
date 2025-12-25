@@ -18,4 +18,7 @@ class Vector3(
   def copy(v: Vector3): this.type          = js.native
   def add(v: Vector3): this.type           = js.native
   def multiplyScalar(s: Double): this.type = js.native
+
+  @JSName("clone")
+  def jsClone(): this.type = js.native
 }

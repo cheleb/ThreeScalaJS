@@ -23,8 +23,8 @@ object RocketLandingSample {
     )
 
     // Game Constants
-    val GRAVITY              = -0.002
-    val THRUST               = 0.01
+    val GRAVITY              = -0.0005
+    val THRUST               = 0.005
     val ROTATION_SPEED       = 0.05
     val MAX_LANDING_VELOCITY = -0.10
 
@@ -102,6 +102,7 @@ object RocketLandingSample {
     var landed    = false
     var crashed   = false
     val explosion = new ExplosionEffect(scene)
+    val trail     = new ReactorTrail(scene)
 
     val keys = js.Dictionary[Boolean]()
     window.addEventListener("keydown", (e: dom.KeyboardEvent) => keys(e.key) = true)
@@ -119,6 +120,7 @@ object RocketLandingSample {
       crashed = false
       messageVar.set("")
       explosion.clear()
+      trail.clear()
       rocketGroup.visible = true
     }
     reset()
@@ -137,6 +139,7 @@ object RocketLandingSample {
           vx += forceX
           vy += forceY
           fuel -= 0.2
+          for (_ <- 0 until 3) trail.emit(rocketGroup.position, rotationZ)
         }
         if (keys.getOrElse("ArrowLeft", false)) {
           rocketGroup.rotation.z = rotationZ + ROTATION_SPEED
@@ -189,6 +192,7 @@ object RocketLandingSample {
       }
 
       explosion.update()
+      trail.update()
       renderer.render(scene, camera)
     }
 
