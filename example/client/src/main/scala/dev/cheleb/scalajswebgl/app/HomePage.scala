@@ -155,7 +155,8 @@ object HomePage:
         cls := "demo",
         h2("Games"),
         ul(
-          demo("Rocket Landing", Router.uiRoute("demo", "three", "rocket"))
+          demo("Rocket Landing", Router.uiRoute("demo", "three", "rocket")),
+          demo("Tetris", Router.uiRoute("demo", "three", "tetris"))
         )
       )
     )

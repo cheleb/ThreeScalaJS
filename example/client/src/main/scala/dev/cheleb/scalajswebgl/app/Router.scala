@@ -282,6 +282,9 @@ object Router:
         },
         path("rocket") {
           RocketLandingSample()
+        },
+        path("tetris") {
+          TetrisSample()
         }
       )
     }
