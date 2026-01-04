@@ -16,10 +16,12 @@ name := "ScalaThree.js"
 
 inThisBuild(
   List(
-    scalaVersion := scala3,
-    organization := "dev.cheleb",
-    homepage     := Some(url("https://github.com/cheleb/")),
-    publishTo    := {
+    scalaVersion       := scala3,
+    organization       := "dev.cheleb",
+    fullstackJsModules := "example",
+    fullstackJsProject := client,
+    homepage           := Some(url("https://github.com/cheleb/")),
+    publishTo          := {
       val centralSnapshots =
         "https://central.sonatype.com/repository/maven-snapshots/"
       if (isSnapshot.value) Some("central-snapshots" at centralSnapshots)
@@ -120,6 +122,7 @@ lazy val three = scalajsProject("threesjs", Some("three"))
 // It depends on sharedJs project, a project that contains shared code between server and client.
 //
 lazy val client = scalajsExampleProject("client")
+  .enablePlugins(FullstackPlugin)
   .settings(
     scalaJSUseMainModuleInitializer := true,
     scalaJSLinkerConfig ~= { config =>
@@ -179,38 +182,3 @@ def scalajsExampleProject(projectId: String): Project =
     .settings(
       publish / skip := true
     )
-
-//
-// This is a global setting that will generate a build-env.sh file in the target directory.
-// This file will contain the SCALA_VERSION variable that can be used in the build process
-//
-Global / onLoad := {
-
-  val buildEnvShPath = sys.env.get("BUILD_ENV_SH_PATH")
-  buildEnvShPath.foreach { path =>
-    val outputFile = Path(path).asFile
-    println(s"🍺 Generating build-env.sh at $outputFile")
-
-    val SCALA_VERSION = (client / scalaVersion).value
-
-    val MAIN_JS_PATH =
-      client.base.getAbsoluteFile / "target" / s"scala-$SCALA_VERSION" / "client-fastopt/main.js"
-
-    val NPM_DEV_PATH =
-      root.base.getAbsoluteFile / "target" / "npm-dev-server-running.marker"
-
-    IO.writeLines(
-      outputFile,
-      s"""
-         |# Generated file see build.sbt
-         |SCALA_VERSION="$SCALA_VERSION"
-         |# Marker file to indicate that npm dev server has been started
-         |MAIN_JS_PATH="${MAIN_JS_PATH}"
-         |# Marker file to indicate that npm dev server has been started
-         |NPM_DEV_PATH="${NPM_DEV_PATH}"
-         |""".stripMargin.split("\n").toList,
-      StandardCharsets.UTF_8
-    )
-  }
-  (Global / onLoad).value
-}
