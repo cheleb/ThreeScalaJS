@@ -151,9 +151,7 @@ def scalajsProject(projectId: String, folder: Option[String] = None): Project =
     id = s"$projectId",
     base = file(s"modules/${folder.getOrElse(projectId)}")
   )
-    .enablePlugins(scalaJSPlugin)
-    .settings(nexusNpmSettings)
-    .settings(Test / requireJsDomEnv := true)
+    .enablePlugins(ScalaJSPlugin)
     .settings(
       scalacOptions := Seq(
         "-scalajs",
@@ -168,9 +166,7 @@ def scalajsExampleProject(projectId: String): Project =
     id = projectId,
     base = file(s"example/$projectId")
   )
-    .enablePlugins(scalaJSPlugin)
-    .settings(nexusNpmSettings)
-    .settings(Test / requireJsDomEnv := true)
+    .enablePlugins(ScalaJSPlugin)
     .settings(
       scalacOptions := Seq(
         "-scalajs",
