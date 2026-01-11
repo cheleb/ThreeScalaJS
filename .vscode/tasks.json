@@ -19,7 +19,7 @@
         {
             "label": "setup",
             "type": "shell",
-            "command": "./scripts-managed/setup.sc",
+            "command": "./init.sh",
             "presentation": {
                 "panel": "dedicated",
                 "group": "runDevCmd",
