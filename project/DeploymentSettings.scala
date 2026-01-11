@@ -2,8 +2,6 @@ import com.typesafe.sbt.packager.archetypes.JavaAppPackaging
 import com.typesafe.sbt.packager.archetypes.scripts.AshScriptPlugin
 import com.typesafe.sbt.packager.docker.DockerPlugin
 import com.typesafe.sbt.SbtNativePackager.autoImport._
-import com.typesafe.sbt.web._
-import com.typesafe.sbt.web.Import._
 
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
@@ -13,12 +11,6 @@ import org.scalajs.sbtplugin._
 
 import sbt._
 import sbt.Keys._
-
-import scalajsbundler.sbtplugin._
-import scalajsbundler.sbtplugin.WebScalaJSBundlerPlugin
-import scalajsbundler.sbtplugin.ScalaJSBundlerPlugin.autoImport._
-
-import webscalajs.WebScalaJS.autoImport._
 
 object DeploymentSettings {
 //
@@ -51,14 +43,6 @@ object DeploymentSettings {
   }
 
   def serverSettings(clientProjects: Project*) = mode match {
-    case "CommonJs" =>
-      Seq(
-        Compile / compile              := ((Compile / compile) dependsOn scalaJSPipeline).value,
-        Assets / WebKeys.packagePrefix := s"$publicFolder/",
-        Runtime / managedClasspath += (Assets / packageBin).value,
-        scalaJSProjects         := clientProjects,
-        Assets / pipelineStages := Seq(scalaJSPipeline)
-      ) ++ dockerSettings
     case "ESModule" => dockerSettings
     case _          => Seq()
   }
@@ -94,21 +78,6 @@ object DeploymentSettings {
       )
     case _ =>
       Seq()
-  }
-
-  def nexusNpmSettings =
-    sys.env
-      .get("NEXUS")
-      .map(url =>
-        npmExtraArgs ++= Seq(
-          s"--registry=$url/repository/npm-public/"
-        )
-      )
-      .toSeq
-
-  def scalaJSPlugin = mode match {
-    case "CommonJs" => ScalaJSBundlerPlugin
-    case _          => ScalaJSPlugin
   }
 
   def symlink(link: File, target: File): Unit = {

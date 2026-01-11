@@ -1,10 +1,6 @@
 // scalafmt: { maxColumn = 120, style = defaultWithAlign }
 
-addSbtPlugin("org.scala-js" % "sbt-scalajs"        % "1.20.2")
-addSbtPlugin("org.scala-js" % "sbt-jsdependencies" % "1.0.2")
-
-addSbtPlugin("ch.epfl.scala" % "sbt-scalajs-bundler"     % "0.21.1")
-addSbtPlugin("ch.epfl.scala" % "sbt-web-scalajs-bundler" % "0.21.1")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.20.2")
 
 addSbtPlugin("org.scalameta"  % "sbt-scalafmt"        % "2.5.6")
 addSbtPlugin("com.github.sbt" % "sbt-pgp"             % "2.3.1")
@@ -21,5 +17,4 @@ addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.9.0")
 // Scalafix
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.5")
 
-addSbtPlugin("dev.cheleb"         % "sbt-fullstack-js"         % "0.4.0")
-
+addSbtPlugin("dev.cheleb" % "sbt-fullstack-js" % "0.4.0")
