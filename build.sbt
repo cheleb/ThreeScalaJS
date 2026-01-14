@@ -10,7 +10,7 @@ import Dependencies._
 //
 import DeploymentSettings._
 
-val scala3 = "3.7.4"
+val scala3 = "3.8.0"
 
 name := "ScalaThree.js"
 
@@ -157,7 +157,7 @@ def scalajsProject(projectId: String, folder: Option[String] = None): Project =
         "-scalajs",
         "-deprecation",
         "-feature",
-        "-Xfatal-warnings"
+        "-Werror"
       )
     )
 
@@ -172,7 +172,7 @@ def scalajsExampleProject(projectId: String): Project =
         "-scalajs",
         "-deprecation",
         "-feature",
-        "-Xfatal-warnings"
+        "-Werror"
       )
     )
     .settings(
