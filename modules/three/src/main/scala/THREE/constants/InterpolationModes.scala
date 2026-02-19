@@ -32,3 +32,13 @@ object InterpolateSmooth extends js.Object:
 @JSImport("three", "InterpolateDiscrete")
 object InterpolateDiscrete extends js.Object:
   override def toString(): String = js.native
+
+/**
+ * Bezier interpolation mode.
+ * @defaultValue
+ *   2303
+ */
+@js.native
+@JSImport("three", "InterpolateBezier")
+object InterpolateBezier extends js.Object:
+  override def toString(): String = js.native

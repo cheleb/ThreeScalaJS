@@ -280,6 +280,9 @@ object Router:
         path("curve") {
           dev.cheleb.scalajswebgl.samples.three.CurveSample()
         },
+        path("bezierinterpolant") {
+          dev.cheleb.scalajswebgl.samples.three.BezierInterpolantSample()
+        },
         path("rocket") {
           RocketLandingSample()
         },
