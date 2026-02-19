@@ -17,4 +17,4 @@ addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.9.0")
 // Scalafix
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.5")
 
-addSbtPlugin("dev.cheleb" % "sbt-fullstack-js" % "0.6.0")
+addSbtPlugin("dev.cheleb" % "sbt-fullstack-js" % "0.7.0")
