@@ -10,7 +10,7 @@ import Dependencies._
 //
 import DeploymentSettings._
 
-val scala3 = "3.8.1"
+val scala3 = "3.8.2"
 
 name := "ScalaThree.js"
 
