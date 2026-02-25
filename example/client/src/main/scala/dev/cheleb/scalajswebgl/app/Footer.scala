@@ -12,7 +12,7 @@ object Footer:
         _.design := BarDesign.Footer,
         a(href := "https://github.com/cheleb/ThreeScalaJS/", "Three.sjs"),
         "♥️" +
-          " ",
+          " bun ",
         a(href := "https://laminar.dev/", "laminar")
       )
     )
