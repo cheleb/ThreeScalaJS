@@ -5,11 +5,11 @@
     "": {
       "name": "scalajs-webgl",
       "dependencies": {
-        "@ui5/webcomponents": "2.18.1",
-        "@ui5/webcomponents-fiori": "2.18.1",
-        "@ui5/webcomponents-icons": "2.18.1",
+        "@ui5/webcomponents": "2.19.2",
+        "@ui5/webcomponents-fiori": "2.19.2",
+        "@ui5/webcomponents-icons": "2.19.2",
         "gl-matrix": "^3.4.3",
-        "three": "0.183.0",
+        "three": "0.183.1",
       },
       "devDependencies": {
         "@scala-js/vite-plugin-scalajs": "^1.1.0",
@@ -139,21 +139,21 @@
 
     "@types/trusted-types": ["@types/trusted-types@2.0.7", "", {}, "sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw=="],
 
-    "@ui5/webcomponents": ["@ui5/webcomponents@2.18.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.18.1", "@ui5/webcomponents-icons": "2.18.1", "@ui5/webcomponents-icons-business-suite": "2.18.1", "@ui5/webcomponents-icons-tnt": "2.18.1", "@ui5/webcomponents-localization": "2.18.1", "@ui5/webcomponents-theming": "2.18.1" } }, "sha512-18O1TVBofhBzc4fw7BrtDXTdYuLV8871EBDzPdYsFN5znTU0DHGw6OOABwfyuGvt4ku6bq3KN12LSQDCiIwdKQ=="],
+    "@ui5/webcomponents": ["@ui5/webcomponents@2.19.2", "", { "dependencies": { "@ui5/webcomponents-base": "2.19.2", "@ui5/webcomponents-icons": "2.19.2", "@ui5/webcomponents-icons-business-suite": "2.19.2", "@ui5/webcomponents-icons-tnt": "2.19.2", "@ui5/webcomponents-localization": "2.19.2", "@ui5/webcomponents-theming": "2.19.2" } }, "sha512-qwJGmGhpZME4HTajhe9r9Bq7p3qIk/czDEs0oIl/Uw/cbz/1ZrYQJdRYAzs9r3FFosuB61ePYv0Eoa8H2IQspA=="],
 
-    "@ui5/webcomponents-base": ["@ui5/webcomponents-base@2.18.1", "", { "dependencies": { "@lit-labs/ssr-dom-shim": "^1.1.2", "lit-html": "^2.0.1" } }, "sha512-/L2F/+17g+RWicG1hguy5AjHnRyAHCqmXExAvPXIH7GyA/Uur1vm/3ZHP19D2y/AidY/OqCkwTbSmf0nl3NSHg=="],
+    "@ui5/webcomponents-base": ["@ui5/webcomponents-base@2.19.2", "", { "dependencies": { "@lit-labs/ssr-dom-shim": "^1.1.2", "lit-html": "^2.0.1" } }, "sha512-K9yFdyXYSDF8fVPTATMAkBEo4VoAdGZ/nXVZITaq9wI/RyiqEeGmGzJLeUJ/Idd5UqFf7zGWZvV42jEVCBqB7w=="],
 
-    "@ui5/webcomponents-fiori": ["@ui5/webcomponents-fiori@2.18.1", "", { "dependencies": { "@ui5/webcomponents": "2.18.1", "@ui5/webcomponents-base": "2.18.1", "@ui5/webcomponents-icons": "2.18.1", "@ui5/webcomponents-theming": "2.18.1", "@zxing/library": "^0.21.3" } }, "sha512-PuCmfJHFJZgj2SK0eFWTM6QgpxT3hN6VrKzpxsJPvKJT1iQsxHCNiwkKFrRm3Iwf00YeRvEXlYGQEYYNi7SVCQ=="],
+    "@ui5/webcomponents-fiori": ["@ui5/webcomponents-fiori@2.19.2", "", { "dependencies": { "@ui5/webcomponents": "2.19.2", "@ui5/webcomponents-base": "2.19.2", "@ui5/webcomponents-icons": "2.19.2", "@ui5/webcomponents-theming": "2.19.2", "@zxing/library": "^0.21.3" } }, "sha512-JlIfaa/wZb0OxMEn3bQZ0hUp0Cr9X396AgjwipKAUzkIv59SVUBmZAfId8M8qIdsX6Swo0Up811rBWeU8/5ZSw=="],
 
-    "@ui5/webcomponents-icons": ["@ui5/webcomponents-icons@2.18.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.18.1" } }, "sha512-8FZgAe3gQmvtJaS1MVQv6+4Z5TEcxRtb8lrLkzmpef5ODGooD2fFw0jxhKNSvlURVmhL2vf2Gj5OPH+6c7A+3A=="],
+    "@ui5/webcomponents-icons": ["@ui5/webcomponents-icons@2.19.2", "", { "dependencies": { "@ui5/webcomponents-base": "2.19.2" } }, "sha512-OKfy6QTiTUhDulibrGePwcUZdJNuc9nkfUasjdcYcihFje/i7U71XZbYbw0wE8jp9YBtZS3BbUm4GfzTYeYvNw=="],
 
-    "@ui5/webcomponents-icons-business-suite": ["@ui5/webcomponents-icons-business-suite@2.18.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.18.1" } }, "sha512-rgC7XiSIfu4XYwHflMRw/assSEMDagGwv5RCQoqanvcBHXwN4vbX8hqhHHXBARuagiF++3xsW4QnfifLLVBUow=="],
+    "@ui5/webcomponents-icons-business-suite": ["@ui5/webcomponents-icons-business-suite@2.19.2", "", { "dependencies": { "@ui5/webcomponents-base": "2.19.2" } }, "sha512-6n32uCmS6beOxO7zwaGK81hQWsmcgQA0j80p57Lh5EyTc6k9kRDeZzq/IzQrARuPTGAZL16cnayXflhOoT5NvQ=="],
 
-    "@ui5/webcomponents-icons-tnt": ["@ui5/webcomponents-icons-tnt@2.18.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.18.1" } }, "sha512-SmM3oeBXN5ubvWUqeC1m7Ng7BvekFxxtOChtf27vhqg9ULu13qo4IEXtfM8qID5o9amx4UT5ieo1ssiXlNOz9w=="],
+    "@ui5/webcomponents-icons-tnt": ["@ui5/webcomponents-icons-tnt@2.19.2", "", { "dependencies": { "@ui5/webcomponents-base": "2.19.2" } }, "sha512-kidvymFpha1tz9nJQtrfrelW7e2xlWk6ZxuFJovp+GRWZmB8RF4iXRJw7LmQ0h7bVyLEVHwUzmWVDvLcqFx0cg=="],
 
-    "@ui5/webcomponents-localization": ["@ui5/webcomponents-localization@2.18.1", "", { "dependencies": { "@types/openui5": "^1.113.0", "@ui5/webcomponents-base": "2.18.1" } }, "sha512-BMcE3vKa+z/kdAdu+N6bb4WduD1IVTl4dKkZGuAoLIyNvnOJQDmO3KxZaepodLtvxzn8RI5/Fyais0oLGEs8+w=="],
+    "@ui5/webcomponents-localization": ["@ui5/webcomponents-localization@2.19.2", "", { "dependencies": { "@types/openui5": "^1.113.0", "@ui5/webcomponents-base": "2.19.2" } }, "sha512-Q2NiCZWTx1QVi2i1vRDsPGSbOcoD3IOhi5RPtDLoAB22+7FebaF/N4qWGM9sfD2ZFwu5q9FwcMn2GC9CkclhTA=="],
 
-    "@ui5/webcomponents-theming": ["@ui5/webcomponents-theming@2.18.1", "", { "dependencies": { "@sap-theming/theming-base-content": "11.29.3", "@ui5/webcomponents-base": "2.18.1" } }, "sha512-ogpKqNpClThOEPQ4gmaJLLK0Q+q8hbkD8nyuPC87LNV/N2rLItTGcHXb1KU4YyOYeKf0dxejDAqHUE0JiOTBbw=="],
+    "@ui5/webcomponents-theming": ["@ui5/webcomponents-theming@2.19.2", "", { "dependencies": { "@sap-theming/theming-base-content": "11.29.3", "@ui5/webcomponents-base": "2.19.2" } }, "sha512-FrXp7H/NasjFeWrPeE6yGIcyUVXc4BJhNfj5Q4SxnU/qZynCRmb6mT01Q34RVQSrWNThYT3rOwprq7Kdnf+qAw=="],
 
     "@yarnpkg/lockfile": ["@yarnpkg/lockfile@1.1.0", "", {}, "sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ=="],
 
@@ -281,7 +281,7 @@
 
     "supports-color": ["supports-color@7.2.0", "", { "dependencies": { "has-flag": "^4.0.0" } }, "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="],
 
-    "three": ["three@0.183.0", "", {}, "sha512-G6SH2jfefIVa2YI4JL2VbgQhrrbp1A8dRc7lr3PW827kdVyaX2RgH6M5FmjmdVFLgSHppyg3OYOZdTfWElle+g=="],
+    "three": ["three@0.183.1", "", {}, "sha512-Psv6bbd3d/M/01MT2zZ+VmD0Vj2dbWTNhfe4CuSg7w5TuW96M3NOyCVuh9SZQ05CpGmD7NEcJhZw4GVjhCYxfQ=="],
 
     "tinyglobby": ["tinyglobby@0.2.15", "", { "dependencies": { "fdir": "^6.5.0", "picomatch": "^4.0.3" } }, "sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ=="],
 
