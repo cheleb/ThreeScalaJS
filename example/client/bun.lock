@@ -5,9 +5,9 @@
     "": {
       "name": "scalajs-webgl",
       "dependencies": {
-        "@ui5/webcomponents": "2.20.0",
-        "@ui5/webcomponents-fiori": "2.20.0",
-        "@ui5/webcomponents-icons": "2.20.0",
+        "@ui5/webcomponents": "2.20.1",
+        "@ui5/webcomponents-fiori": "2.20.1",
+        "@ui5/webcomponents-icons": "2.20.1",
         "gl-matrix": "^3.4.3",
         "three": "0.183.2",
       },
@@ -185,21 +185,21 @@
 
     "@types/trusted-types": ["@types/trusted-types@2.0.7", "", {}, "sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw=="],
 
-    "@ui5/webcomponents": ["@ui5/webcomponents@2.20.0", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.0", "@ui5/webcomponents-icons": "2.20.0", "@ui5/webcomponents-icons-business-suite": "2.20.0", "@ui5/webcomponents-icons-tnt": "2.20.0", "@ui5/webcomponents-localization": "2.20.0", "@ui5/webcomponents-theming": "2.20.0" } }, "sha512-XHK/jqb2HEtvfbxLF5nRg1ut/lytG6n3oaf4n7KkIloCTKVUFMqqWDyIBZMiBHutw1D5sANSQFBh95oLobdSBw=="],
+    "@ui5/webcomponents": ["@ui5/webcomponents@2.20.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.1", "@ui5/webcomponents-icons": "2.20.1", "@ui5/webcomponents-icons-business-suite": "2.20.1", "@ui5/webcomponents-icons-tnt": "2.20.1", "@ui5/webcomponents-localization": "2.20.1", "@ui5/webcomponents-theming": "2.20.1" } }, "sha512-yv8o83+I7ftWV15Mpnvee1d8X2sH0OL+1JnQfOn0d1VwFHvEnWs5ZUo4RNMT3fsMPjW82XHkZANntizsJvl7Cg=="],
 
-    "@ui5/webcomponents-base": ["@ui5/webcomponents-base@2.20.0", "", { "dependencies": { "@lit-labs/ssr-dom-shim": "^1.1.2", "lit-html": "^2.0.1" } }, "sha512-uNO40SU5brIOO8qkdp9+EKwgs1pQEBYbm82uhUsG37u0iM0pYfhopnlj8kdD9Uy782pZyzIfXkOKhrLRQJVnnw=="],
+    "@ui5/webcomponents-base": ["@ui5/webcomponents-base@2.20.1", "", { "dependencies": { "@lit-labs/ssr-dom-shim": "^1.1.2", "lit-html": "^2.0.1" }, "peerDependencies": { "react": ">=18" }, "optionalPeers": ["react"] }, "sha512-jX3gtuY4vxfzIhf4onfAeie9T1HXIXAP22ErZFJh4aWBKfo7nX8MvsE5hZoOjWNa0vXht4xBOu7yM/YYDUdiCg=="],
 
-    "@ui5/webcomponents-fiori": ["@ui5/webcomponents-fiori@2.20.0", "", { "dependencies": { "@ui5/webcomponents": "2.20.0", "@ui5/webcomponents-base": "2.20.0", "@ui5/webcomponents-icons": "2.20.0", "@ui5/webcomponents-theming": "2.20.0", "@zxing/library": "^0.21.3" } }, "sha512-Xb0FwkIFkf6CzB8BK+A3T8kv8gFP6o9zVeJGgJljl6ylw0HYMECyuvS6JUy097lZieNJCSXRIxH6z1+oE+u+BQ=="],
+    "@ui5/webcomponents-fiori": ["@ui5/webcomponents-fiori@2.20.1", "", { "dependencies": { "@ui5/webcomponents": "2.20.1", "@ui5/webcomponents-base": "2.20.1", "@ui5/webcomponents-icons": "2.20.1", "@ui5/webcomponents-theming": "2.20.1", "@zxing/library": "^0.21.3" } }, "sha512-1pgDlLNVDl7xiCgjx7Uy2CugWCUIuLMUoauNDpdeIvNRxT1N5H8cNtDy7DCw4xjrC35sSOrUa4w+AGQWJ5jSVA=="],
 
-    "@ui5/webcomponents-icons": ["@ui5/webcomponents-icons@2.20.0", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.0" } }, "sha512-sG2yakPo7IBddk5fRQ6hf5todCKF/MsxANDjyblwHvWRyl2KJgp0PPUYAsoZwhUL4XdSYqmg47RXWRvTurFeuw=="],
+    "@ui5/webcomponents-icons": ["@ui5/webcomponents-icons@2.20.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.1" } }, "sha512-/FYrMOF9r6vYNjmZzSGaWsIwbnzrtyiZn//Az4N8ycC+YoIFREgKzkeEtIksbgKN8L9dbkJGGndUxbF40aBXjg=="],
 
-    "@ui5/webcomponents-icons-business-suite": ["@ui5/webcomponents-icons-business-suite@2.20.0", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.0" } }, "sha512-3/sucC0dUGlGRQAR+nP0lILTODpFFCGLj1tZopSyX70oMq6MsWM9HJOcxA3YiivNfm7yMlNwoRi0/p8vcvLADA=="],
+    "@ui5/webcomponents-icons-business-suite": ["@ui5/webcomponents-icons-business-suite@2.20.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.1" } }, "sha512-5UCpv4RUhXeHCwP7XySnTbMvibmD6ZJNNNbmhpAl240Joo8rRJJoP2p3oW10rfYW2FjQa3C8nkx+7B+FpHZcwQ=="],
 
-    "@ui5/webcomponents-icons-tnt": ["@ui5/webcomponents-icons-tnt@2.20.0", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.0" } }, "sha512-ibczhbVSyBS4Af7AnDOE1q0FQIMG6eh4/71Y1tcyrGGTdwXe0YLU86bHVxDT+n7Pd4DxE6T8AKGr9ggKne+KoA=="],
+    "@ui5/webcomponents-icons-tnt": ["@ui5/webcomponents-icons-tnt@2.20.1", "", { "dependencies": { "@ui5/webcomponents-base": "2.20.1" } }, "sha512-SIHR0HeCI90chCDzoI6VQVSvzy7gH4x2ebg8vC23cB3W0fMO+8bN47GFdS7c5ZSCPvGis3qMgQ9HB2WFABsBgw=="],
 
-    "@ui5/webcomponents-localization": ["@ui5/webcomponents-localization@2.20.0", "", { "dependencies": { "@types/openui5": "^1.113.0", "@ui5/webcomponents-base": "2.20.0" } }, "sha512-SrDSURWCJZpEQZqxnPfhg4NiEPCTxmVpTo1+TyTIaKuST+iQLI6b56SghqnWvs9dIp3GRzs9YKrtDrR3wyCTgw=="],
+    "@ui5/webcomponents-localization": ["@ui5/webcomponents-localization@2.20.1", "", { "dependencies": { "@types/openui5": "^1.113.0", "@ui5/webcomponents-base": "2.20.1" } }, "sha512-vzKi23IX6QkB5dCKaZVBdHRpbayuLAtjmBpCEOlLzXEFKhSL21XJXKcMczCavYkPg4vjDpRqmy92P77k1Tp+5g=="],
 
-    "@ui5/webcomponents-theming": ["@ui5/webcomponents-theming@2.20.0", "", { "dependencies": { "@sap-theming/theming-base-content": "11.33.0", "@ui5/webcomponents-base": "2.20.0" } }, "sha512-2GKIMwYmuGzTf/Qq6+AqCNkcSyC/+2uuOnNxu6VZcY9VFT4fSIm7HhyhwodErzrxwGyR3gl+BuVDoly5bOdcqg=="],
+    "@ui5/webcomponents-theming": ["@ui5/webcomponents-theming@2.20.1", "", { "dependencies": { "@sap-theming/theming-base-content": "11.33.0", "@ui5/webcomponents-base": "2.20.1" } }, "sha512-KvTDJLDGUosWWAKMCOocPd9lFv4UrhMPzXceNtAOoViNrTkvZg4eNoAIm+ps2Ml/wN6OeVY73tpk6T5p4ABGZg=="],
 
     "@yarnpkg/lockfile": ["@yarnpkg/lockfile@1.1.0", "", {}, "sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ=="],
 
