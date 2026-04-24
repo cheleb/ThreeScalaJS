@@ -191,6 +191,9 @@ object Router:
         path("framebuffertexture") {
           FramebufferTextureSample()
         },
+        path("htmltexture") {
+          HTMLTextureSample()
+        },
         path("ddsloader") {
           DDSLoaderSample()
         },

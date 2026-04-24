@@ -8,13 +8,13 @@ import scala.annotation.nowarn
  * Class for keeping track of time.
  *
  * @deprecated
- *   since r183. Use [[Timer]] instead.
+ *   since r184. Use [[Timer]] instead.
  * @see
  *   [[Timer]] for the recommended replacement
  */
 @js.native
 @JSImport("three", "Clock")
-@deprecated("Use THREE.Timer instead. Clock will be removed in a future version.", "r183")
+@deprecated("Use THREE.Timer instead. Clock will be removed in a future version.", "r184")
 class Clock(var autoStart: Boolean = true) extends js.Object {
 
   /** Holds the time at which the clock's start() method was last called. */
