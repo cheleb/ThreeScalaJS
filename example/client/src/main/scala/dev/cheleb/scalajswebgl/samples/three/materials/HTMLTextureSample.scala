@@ -7,35 +7,18 @@ import THREE.*
 import org.scalajs.dom
 import org.scalajs.dom.window
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 import scala.math.sin
+
+@js.native
+@JSImport("three-html-render/polyfill", JSImport.Namespace)
+object HtmlInCanvasPolyfill extends js.Object {
+  def installHtmlInCanvasPolyfill(): Unit = js.native
+}
 
 object HTMLTextureSample {
 
   def apply() =
-
-    // Create the HTML element that will be used as a texture source
-    val htmlSource = dom.document.createElement("div").asInstanceOf[dom.html.Div]
-    htmlSource.style.width = "256px"
-    htmlSource.style.height = "256px"
-    htmlSource.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-    htmlSource.style.color = "white"
-    htmlSource.style.fontFamily = "Arial, sans-serif"
-    htmlSource.style.fontSize = "18px"
-    htmlSource.style.display = "flex"
-    htmlSource.style.setProperty("flex-direction", "column")
-    htmlSource.style.setProperty("align-items", "center")
-    htmlSource.style.setProperty("justify-content", "center")
-    htmlSource.style.borderRadius = "8px"
-    htmlSource.style.padding = "16px"
-    htmlSource.style.boxSizing = "border-box"
-    htmlSource.innerHTML =
-      """<div style="text-align:center">
-        |  <h3 style="margin:0 0 8px 0">HTMLTexture</h3>
-        |  <p style="margin:0;font-size:14px" id="timer">Time: 0.0s</p>
-        |  <div id="bar" style="margin-top:12px;width:80%;height:12px;background:rgba(255,255,255,0.3);border-radius:6px;overflow:hidden">
-        |    <div id="fill" style="width:0%;height:100%;background:white;border-radius:6px;transition:width 0.1s"></div>
-        |  </div>
-        |</div>""".stripMargin
 
     val htmlTextureDiv = div(
       h1("HTMLTexture Demo"),
@@ -48,76 +31,106 @@ object HTMLTextureSample {
       )
     )
 
+    // Install the polyfill if native HTML-in-Canvas API is not available
+    if (!js.Dynamic.global.HTMLCanvasElement.prototype.hasOwnProperty("requestPaint").asInstanceOf[Boolean]) {
+      HtmlInCanvasPolyfill.installHtmlInCanvasPolyfill()
+    }
+
+    // Create the HTML element that will be used as a texture source
+    val htmlSource = dom.document.createElement("div").asInstanceOf[dom.html.Div]
+    htmlSource.id = "draw_element"
+    htmlSource.style.width = "512px"
+    htmlSource.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    htmlSource.style.color = "white"
+    htmlSource.style.fontFamily = "Arial, sans-serif"
+    htmlSource.style.fontSize = "24px"
+    htmlSource.style.setProperty("line-height", "1.5")
+    htmlSource.style.setProperty("text-align", "center")
+    htmlSource.style.padding = "30px"
+    htmlSource.innerHTML =
+      """<div>
+        |  <h2 style="margin:0 0 12px 0">HTMLTexture</h2>
+        |  <p style="margin:0;font-size:18px" id="timer">Time: 0.0s</p>
+        |  <div style="margin-top:16px;width:80%;height:16px;background:rgba(255,255,255,0.3);border-radius:8px;overflow:hidden;display:inline-block">
+        |    <div id="fill" style="width:0%;height:100%;background:white;border-radius:8px"></div>
+        |  </div>
+        |  <p style="margin-top:12px;font-size:16px">Live HTML on 3D mesh!</p>
+        |</div>""".stripMargin
+
     // Create scene
     val scene = Scene()
 
     // Create camera
-    val camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-    camera.position.z = 6
+    val camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000)
+    camera.position.z = 8
 
     // Create renderer
     val renderer = WebGLRenderer(antialias = true)
     renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8)
-    renderer.setClearColor("#1a1a2e", 1)
+    renderer.setClearColor("#aaaaaa", 1)
+
+    // Pre-setup: attach the HTML element to the canvas and trigger an initial paint
+    // before the renderer tries to use the texture. This ensures the polyfill has
+    // completed at least one snapshot before texElementImage2D is called.
+    val canvas = renderer.domElement
+    canvas.asInstanceOf[js.Dynamic].setAttribute("layoutsubtree", "true")
+    canvas.appendChild(htmlSource)
+    canvas.asInstanceOf[js.Dynamic].requestPaint()
 
     // Create the HTMLTexture from the div element
     val htmlTexture = new HTMLTexture(htmlSource)
 
     // --- Object 1: Rotating cube with HTMLTexture ---
-    val cubeGeometry = new BoxGeometry(2, 2, 2)
-    val cubeMaterial = MeshPhongMaterial(
-      color = 0xffffff,
-      shininess = 60,
-      map = htmlTexture
+    val cubeGeometry = new BoxGeometry(2.5, 2.5, 2.5)
+    val cubeMaterial = MeshStandardMaterial(
+      roughness = 0.2,
+      metalness = 0.3
     )
+    cubeMaterial.map = htmlTexture
     val cube = new Mesh(cubeGeometry, cubeMaterial)
-    cube.position.x = -2.5
+    cube.position.x = -3
     scene.add(cube)
 
     // --- Object 2: Sphere with HTMLTexture ---
-    val sphereGeometry = new SphereGeometry(1.3, 32, 32)
-    val sphereMaterial = MeshPhongMaterial(
-      color = 0xffffff,
-      shininess = 80,
-      map = htmlTexture
+    val sphereGeometry = new SphereGeometry(1.5, 32, 32)
+    val sphereMaterial = MeshStandardMaterial(
+      roughness = 0.1,
+      metalness = 0.4
     )
+    sphereMaterial.map = htmlTexture
     val sphere = new Mesh(sphereGeometry, sphereMaterial)
-    sphere.position.x = 2.5
+    sphere.position.x = 3
     scene.add(sphere)
 
     // --- Object 3: Plane showing the texture flat ---
-    val planeGeometry = new PlaneGeometry(2.5, 2.5)
+    val planeGeometry = new PlaneGeometry(3, 3)
     val planeMaterial = MeshBasicMaterial(map = htmlTexture)
     val plane         = new Mesh(planeGeometry, planeMaterial)
-    plane.position.set(0, -2.5, 0)
-    plane.rotation.x = -0.3
+    plane.position.set(0, -3, 0)
+    plane.rotation.x = -0.4
     scene.add(plane)
 
     // Add lighting
-    val directionalLight = DirectionalLight(0xffffff, 1.5)
+    val directionalLight = DirectionalLight(0xffffff, 2.0)
     directionalLight.position.set(5, 5, 5)
     scene.add(directionalLight)
 
-    val directionalLight2 = DirectionalLight(0xffffff, 0.8)
+    val directionalLight2 = DirectionalLight(0xffffff, 1.0)
     directionalLight2.position.set(-5, 3, -3)
     scene.add(directionalLight2)
 
-    val ambientLight = AmbientLight(0xffffff, 1.0)
+    val ambientLight = AmbientLight(0xffffff, 1.5)
     scene.add(ambientLight)
-
-    val pointLight = PointLight(0x4488ff, 1.2, 20)
-    pointLight.position.set(-3, 3, 3)
-    scene.add(pointLight)
 
     // Animation loop
     val animate: () => Unit = () => {
       val time = js.Date.now() * 0.001
 
       // Rotate objects
-      cube.rotation.x = time * 0.3
-      cube.rotation.y = time * 0.5
+      cube.rotation.x = sin(time * 0.5) * 0.5
+      cube.rotation.y = time * 0.4
 
-      sphere.rotation.y = time * 0.4
+      sphere.rotation.y = time * 0.3
 
       // Update the HTML content dynamically
       val timerEl = htmlSource.querySelector("#timer")
@@ -131,13 +144,16 @@ object HTMLTextureSample {
         fillEl.style.width = s"$pct%"
       }
 
-      // The HTMLTexture listens for paint events automatically,
-      // but we can force an update if needed:
-      htmlTexture.needsUpdate = true
-
       renderer.render(scene, camera)
     }
-    renderer.setAnimationLoop(animate)
+
+    // Defer the animation loop start to allow the polyfill to complete
+    // its first requestPaint() + rAF snapshot cycle.
+    window.requestAnimationFrame { _ =>
+      window.requestAnimationFrame { _ =>
+        renderer.setAnimationLoop(animate)
+      }
+    }
 
     // Handle window resize
     val onWindowResize: dom.Event => Unit = { _ =>
@@ -148,7 +164,7 @@ object HTMLTextureSample {
     window.addEventListener("resize", onWindowResize)
 
     // Append renderer to the canvas container
-    htmlTextureDiv.ref.querySelector(".canvas-container").appendChild(renderer.domElement)
+    htmlTextureDiv.ref.querySelector(".canvas-container").appendChild(canvas)
 
     htmlTextureDiv
 }
