@@ -4,10 +4,10 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.*
 
 /**
- * RenderPipeline is the new name for PostProcessing since r183. It manages a
+ * RenderPipeline is the new name for PostProcessing since r184. It manages a
  * series of post-processing passes to be applied to a scene.
  *
- * @since r183
+ * @since r184
  */
 @js.native
 @JSImport("three/webgpu", "RenderPipeline")
