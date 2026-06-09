@@ -5,7 +5,7 @@ import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 object Dependencies {
   val Versions = new {
     val frontroute = "0.19.0"
-    val mUnit      = "1.3.2"
+    val mUnit      = "1.3.3"
   }
 
   val testingLibraryDependencies =
