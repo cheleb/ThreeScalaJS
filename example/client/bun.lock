@@ -9,7 +9,7 @@
         "@ui5/webcomponents-fiori": "2.23.2",
         "@ui5/webcomponents-icons": "2.23.2",
         "gl-matrix": "^3.4.3",
-        "three": "0.185.0",
+        "three": "0.185.1",
         "three-html-render": "^0.1.2",
       },
       "devDependencies": {
@@ -356,7 +356,7 @@
 
     "supports-color": ["supports-color@7.2.0", "", { "dependencies": { "has-flag": "^4.0.0" } }, "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="],
 
-    "three": ["three@0.185.0", "", {}, "sha512-+yRrcRO2iZa8uzvNNl0d7cL4huhgKgBvVJ0njcTe8xFqZ6DMAFZdCKDP91SEAuj25bNAj7k1QQdf+srZywVK6w=="],
+    "three": ["three@0.185.1", "", {}, "sha512-5aojFCXKwnjBRZvUnt3WFfEcvUJgkN5LlijRFN95hMy8WVkG4I0QNcJE+OuWvuJ0bOdStrbfXn0pkd6/QyiAlg=="],
 
     "three-html-render": ["three-html-render@0.1.2", "", { "peerDependencies": { "three": ">=0.150.0" }, "optionalPeers": ["three"] }, "sha512-JHx6x006LuLcHMRg+X3DyrrbPVsXklhFJGBtpTULFhbnpK7DidgGr6dJ6aTEaN9sc6uFgwI0VHExEYo4qwVSug=="],
 
