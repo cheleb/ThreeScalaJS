@@ -4,7 +4,7 @@ addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.22.0")
 
 addSbtPlugin("org.scalameta"  % "sbt-scalafmt"        % "2.6.1")
 addSbtPlugin("com.github.sbt" % "sbt-pgp"             % "2.3.1")
-addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.11.2")
+addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.12.0")
 addSbtPlugin("com.eed3si9n"   % "sbt-assembly"        % "2.3.1")
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.7")
 // Cross project support, to spread project resources between js and jvm world
