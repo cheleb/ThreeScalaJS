@@ -18,3 +18,5 @@ addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.9.0")
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.7")
 
 addSbtPlugin("dev.cheleb" % "sbt-fullstack-js" % "0.8.0")
+
+addSbtPlugin("com.skillsjars" % "skillsjars-sbt-plugin" % "0.0.9")
