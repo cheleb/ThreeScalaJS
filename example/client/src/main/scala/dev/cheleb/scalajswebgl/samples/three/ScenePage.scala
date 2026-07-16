@@ -12,7 +12,6 @@ import scala.scalajs.js
 import scalajs.js.JSConverters.*
 
 import scala.collection.mutable.Map as MutableMap
-import org.scalajs.dom.Event
 
 object ScenePage {
 
