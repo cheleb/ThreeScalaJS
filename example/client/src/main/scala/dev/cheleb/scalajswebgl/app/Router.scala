@@ -320,7 +320,7 @@ object Router:
             )
           },
           noneMatched {
-            div("404 Not Found")
+            HomePage()
           }
         )
       )
