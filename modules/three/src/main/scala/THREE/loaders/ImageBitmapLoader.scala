@@ -19,7 +19,7 @@ class ImageBitmapLoader(loadingManager: js.UndefOr[LoadingManager] = js.undefine
     onLoad: js.UndefOr[js.Function1[org.scalajs.dom.ImageBitmap, Unit]] = js.undefined,
     onProgress: js.UndefOr[js.Function3[js.Any, Int, Int, Unit]] = js.undefined,
     onError: js.UndefOr[js.Function1[js.Error, Unit]] = js.undefined
-  ): org.scalajs.dom.ImageBitmap = js.native
+  ): Unit = js.native
 
   /**
    * Load an ImageBitmap from a URL asynchronously with Promise.

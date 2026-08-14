@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * A material for drawing line segments with custom width.
  */
 @js.native
-@JSImport("three/examples/jsm/lines/LineMaterial.js", "LineMaterial")
+@JSImport("three/addons/lines/LineMaterial.js", "LineMaterial")
 class LineMaterial(parameters: js.UndefOr[js.Dynamic] = js.undefined) extends Material {
 
   /**

@@ -9,7 +9,7 @@ import org.scalajs.dom
  * multiple post-processing effects to a scene.
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/EffectComposer.js", "EffectComposer")
+@JSImport("three/addons/postprocessing/EffectComposer.js", "EffectComposer")
 class EffectComposer(renderer: WebGLRenderer, renderTarget: js.UndefOr[WebGLRenderTarget] = js.undefined)
     extends js.Object {
 

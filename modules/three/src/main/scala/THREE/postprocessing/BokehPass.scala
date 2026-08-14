@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * BokehPass applies a depth of field effect using a bokeh shader
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/BokehPass.js", "BokehPass")
+@JSImport("three/addons/postprocessing/BokehPass.js", "BokehPass")
 class BokehPass(scene: Scene, camera: Camera, params: BokehPassParameters = ???) extends EffectPass {
 
   def setFocus(focus: Double): Unit                          = js.native

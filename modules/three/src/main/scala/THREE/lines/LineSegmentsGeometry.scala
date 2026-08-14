@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * A specialized geometry for drawing line segments.
  */
 @js.native
-@JSImport("three/examples/jsm/lines/LineSegmentsGeometry.js", "LineSegmentsGeometry")
+@JSImport("three/addons/lines/LineSegmentsGeometry.js", "LineSegmentsGeometry")
 class LineSegmentsGeometry extends BufferGeometry {
 
   /**

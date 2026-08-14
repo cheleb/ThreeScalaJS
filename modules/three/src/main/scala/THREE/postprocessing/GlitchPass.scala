@@ -15,7 +15,7 @@ case class GlitchPassParameters(
  * Glitch pass that creates digital glitch effects
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/GlitchPass.js", "GlitchPass")
+@JSImport("three/addons/postprocessing/GlitchPass.js", "GlitchPass")
 class GlitchPass(
   dtSize: js.UndefOr[Int] = js.undefined,
   random: js.UndefOr[Boolean] = js.undefined

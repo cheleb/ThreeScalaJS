@@ -25,4 +25,9 @@ class Matrix4(
 ) extends js.Object {
   val elements: js.Array[Double] = js.native
   val isMatrix4: Boolean         = js.native
+
+  /**
+   * Computes and returns the determinant of this matrix assuming an affine transformation.
+   */
+  def determinantAffine(): Double = js.native
 }

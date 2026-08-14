@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * Base class for all post-processing passes
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/Pass.js", "Pass")
+@JSImport("three/addons/postprocessing/Pass.js", "Pass")
 class EffectPass extends js.Object {
 
   var enabled: Boolean   = js.native

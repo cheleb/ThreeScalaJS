@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * SSR (Screen Space Reflections) pass for realistic reflections
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/SSRPass.js", "SSRPass")
+@JSImport("three/addons/postprocessing/SSRPass.js", "SSRPass")
 class SSRPass(parameters: SSRPassParameters) extends EffectPass {
 
   var width: Double           = js.native
