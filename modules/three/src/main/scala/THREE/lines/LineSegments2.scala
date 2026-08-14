@@ -11,7 +11,7 @@ import scala.scalajs.js.annotation.*
  * polyline instead of individual segments.
  */
 @js.native
-@JSImport("three/examples/jsm/lines/LineSegments2.js", "LineSegments2")
+@JSImport("three/addons/lines/LineSegments2.js", "LineSegments2")
 class LineSegments2(
   geometry: js.UndefOr[LineSegmentsGeometry] = js.undefined,
   material: js.UndefOr[LineMaterial] = js.undefined

@@ -44,3 +44,13 @@ class MaterialLoader(loadingManager: js.UndefOr[LoadingManager] = js.undefined) 
    */
   def setTextures(textures: js.Object): this.type = js.native
 }
+
+@js.native
+@JSImport("three", "MaterialLoader")
+object MaterialLoader extends js.Object {
+
+  /**
+   * Register a custom material class for deserialization.
+   */
+  def registerMaterial(typeName: String, materialClass: js.Object): Unit = js.native
+}

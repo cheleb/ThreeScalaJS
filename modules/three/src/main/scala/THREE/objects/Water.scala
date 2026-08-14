@@ -11,7 +11,7 @@ import scala.scalajs.js.|
  * WebGPURenderer, use WaterMesh.
  */
 @js.native
-@JSImport("three/examples/jsm/objects/Water.js", "Water")
+@JSImport("three/addons/objects/Water.js", "Water")
 class Water(
   geometry: BufferGeometry,
   options: js.UndefOr[WaterOptions] = js.undefined

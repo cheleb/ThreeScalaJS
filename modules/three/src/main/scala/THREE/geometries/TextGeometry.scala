@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.*
  * font and extrude settings.
  */
 @js.native
-@JSImport("three/examples/jsm/geometries/TextGeometry.js", "TextGeometry")
+@JSImport("three/addons/geometries/TextGeometry.js", "TextGeometry")
 class TextGeometry(
   text: String,
   parameters: js.Object = js.Dynamic.literal()

@@ -19,7 +19,7 @@ class FileLoader(loadingManager: js.UndefOr[LoadingManager] = js.undefined) exte
     onLoad: js.UndefOr[js.Function1[String | ArrayBuffer, Unit]] = js.undefined,
     onProgress: js.UndefOr[js.Function3[js.Any, Int, Int, Unit]] = js.undefined,
     onError: js.UndefOr[js.Function1[js.Error, Unit]] = js.undefined
-  ): String | ArrayBuffer = js.native
+  ): Unit = js.native
 
   /**
    * Load a file from a URL asynchronously with Promise.

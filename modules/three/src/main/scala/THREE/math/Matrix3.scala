@@ -131,16 +131,19 @@ class Matrix3(
   /**
    * Scales this matrix with the given scalar values
    */
+  @deprecated("Use makeScale() instead.", "r185")
   def scale(sx: Double, sy: Double): this.type = js.native
 
   /**
    * Rotates this matrix by the given angle
    */
+  @deprecated("Use makeRotation() instead.", "r185")
   def rotate(theta: Double): this.type = js.native
 
   /**
    * Translates this matrix by the given scalar values
    */
+  @deprecated("Use makeTranslation() instead.", "r185")
   def translate(tx: Double, ty: Double): this.type = js.native
 
   /**

@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * Render pass that renders a scene to a render target
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/RenderPass.js", "RenderPass")
+@JSImport("three/addons/postprocessing/RenderPass.js", "RenderPass")
 class RenderPass(
   scene: Scene,
   camera: Camera,

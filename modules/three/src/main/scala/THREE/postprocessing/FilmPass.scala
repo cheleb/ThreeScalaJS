@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * Film pass that adds film grain and scanlines effects
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/FilmPass.js", "FilmPass")
+@JSImport("three/addons/postprocessing/FilmPass.js", "FilmPass")
 class FilmPass(
   noiseIntensity: js.UndefOr[Double] = js.undefined,
   scanlinesIntensity: js.UndefOr[Double] = js.undefined,

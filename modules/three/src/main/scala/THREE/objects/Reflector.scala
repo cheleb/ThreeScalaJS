@@ -28,7 +28,7 @@ import scala.scalajs.js.|
  * ```
  */
 @js.native
-@JSImport("three/examples/jsm/objects/Reflector.js", "Reflector")
+@JSImport("three/addons/objects/Reflector.js", "Reflector")
 class Reflector(
   geometry: BufferGeometry,
   options: js.UndefOr[ReflectorOptions] = js.undefined
@@ -78,5 +78,5 @@ trait ReflectorOptions extends js.Object {
  * Companion object for Reflector with factory method.
  */
 @js.native
-@JSImport("three/examples/jsm/objects/Reflector.js", "Reflector")
+@JSImport("three/addons/objects/Reflector.js", "Reflector")
 object Reflector extends js.Object

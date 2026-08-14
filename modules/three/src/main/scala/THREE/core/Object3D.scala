@@ -79,7 +79,7 @@ class Object3D extends js.Object {
 
   def updateMatrix(): Unit                                                    = js.native
   def updateMatrixWorld(force: Boolean = false): Unit                         = js.native
-  def updateWorldMatrix(updateParent: Boolean, updateChildren: Boolean): Unit = js.native
+  def updateWorldMatrix(updateParent: Boolean, updateChildren: Boolean, force: Boolean = false): Unit = js.native
 
   def getObjectById(id: Int): js.UndefOr[Object3D]                           = js.native
   def getObjectByName(name: String): js.UndefOr[Object3D]                    = js.native

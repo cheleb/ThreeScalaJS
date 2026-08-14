@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.*
  * effects
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/SSAOPass.js", "SSAOPass")
+@JSImport("three/addons/postprocessing/SSAOPass.js", "SSAOPass")
 class SSAOPass(scene: Scene, camera: Camera, width: Double = 512, height: Double = 512, kernelSize: Double = 32)
     extends EffectPass {
 

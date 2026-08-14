@@ -28,7 +28,7 @@ import scala.scalajs.js.|
  * ```
  */
 @js.native
-@JSImport("three/examples/jsm/objects/Refractor.js", "Refractor")
+@JSImport("three/addons/objects/Refractor.js", "Refractor")
 class Refractor(
   geometry: BufferGeometry,
   options: js.UndefOr[RefractorOptions] = js.undefined
@@ -73,5 +73,5 @@ trait RefractorOptions extends js.Object {
  * Companion object for Refractor with factory method.
  */
 @js.native
-@JSImport("three/examples/jsm/objects/Refractor.js", "Refractor")
+@JSImport("three/addons/objects/Refractor.js", "Refractor")
 object Refractor extends js.Object

@@ -193,7 +193,7 @@ object AdvancedLoadersSample {
       svgResult =>
         dom.console.log("SVG loaded:", svgResult)
         svgResult.paths.foreach { path =>
-          val pathShapes = svgLoader.parse(path.path)
+          val pathShapes = path.toShapes()
           // Create geometry from SVG paths
           val geometry  = new ShapeGeometry(pathShapes)
           val scalaMesh = new Mesh(geometry, MeshBasicMaterial(color = 0x008f4c))

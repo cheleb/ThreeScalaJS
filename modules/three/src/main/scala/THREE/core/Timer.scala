@@ -16,7 +16,7 @@ import org.scalajs.dom
  *     delta values when the app is inactive (e.g. tab switched or browser
  *     hidden).
  *
- * @since r184
+ * @since r183
  */
 @js.native
 @JSImport("three", "Timer")

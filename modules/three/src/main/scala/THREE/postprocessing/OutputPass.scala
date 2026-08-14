@@ -14,7 +14,7 @@ import scala.scalajs.js.annotation.*
  * The tone mapping and color space settings are extracted from the renderer.
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/OutputPass.js", "OutputPass")
+@JSImport("three/addons/postprocessing/OutputPass.js", "OutputPass")
 class OutputPass() extends EffectPass {
 
   /** The pass uniforms */

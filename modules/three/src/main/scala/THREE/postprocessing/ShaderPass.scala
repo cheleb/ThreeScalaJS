@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * Shader pass that applies a custom shader to a texture
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/ShaderPass.js", "ShaderPass")
+@JSImport("three/addons/postprocessing/ShaderPass.js", "ShaderPass")
 class ShaderPass(shader: js.Object, textureID: js.UndefOr[String] = js.undefined) extends EffectPass {
 
   var uniforms: js.Object = js.native

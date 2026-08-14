@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.*
  * intensity controls
  */
 @js.native
-@JSImport("three/examples/jsm/postprocessing/UnrealBloomPass.js", "UnrealBloomPass")
+@JSImport("three/addons/postprocessing/UnrealBloomPass.js", "UnrealBloomPass")
 class UnrealBloomPass(resolution: Vector2, strength: Double, radius: Double, threshold: Double) extends EffectPass {
 
   def setStrength(strength: Double): Unit      = js.native

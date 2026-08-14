@@ -7,7 +7,7 @@ import scala.scalajs.js.annotation.*
  * Output shader for tone mapping and color space conversion
  */
 @js.native
-@JSImport("three/examples/jsm/shaders/OutputShader.js", "OutputShader")
+@JSImport("three/addons/shaders/OutputShader.js", "OutputShader")
 object OutputShader extends js.Object {
 
   /** Shader name */

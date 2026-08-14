@@ -56,4 +56,9 @@ trait SVGPath extends js.Object {
   val `type`: String      = js.native
   val path: String        = js.native
   val userData: js.Object = js.native
+
+  /**
+   * Convert this SVG path to an array of THREE.Shape objects.
+   */
+  def toShapes(): js.Array[Shape] = js.native
 }
