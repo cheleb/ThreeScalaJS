@@ -8,7 +8,7 @@ addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.12.0")
 addSbtPlugin("com.eed3si9n"   % "sbt-assembly"        % "2.4.1")
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.7")
 // Cross project support, to spread project resources between js and jvm world
-addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "1.3.2")
+addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "1.4.0")
 addSbtPlugin("com.github.sbt"     % "sbt-dynver"               % "5.1.1")
 addSbtPlugin("com.github.sbt"     % "sbt-unidoc"               % "0.6.1")
 addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.10.0")
