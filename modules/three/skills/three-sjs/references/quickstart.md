@@ -1,5 +1,29 @@
 # ThreeScalaJS Quickstart
 
+## Node dependency
+
+add the following to your `package.json`:
+
+```json
+{
+  "dependencies": {
+    "three": "0.185.1"
+  }
+}
+```
+and run:
+
+```bash
+npm install
+```
+
+or 
+
+```bash
+
+bun install
+```
+
 ## Dependency (SBT)
 
 ```sbt
