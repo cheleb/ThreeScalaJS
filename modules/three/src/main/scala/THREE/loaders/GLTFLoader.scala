@@ -3,6 +3,7 @@ package THREE
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*
 import js.Promise
+import org.scalajs.dom.ProgressEvent
 
 /**
  * A loader for loading GLTF resources. The .gltf and .glb file extensions are
@@ -48,7 +49,7 @@ class GLTFLoader(manager: js.UndefOr[LoadingManager] = js.undefined) extends js.
   def load(
     url: String,
     onLoad: js.Function1[GLTFResult, Unit] = null,
-    onProgress: js.Function3[js.Any, Int, Int, Unit] = null,
+    onProgress: js.Function1[ProgressEvent, Unit] = null,
     onError: js.Function1[js.Error, Unit] = null
   ): Unit = js.native
 
@@ -57,7 +58,7 @@ class GLTFLoader(manager: js.UndefOr[LoadingManager] = js.undefined) extends js.
    */
   def loadAsync(
     url: String,
-    onProgress: js.UndefOr[js.Function3[js.Any, Int, Int, Unit]] = js.undefined
+    onProgress: js.UndefOr[js.Function1[ProgressEvent, Unit]] = js.undefined
   ): js.Promise[GLTFResult] = js.native
 
   /**
