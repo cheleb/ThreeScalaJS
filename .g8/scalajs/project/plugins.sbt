@@ -1,24 +1,15 @@
 // scalafmt: { maxColumn = 120, style = defaultWithAlign }
 
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.22.0")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "$scalajsVersion$")
 
-addSbtPlugin("org.scalameta"  % "sbt-scalafmt"        % "2.6.2")
+addSbtPlugin("org.scalameta"  % "sbt-scalafmt"       % "2.6.2")
 addSbtPlugin("com.github.sbt" % "sbt-pgp"             % "2.3.2")
 addSbtPlugin("com.github.sbt" % "sbt-ci-release"      % "1.12.1")
 addSbtPlugin("com.eed3si9n"   % "sbt-assembly"        % "2.5.0")
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.7")
-// Cross project support, to spread project resources between js and jvm world
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "1.4.0")
 addSbtPlugin("com.github.sbt"     % "sbt-dynver"               % "5.1.1")
 addSbtPlugin("com.github.sbt"     % "sbt-unidoc"               % "0.6.1")
 addSbtPlugin("com.github.sbt"     % "sbt-ghpages"              % "0.10.0")
-// will reStart server on code modification.
-// Giter8 support
-// Scalafix
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.8")
-
-addSbtPlugin("dev.cheleb" % "sbt-fullstack-js" % "0.8.0")
-
-addSbtPlugin("org.foundweekends.giter8" % "sbt-giter8-scaffold" % "0.18.0")
-
-addSbtPlugin("com.skillsjars" % "skillsjars-sbt-plugin" % "0.0.9")
+addSbtPlugin("ch.epfl.scala" % "sbt-bloop" % "2.1.1")

@@ -1,0 +1,18 @@
+# Scala CLI
+
+.scala-build/
+
+target/
+package-lock.json
+node_modules/
+dist/
+*.bak
+.bloop/
+.bsp/
+.metals/
+
+# Managed by sbt-fullstack-js plugin
+scripts-managed/
+
+externals/
+submodules/
