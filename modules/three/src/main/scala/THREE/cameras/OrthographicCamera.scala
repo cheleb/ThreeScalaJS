@@ -17,7 +17,7 @@ class OrthographicCamera(
   var far: Double = 2000.0
 ) extends Camera {
 
-  def updateProjectionMatrix(): Unit = js.native
+  def updateProjectionMatrix(): Unit                                                                                  = js.native
   def setViewOffset(fullWidth: Double, fullHeight: Double, x: Double, y: Double, width: Double, height: Double): Unit =
     js.native
   def clearViewOffset(): Unit = js.native

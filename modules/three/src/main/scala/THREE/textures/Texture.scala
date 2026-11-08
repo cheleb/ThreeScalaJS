@@ -26,6 +26,11 @@ class Texture(
   val uuid: String = js.native
   val name: String = js.native
 
+  /**
+   * The data definition of the texture. Can be shared between textures.
+   */
+  var source: TextureSource = js.native
+
   var offset: Vector2  = js.native
   var repeat: Vector2  = js.native
   var center: Vector2  = js.native

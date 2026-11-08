@@ -31,7 +31,7 @@ class Euler(
     q: js.Object,
     order: js.UndefOr[String] = js.undefined,
     update: js.UndefOr[Boolean] = js.undefined
-  ): Euler = js.native
+  ): Euler                                             = js.native
   def setFromVector3(v: Vector3, order: String): Euler = js.native
 
   def reorder(newOrder: String): Euler = js.native

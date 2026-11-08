@@ -38,5 +38,5 @@ class Lensflare extends Object3D {
   /**
    * Disposes of this lens flare and cleans up resources.
    */
-  def dispose(): Unit = js.native
+  override def dispose(): Unit = js.native
 }

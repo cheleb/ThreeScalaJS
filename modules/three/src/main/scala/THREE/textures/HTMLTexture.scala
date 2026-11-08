@@ -6,10 +6,12 @@ import scala.scalajs.js.annotation.*
 /**
  * Creates a texture from an HTML element.
  *
- * This is almost the same as the base texture class, except that it sets [[Texture#needsUpdate]]
- * to `true` immediately and listens for the parent canvas's paint events to trigger updates.
+ * This is almost the same as the base texture class, except that it sets
+ * [[Texture#needsUpdate]] to `true` immediately and listens for the parent
+ * canvas's paint events to trigger updates.
  *
- * @augments Texture
+ * @augments
+ *   Texture
  */
 @js.native
 @JSImport("three", "HTMLTexture")
@@ -24,29 +26,31 @@ class HTMLTexture(
   `type`: js.UndefOr[Int] = js.undefined,
   anisotropy: js.UndefOr[Int] = js.undefined
 ) extends Texture(
-  element,
-  mapping,
-  wrapS,
-  wrapT,
-  magFilter,
-  minFilter,
-  format,
-  `type`,
-  anisotropy
-) {
+      element,
+      mapping,
+      wrapS,
+      wrapT,
+      magFilter,
+      minFilter,
+      format,
+      `type`,
+      anisotropy
+    ) {
 
   /**
    * This flag can be used for type testing.
    *
-   * @type {boolean}
+   * @type
+   *   {boolean}
    * @readonly
-   * @default true
+   * @default
+   *   true
    */
   val isHTMLTexture: Boolean = js.native
 
   /**
-   * Releases the internal resources of the texture and removes the paint callback
-   * from the parent element.
+   * Releases the internal resources of the texture and removes the paint
+   * callback from the parent element.
    */
   override def dispose(): Unit = js.native
 
