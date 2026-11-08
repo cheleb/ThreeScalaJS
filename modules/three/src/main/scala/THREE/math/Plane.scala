@@ -40,4 +40,18 @@ class Plane(var normal: js.UndefOr[Vector3] = js.undefined, constant: js.UndefOr
   def translate(offset: Vector3): this.type                                                                = js.native
 
   def equals(plane: Plane): Boolean = js.native
+
+  /**
+   * Returns a serialized structure (`{ normal, constant }`) of the plane.
+   *
+   * @since r186
+   */
+  def toJSON(): js.Object = js.native
+
+  /**
+   * Sets the plane properties from the given JSON.
+   *
+   * @since r186
+   */
+  def fromJSON(json: js.Object): this.type = js.native
 }

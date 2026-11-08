@@ -54,7 +54,7 @@ class Refractor(
    * Frees the GPU-related resources allocated by this instance. Call this
    * method whenever this instance is no longer used in your app.
    */
-  def dispose(): Unit = js.native
+  override def dispose(): Unit = js.native
 }
 
 /**

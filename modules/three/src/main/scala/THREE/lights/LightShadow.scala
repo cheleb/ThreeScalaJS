@@ -40,10 +40,6 @@ class LightShadow(var camera: Camera) extends js.Object {
    * map size will allow for a higher value to be used here before these effects
    * become visible.
    *
-   * The property has no effect when the shadow map type is `PCFSoftShadowMap`
-   * and and it is recommended to increase softness by decreasing the shadow map
-   * size instead.
-   *
    * The property has no effect when the shadow map type is `BasicShadowMap`.
    */
   var radius: Double = js.native
@@ -103,6 +99,14 @@ class LightShadow(var camera: Camera) extends js.Object {
    * be rendered for this shadow.
    */
   def getViewportCount(): Double = js.native
+
+  /**
+   * Used internally by the renderer to get the camera that renders the given
+   * viewport.
+   *
+   * @since r186
+   */
+  def getCamera(viewportIndex: Int = 0): Camera = js.native
 
   /**
    * Gets the shadow cameras frustum. Used internally by the renderer to cull

@@ -38,7 +38,6 @@ object Triangle {
       width  := "100%",
       height := "100%",
       onMountCallback { mc =>
-
         val canvasH = mc.thisNode.ref
 
         canvasH.width = (window.innerWidth * 0.80).toInt

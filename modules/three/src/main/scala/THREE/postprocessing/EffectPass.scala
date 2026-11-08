@@ -19,7 +19,7 @@ class EffectPass extends js.Object {
     readBuffer: js.Object,
     deltaTime: Double,
     maskActive: Boolean = false
-  ): Unit = js.native
+  ): Unit                                          = js.native
   def setSize(width: Double, height: Double): Unit = js.native
   def dispose(): Unit                              = js.native
 }

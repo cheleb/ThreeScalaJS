@@ -19,6 +19,21 @@ class TrackballControls(camera: Camera, domElement: js.UndefOr[dom.Element] = js
   var rotateSpeed: Double = js.native
 
   /**
+   * The roll speed used by two-finger touch roll gestures.
+   *
+   * @since r186
+   */
+  var rollSpeed: Double = js.native
+
+  /**
+   * Whether rolling the camera with a two-finger touch twist gesture is enabled
+   * or not.
+   *
+   * @since r186
+   */
+  var multiTouchRoll: Boolean = js.native
+
+  /**
    * The zoom speed.
    */
   var zoomSpeed: Double = js.native

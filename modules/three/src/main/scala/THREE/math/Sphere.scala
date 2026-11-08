@@ -13,7 +13,7 @@ class Sphere(var center: js.UndefOr[Vector3] = js.undefined, var radius: js.Unde
 
   val isSphere: Boolean = js.native
 
-  def set(center: Vector3, radius: Double): this.type = js.native
+  def set(center: Vector3, radius: Double): this.type                                                         = js.native
   def setFromPoints(points: js.Array[Vector3], optionalCenter: js.UndefOr[Vector3] = js.undefined): this.type =
     js.native
 

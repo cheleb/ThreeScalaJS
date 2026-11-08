@@ -62,6 +62,14 @@ class WebGLRenderTarget(
   var stencilBuffer: Boolean = js.native
 
   /**
+   * Whether to resolve the color buffer or not. Only relevant for multisampled
+   * render targets.
+   *
+   * @since r186
+   */
+  var resolveColorBuffer: Boolean = js.native
+
+  /**
    * Whether to resolve the depth buffer or not.
    */
   var resolveDepthBuffer: Boolean = js.native
@@ -70,6 +78,29 @@ class WebGLRenderTarget(
    * Whether to resolve the stencil buffer or not.
    */
   var resolveStencilBuffer: Boolean = js.native
+
+  /**
+   * Whether to store the multisampled color buffer at the end of a render pass.
+   * Setting it to `false` saves memory bandwidth.
+   *
+   * @since r186
+   */
+  var storeMultisampledColorBuffer: Boolean = js.native
+
+  /**
+   * Whether to store the multisampled depth buffer at the end of a render pass.
+   *
+   * @since r186
+   */
+  var storeMultisampledDepthBuffer: Boolean = js.native
+
+  /**
+   * Whether to store the multisampled stencil buffer at the end of a render
+   * pass.
+   *
+   * @since r186
+   */
+  var storeMultisampledStencilBuffer: Boolean = js.native
 
   /**
    * The number of MSAA samples. A value of `0` disables MSAA.
@@ -106,25 +137,29 @@ class WebGLRenderTarget(
 }
 
 trait WebGLRenderTargetOptions extends js.Object {
-  var width: js.UndefOr[Double]                 = js.undefined
-  var height: js.UndefOr[Double]                = js.undefined
-  var generateMipmaps: js.UndefOr[Boolean]      = js.undefined
-  var internalFormat: js.UndefOr[js.Any]        = js.undefined
-  var minFilter: js.UndefOr[Double]             = js.undefined
-  var magFilter: js.UndefOr[Double]             = js.undefined
-  var format: js.UndefOr[Double]                = js.undefined
-  var `type`: js.UndefOr[Double]                = js.undefined
-  var anisotropy: js.UndefOr[Double]            = js.undefined
-  var colorSpace: js.UndefOr[String]            = js.undefined
-  var depthBuffer: js.UndefOr[Boolean]          = js.undefined
-  var stencilBuffer: js.UndefOr[Boolean]        = js.undefined
-  var resolveDepthBuffer: js.UndefOr[Boolean]   = js.undefined
-  var resolveStencilBuffer: js.UndefOr[Boolean] = js.undefined
-  var depthTexture: js.UndefOr[DepthTexture]    = js.undefined
-  var samples: js.UndefOr[Double]               = js.undefined
-  var count: js.UndefOr[Double]                 = js.undefined
-  var depth: js.UndefOr[Double]                 = js.undefined
-  var multiview: js.UndefOr[Boolean]            = js.undefined
+  var width: js.UndefOr[Double]                           = js.undefined
+  var height: js.UndefOr[Double]                          = js.undefined
+  var generateMipmaps: js.UndefOr[Boolean]                = js.undefined
+  var internalFormat: js.UndefOr[js.Any]                  = js.undefined
+  var minFilter: js.UndefOr[Double]                       = js.undefined
+  var magFilter: js.UndefOr[Double]                       = js.undefined
+  var format: js.UndefOr[Double]                          = js.undefined
+  var `type`: js.UndefOr[Double]                          = js.undefined
+  var anisotropy: js.UndefOr[Double]                      = js.undefined
+  var colorSpace: js.UndefOr[String]                      = js.undefined
+  var depthBuffer: js.UndefOr[Boolean]                    = js.undefined
+  var stencilBuffer: js.UndefOr[Boolean]                  = js.undefined
+  var resolveColorBuffer: js.UndefOr[Boolean]             = js.undefined
+  var resolveDepthBuffer: js.UndefOr[Boolean]             = js.undefined
+  var resolveStencilBuffer: js.UndefOr[Boolean]           = js.undefined
+  var storeMultisampledColorBuffer: js.UndefOr[Boolean]   = js.undefined
+  var storeMultisampledDepthBuffer: js.UndefOr[Boolean]   = js.undefined
+  var storeMultisampledStencilBuffer: js.UndefOr[Boolean] = js.undefined
+  var depthTexture: js.UndefOr[DepthTexture]              = js.undefined
+  var samples: js.UndefOr[Double]                         = js.undefined
+  var count: js.UndefOr[Double]                           = js.undefined
+  var depth: js.UndefOr[Double]                           = js.undefined
+  var multiview: js.UndefOr[Boolean]                      = js.undefined
 }
 
 object WebGLRenderTarget {

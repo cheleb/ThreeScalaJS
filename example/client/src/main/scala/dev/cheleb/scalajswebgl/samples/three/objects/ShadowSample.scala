@@ -34,7 +34,7 @@ object ShadowSample {
     renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8)
     renderer.setClearColor("#87CEEB", 1) // Sky blue background
     renderer.shadowMap.asInstanceOf[js.Dynamic].enabled = true
-    renderer.shadowMap.asInstanceOf[js.Dynamic].`type` = 2 // PCFSoftShadowMap
+    renderer.shadowMap.asInstanceOf[js.Dynamic].`type` = PCFShadowMap.asInstanceOf[js.Any]
 
     // Create geometries for demonstration
     val geometries = List(
@@ -192,7 +192,7 @@ object ShadowSample {
         li("Directional Light: Enabled, Map Size 2048x2048"),
         li("Spot Light: Enabled, Map Size 1024x1024"),
         li("Point Light: Enabled, Map Size 1024x1024"),
-        li("Shadow Type: PCF Soft Shadows"),
+        li("Shadow Type: PCF Shadows"),
         li("Shadow Bias: -0.0001")
       ),
       p("Watch how different lights cast different shadow patterns!")
