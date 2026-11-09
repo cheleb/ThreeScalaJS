@@ -77,8 +77,8 @@ class Object3D extends js.Object {
   def traverseVisible(callback: js.Function1[Object3D, Unit]): Unit   = js.native
   def traverseAncestors(callback: js.Function1[Object3D, Unit]): Unit = js.native
 
-  def updateMatrix(): Unit                                                    = js.native
-  def updateMatrixWorld(force: Boolean = false): Unit                         = js.native
+  def updateMatrix(): Unit                                                                            = js.native
+  def updateMatrixWorld(force: Boolean = false): Unit                                                 = js.native
   def updateWorldMatrix(updateParent: Boolean, updateChildren: Boolean, force: Boolean = false): Unit = js.native
 
   def getObjectById(id: Int): js.UndefOr[Object3D]                           = js.native
@@ -91,6 +91,24 @@ class Object3D extends js.Object {
   def getWorldDirection(target: Vector3): Vector3        = js.native
 
   def raycast(raycaster: js.Object, intersects: js.Array[js.Object]): Unit = js.native
+
+  /**
+   * Tests whether this 3D object intersects the given frustum. Implemented by
+   * renderable objects (Mesh, Line, Points, Sprite) for frustum culling;
+   * returns `undefined` for non-renderable objects.
+   *
+   * @since r186
+   */
+  def intersectsFrustum(frustum: Frustum): js.UndefOr[Boolean] = js.native
+
+  /**
+   * Frees the GPU-related resources allocated by this instance and fires a
+   * `dispose` event. Geometries, materials and textures must be disposed of
+   * separately.
+   *
+   * @since r186
+   */
+  def dispose(): Unit = js.native
 
   def clear(): this.type = js.native
 }

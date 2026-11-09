@@ -22,9 +22,13 @@ object PCFShadowMap extends js.Object:
 /**
  * Filters shadow maps using the Percentage-Closer Filtering (PCF) algorithm
  * with better soft shadows especially when using low-resolution shadow maps.
+ *
+ * @deprecated
+ *   since r186. The renderers fall back to [[PCFShadowMap]].
  */
 @js.native
 @JSImport("three", "PCFSoftShadowMap")
+@deprecated("PCFSoftShadowMap has been removed. Use PCFShadowMap instead.", "r186")
 object PCFSoftShadowMap extends js.Object:
   override def toString(): String = js.native
 

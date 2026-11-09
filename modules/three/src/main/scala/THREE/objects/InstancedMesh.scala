@@ -57,5 +57,5 @@ class InstancedMesh(
   /**
    * Disposes of this instance of InstancedMesh.
    */
-  def dispose(): Unit = js.native
+  override def dispose(): Unit = js.native
 }

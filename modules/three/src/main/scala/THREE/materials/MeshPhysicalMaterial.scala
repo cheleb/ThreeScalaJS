@@ -103,6 +103,15 @@ class MeshPhysicalMaterial(parameters: js.UndefOr[js.Object] = js.undefined) ext
   var sheen: Double = js.native
 
   /**
+   * The strength of retroreflection, from `0.0` to `1.0`. Redirects the
+   * specular lobe back toward the light source (road markings, reflective
+   * tape...).
+   *
+   * @since r186
+   */
+  var retroreflectivity: Double = js.native
+
+  /**
    * The color map.
    */
   var map: js.UndefOr[js.Object] = js.native
@@ -277,7 +286,8 @@ object MeshPhysicalMaterial:
     sheenRoughness: js.UndefOr[Double] = js.undefined,
     wireframe: Boolean = false,
     emissive: js.UndefOr[Int | String | Color] = js.undefined,
-    emissiveIntensity: js.UndefOr[Double] = js.undefined
+    emissiveIntensity: js.UndefOr[Double] = js.undefined,
+    retroreflectivity: js.UndefOr[Double] = js.undefined
   ): MeshPhysicalMaterial = {
     val params = js.Dynamic.literal(
       color = color.asInstanceOf[js.Any],
@@ -298,6 +308,7 @@ object MeshPhysicalMaterial:
     if (!js.isUndefined(sheen)) params.sheen = sheen
     if (!js.isUndefined(sheenColor)) params.sheenColor = sheenColor.asInstanceOf[js.Any]
     if (!js.isUndefined(sheenRoughness)) params.sheenRoughness = sheenRoughness
+    if (!js.isUndefined(retroreflectivity)) params.retroreflectivity = retroreflectivity
     if (!js.isUndefined(emissive)) params.emissive = emissive.asInstanceOf[js.Any]
     if (!js.isUndefined(emissiveIntensity)) params.emissiveIntensity = emissiveIntensity
 

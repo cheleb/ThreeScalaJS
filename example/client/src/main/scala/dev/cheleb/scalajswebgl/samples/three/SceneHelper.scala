@@ -70,7 +70,7 @@ object SceneHelper {
     context.fillText(text, 64, 32)
 
     // Create a sprite with this texture
-    val texture = new CanvasTexture(canvas)
+    val texture  = new CanvasTexture(canvas)
     val material = new SpriteMaterial(
       js.Dynamic.literal(
         map = texture,

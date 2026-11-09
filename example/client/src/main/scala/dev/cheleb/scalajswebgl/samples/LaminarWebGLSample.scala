@@ -12,7 +12,6 @@ import dev.cheleb.webgl.*
 object LaminarWebGLSample {
   def apply() = {
     canvasTag(onMountCallback { mc =>
-
       val canvas = mc.thisNode.ref
       canvas.width = 640
       canvas.height = 480
@@ -119,7 +118,7 @@ object LaminarWebGLSample {
 
       val buffers = initBuffers(gl, positions, colors, indices)
 
-      var rotation = 0.0
+      var rotation       = 0.0
       def render(): Unit = {
         gl.clearColor(0.0f, 0.0f, 0.0f, 1.0f)
         gl.clearDepth(1.0f)

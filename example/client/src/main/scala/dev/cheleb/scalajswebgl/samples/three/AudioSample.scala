@@ -138,7 +138,6 @@ object AudioSample {
     audioLoader.load(
       "/ThreeScalaJS/demo/sounds/zogzog.mp3",
       { audioBuffer =>
-
         audio.setBuffer(audioBuffer)
         audio.setRefDistance(20)
         audio.setLoop(true)
