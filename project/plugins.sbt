@@ -19,4 +19,4 @@ addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.10")
 
 addSbtPlugin("dev.cheleb" % "sbt-fullstack-js" % "0.8.0")
 
-addSbtPlugin("com.skillsjars" % "skillsjars-sbt-plugin" % "0.0.9")
+addSbtPlugin("com.skillsjars" % "skillsjars-sbt-plugin" % "0.1.0")
