@@ -18,9 +18,9 @@ It scaffolds a standalone Scala 3 + Scala.js + Vite project that depends on the 
 and renders a rotating cube with orbit controls:
 
 ```sh
-sbt new cheleb/ThreeScalaJS --directory=threescalajs.g8
+sbt new cheleb/ThreeScalaJS.g8
 # or, from a local checkout
-sbt new file:///path/to/ThreeScalaJS/threescalajs.g8
+sbt new file:///path/to/ThreeScalaJS.g8
 
 cd <name>
 npm install
