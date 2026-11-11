@@ -15,7 +15,7 @@ object Header:
           Icon(_.name := IconName.home, cls := "pad-10"),
           href := Router.uiRoute("demo")
         ),
-        _.primaryTitle   := "ScalaJs WebGL",
+        _.primaryTitle   := "ScalaJs Three",
         _.secondaryTitle := "ScalaJs WebGL bindings and utilities",
         _.showCoPilot    := true,
         _.slots.profile  := Avatar(

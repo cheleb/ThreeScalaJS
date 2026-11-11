@@ -1,5 +1,11 @@
 # ThreeScalaJS Quickstart
 
+## Scafold Setup
+
+```bash
+sbt new cheleb/ThreeScalaJS.g8 --name <project-name> --force
+```
+
 ## Dependency (SBT)
 
 ```sbt

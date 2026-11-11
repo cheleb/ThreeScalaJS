@@ -1,8 +1,0 @@
-target/
-node_modules/
-dist/
-package-lock.json
-.bsp/
-.bloop/
-.metals/
-metals.sbt
