@@ -1,0 +1,16 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #101018;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+
+canvas {
+  display: block;
+}

@@ -11,6 +11,22 @@ https://cheleb.github.io/ThreeScalaJS/docs/index.html
 
 Check out the live demo at: [https://cheleb.github.io/ThreeScalaJS/demo](https://cheleb.github.io/ThreeScalaJS/demo)
 
+## Start a new project (giter8 template)
+
+The [`threescalajs.g8`](threescalajs.g8) folder is a [giter8](https://www.foundweekends.org/giter8/) template.
+It scaffolds a standalone Scala 3 + Scala.js + Vite project that depends on the published `threesjs` artifact
+and renders a rotating cube with orbit controls:
+
+```sh
+sbt new cheleb/ThreeScalaJS --directory=threescalajs.g8
+# or, from a local checkout
+sbt new file:///path/to/ThreeScalaJS/threescalajs.g8
+
+cd <name>
+npm install
+npm run dev
+```
+
 ## Architecture
 
 The project follows a modular structure:

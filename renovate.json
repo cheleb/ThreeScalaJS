@@ -3,14 +3,127 @@
   "extends": [
     "config:recommended"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "giter8 template default scala_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)scala_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "org.scala-lang:scala3-library_3",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "description": "giter8 template default scalajs_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)scalajs_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "org.scala-js:sbt-scalajs_2.12_1.0",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "description": "giter8 template default scalajs_dom_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)scalajs_dom_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "org.scala-js:scalajs-dom_sjs1_3",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "description": "giter8 template default threesjs_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)threesjs_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "dev.cheleb:threesjs_sjs1_3",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "description": "giter8 template default three_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)three_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "three",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "description": "giter8 template default vite_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)vite_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "vite",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "description": "giter8 template default vite_plugin_scalajs_version",
+      "managerFilePatterns": [
+        "/(^|/)threescalajs\\.g8/src/main/g8/default\\.properties$/"
+      ],
+      "matchStrings": [
+        "(^|\\n)vite_plugin_scalajs_version=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "@scala-js/vite-plugin-scalajs",
+      "datasourceTemplate": "npm"
+    }
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
       "automerge": true
     },
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "automerge": true
+    },
+    {
+      "description": "The template three_version must match the facades of the published threesjs_version: bump it by hand together with threesjs_version, never on its own",
+      "matchFileNames": [
+        "threescalajs.g8/src/main/g8/default.properties"
+      ],
+      "matchDepNames": [
+        "three"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "threesjs and the template three_version move together; review by hand",
+      "matchFileNames": [
+        "threescalajs.g8/src/main/g8/default.properties"
+      ],
+      "matchDepNames": [
+        "dev.cheleb:threesjs_sjs1_3"
+      ],
+      "automerge": false
     }
   ],
   "platformAutomerge": true

@@ -12,6 +12,8 @@ import DeploymentSettings._
 
 skillsJarsOutputDir := Some(file(".agents/skills"))
 
+// Keep threescalajs.g8/src/main/g8/default.properties (scala_version) at a version at least as new:
+// Scala 3 cannot read TASTy produced by a newer compiler.
 val scala3 = "3.10.1"
 
 name := "ScalaThree.js"

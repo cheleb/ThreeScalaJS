@@ -48,3 +48,18 @@ jobs:
       #   run: sbt +test
       - name: example/dist
         run: DEV=prod sbt "client/fastLinkJS"
+      - name: g8 template
+        run: |
+          cd threescalajs.g8
+          sbt test
+      - name: g8 template three.js version matches the published threesjs facades
+        run: |
+          props=threescalajs.g8/src/main/g8/default.properties
+          threesjs=$(sed -n "s/^threesjs_version=//p" $props)
+          actual=$(sed -n "s/^three_version=//p" $props)
+          git fetch --depth=1 origin tag "v$threesjs"
+          expected=$(git show "v${threesjs}:example/client/package.json" | node -p "JSON.parse(require(\"fs\").readFileSync(0)).dependencies.three")
+          if [ "$expected" != "$actual" ]; then
+            echo "three_version=$actual in $props, but threesjs $threesjs was released against three $expected (tag v$threesjs)"
+            exit 1
+          fi

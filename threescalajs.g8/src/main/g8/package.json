@@ -1,0 +1,18 @@
+{
+  "name": "$name;format="norm"$",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "$three_version$"
+  },
+  "devDependencies": {
+    "@scala-js/vite-plugin-scalajs": "^$vite_plugin_scalajs_version$",
+    "vite": "^$vite_version$"
+  }
+}
